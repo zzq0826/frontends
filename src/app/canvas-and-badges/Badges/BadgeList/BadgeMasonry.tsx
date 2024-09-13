@@ -1,3 +1,5 @@
+"use client"
+
 import { useEffect, useRef } from "react"
 import { usePrevious } from "react-use"
 import { AutoSizer, CellMeasurer, CellMeasurerCache, Masonry, WindowScroller } from "react-virtualized"

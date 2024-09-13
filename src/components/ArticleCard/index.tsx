@@ -79,7 +79,8 @@ const ArticlePoster = styled(WebpImage)(({ theme }) => ({
   },
 }))
 
-const ArticleCard = ({ blog }) => {
+const ArticleCard = props => {
+  const { blog } = props
   const router = useRouter()
   const handleClick = () => {
     if (blog.externalLink) {

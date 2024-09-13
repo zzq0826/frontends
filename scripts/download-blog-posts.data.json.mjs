@@ -1,5 +1,5 @@
-const fs = require("fs")
-const fetch = require("node-fetch")
+import fs from "fs"
+import fetch from "node-fetch"
 
 const isMainnet = process.env.NEXT_PUBLIC_SCROLL_ENVIRONMENT === "Mainnet"
 const POSTS_URL = `https://blog.scroll.cat/api/posts/${isMainnet ? "published" : "preview"}/data.json`

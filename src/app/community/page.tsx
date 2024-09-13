@@ -1,12 +1,14 @@
 "use client"
 
+import dynamic from "next/dynamic"
 import { makeStyles } from "tss-react/mui"
 
 import { Box } from "@mui/material"
 
 import Events from "./Events"
-import Globe from "./Globe"
 import Join from "./Join"
+
+const Globe = dynamic(() => import("./Globe"), { ssr: false })
 
 const useStyles = makeStyles()(() => ({
   container: {

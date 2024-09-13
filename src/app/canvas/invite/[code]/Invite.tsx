@@ -3,8 +3,8 @@ import Link from "next/link"
 import { useRainbowContext } from "@/contexts/RainbowProvider"
 import useCanvasStore from "@/stores/canvasStore"
 
-import LoadingPage from "../loading"
-import ReadyToMint from "../mint/home"
+import LoadingPage from "../../loading"
+import ReadyToMint from "../../mint/home"
 
 const CanvasInvite = props => {
   const { code } = props

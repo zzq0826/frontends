@@ -35,6 +35,7 @@ const linkStyles = (theme: Theme, dark: boolean): CSSObject => ({
 interface StyledNavLinkProps {
   dark?: boolean
   href?: string
+  reloadDocument?: boolean
 }
 
 interface StyledLinkProps {

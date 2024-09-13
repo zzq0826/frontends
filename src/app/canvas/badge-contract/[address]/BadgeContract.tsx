@@ -25,7 +25,7 @@ import Back from "./Back"
 
 const BadgeContractDetail = () => {
   const router = useRouter()
-  const { address } = useParams()
+  const { address } = useParams<{ address: string }>()
   const isNewTab = window.history.length === 1
   const { walletCurrentAddress, connect, chainId, provider } = useRainbowContext()
   const { profileMinted, changeIsBadgeMinting, isBadgeMinting, userBadges, queryUserBadges, queryUserBadgesLoading } = useCanvasStore()

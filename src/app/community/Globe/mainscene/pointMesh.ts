@@ -31,15 +31,12 @@ function createPointMesh(R: number, lon: number, lat: number): THREE.Mesh {
 
 function createImg(param: { src: string; style: Partial<CSSStyleDeclaration> }): CSS2DObject {
   let img
-  if (typeof document !== "undefined") {
-    img = document.createElement("img")
-    img.src = param.src
+  img = document.createElement("img")
+  img.src = param.src
 
-    Object.assign(img.style, param.style)
+  Object.assign(img.style, param.style)
 
-    return new CSS2DObject(img)
-  }
-  return null
+  return new CSS2DObject(img)
 }
 
 function createPointLabel(R: number, lon: number, lat: number): CSS2DObject {

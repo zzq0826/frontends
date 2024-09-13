@@ -27,7 +27,7 @@ const MintFlow = props => {
           <MintStep scrollTarget={scrollTarget}></MintStep>
         </SwiperSlide>
         <SwiperSlide>
-          <FirstBadgeStep scrollTarget={scrollTarget}></FirstBadgeStep>
+          <FirstBadgeStep></FirstBadgeStep>
         </SwiperSlide>
       </Swiper>
     </SectionWrapper>

@@ -1,4 +1,4 @@
-import Img from "react-cool-img"
+import Image from "next/image"
 
 import { Container, Typography } from "@mui/material"
 
@@ -16,7 +16,7 @@ const SessionsRestricted = () => {
         gap: ["1.6rem", "3.2rem"],
       }}
     >
-      <Img src={ScrollySad} width={120} height={120}></Img>
+      <Image src={ScrollySad} alt="sessions-restricted" width={120} height={120}></Image>
       <Typography sx={{ fontSize: ["1.8rem", "2.4rem"], lineHeight: ["2.8rem", "3.2rem"], fontWeight: 600, textAlign: "center" }}>
         Scroll Sessions is not available<br></br>in your region.
       </Typography>

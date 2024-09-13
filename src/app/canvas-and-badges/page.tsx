@@ -1,8 +1,11 @@
 "use client"
 
+import dynamic from "next/dynamic"
+
 import Badges from "./Badges"
-import Header from "./Header"
 import Introduction from "./Introduction"
+
+const Header = dynamic(() => import("./Header"), { ssr: false })
 
 const CanvasBadge = () => {
   return (

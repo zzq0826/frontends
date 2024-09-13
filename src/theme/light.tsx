@@ -5,25 +5,25 @@ import { boxShadowOptions, paletteOptions, typographyOptions } from "./options"
 const defaultTransition = "all 0.15s ease-out"
 
 const lightTheme = {
-  // check in bridge
-  // singleLineEllipsis: {
-  //   overflow: "hidden",
-  //   whiteSpace: "nowrap",
-  //   textOverflow: "ellipsis",
-  // },
-  // multilineEllipsis: {
-  //   display: "-webkit-box",
-  //   WebkitBoxOrient: "vertical",
-  //   WebkitLineClamp: "4",
-  //   overflow: "hidden",
-  // },
+  singleLineEllipsis: {
+    overflow: "hidden",
+    whiteSpace: "nowrap",
+    textOverflow: "ellipsis",
+  },
+  multilineEllipsis: {
+    display: "-webkit-box",
+    WebkitBoxOrient: "vertical",
+    WebkitLineClamp: "4",
+    overflow: "hidden",
+  },
   shape: {
     borderRadius: 27,
   },
   palette: paletteOptions,
   typography: typographyOptions,
   // diferrent from raw shadows
-  // boxShadows: boxShadowOptions,
+  boxShadows: boxShadowOptions,
+
   components: {
     MuiContainer: {
       styleOverrides: {

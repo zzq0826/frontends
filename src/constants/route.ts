@@ -6,6 +6,7 @@ export interface PageMetadata {
   description?: string
   ogImg?: string
   twitterImg?: string
+  isHiddenFooter?: boolean
 }
 
 export const DEFAULT_METADATA = {

@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import { headers } from "next/headers"
 
 import CanvasDashboard from "../Dashboard"
@@ -18,7 +19,6 @@ export async function generateMetadata({ params }): Promise<Metadata> {
     openGraph: {
       title,
       description,
-      url,
       images: [imgUrl],
     },
     twitter: {

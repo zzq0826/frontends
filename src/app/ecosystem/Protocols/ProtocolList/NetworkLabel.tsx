@@ -2,7 +2,7 @@ import { makeStyles } from "tss-react/mui"
 
 import { Chip } from "@mui/material"
 
-const useStyles = makeStyles<any>()(theme => ({
+const useStyles = makeStyles()(theme => ({
   root: {
     height: "auto",
     padding: "0.4rem 1.2rem",

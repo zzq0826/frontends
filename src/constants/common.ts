@@ -9,8 +9,8 @@ export const L1_NAME = `Ethereum ${isMainnet ? "" : process.env.NEXT_PUBLIC_SCRO
 export const L2_NAME = `Scroll ${isMainnet ? "" : process.env.NEXT_PUBLIC_SCROLL_ENVIRONMENT}`
 
 export const CHAIN_ID = {
-  L1: parseInt(process.env.NEXT_PUBLIC_CHAIN_ID_L1 as string),
-  L2: parseInt(process.env.NEXT_PUBLIC_CHAIN_ID_L2 as string),
+  L1: parseInt(process.env.NEXT_PUBLIC_CHAIN_ID_L1),
+  L2: parseInt(process.env.NEXT_PUBLIC_CHAIN_ID_L2),
 }
 
 export const RPC_URL = {

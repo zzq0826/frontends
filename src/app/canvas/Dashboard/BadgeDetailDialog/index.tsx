@@ -251,7 +251,7 @@ const BadgeDetailDialog = () => {
                   textAlign: ["left", "center"],
                   marginBottom: "1.2rem",
                 },
-                theme => theme.multilineEllipsis,
+                theme => (theme as any).vars.multilineEllipsis,
               ]}
             >
               <BadgeDesc>{selectedBadge.description}</BadgeDesc>

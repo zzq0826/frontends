@@ -36,7 +36,7 @@ const wallets = [
   },
 ]
 
-const sepoliaChain = produce(sepolia, draft => {
+const sepoliaChain: Chain = produce(sepolia, draft => {
   draft.rpcUrls.default.http = [RPC_URL.L1 as any]
   draft.fees = {
     // adopt MetaMask params
@@ -47,7 +47,7 @@ const sepoliaChain = produce(sepolia, draft => {
   }
 })
 
-const mainnetChain = produce(mainnet, draft => {
+const mainnetChain: Chain = produce(mainnet, draft => {
   draft.rpcUrls.default.http = [RPC_URL.L1 as any]
   draft.fees = {
     // adopt MetaMask params
@@ -63,6 +63,6 @@ export const configs = {
   wallets,
   appName: "Scroll",
   projectId,
-  chains: [mainnetChain, sepoliaChain as unknown as Chain, scroll, scrollSepolia],
+  chains: [mainnetChain, sepoliaChain, scroll, scrollSepolia],
   ssr: true,
 }

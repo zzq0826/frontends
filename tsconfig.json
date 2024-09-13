@@ -23,11 +23,12 @@
     },
     // TODO:
     "noImplicitAny": false,
+    "strictNullChecks": true,
+
     "useUnknownInCatchVariables": false,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
     "allowSyntheticDefaultImports": true,
-    "strictNullChecks": true,
     "noImplicitThis": true,
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/types/*.d.ts"],

@@ -19,7 +19,7 @@ type RainbowContextProps = {
   checkConnectedChainId: (_chainId: number) => boolean
 }
 
-export const defaultConfig = getDefaultConfig(configs)
+export const defaultConfig = getDefaultConfig(configs as any)
 
 const RainbowContext = createContext<RainbowContextProps | undefined>(undefined)
 

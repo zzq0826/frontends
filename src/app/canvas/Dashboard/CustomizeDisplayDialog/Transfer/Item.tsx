@@ -22,7 +22,7 @@ const getScaleY = transform => {
   return transform?.scaleY ? `${transform.scaleY}` : undefined
 }
 
-const useStyles = makeStyles()((theme, { transform }) => ({
+const useStyles = makeStyles<any>()((theme, { transform }) => ({
   "@keyframes pop": {
     "0%": {
       transform: "scale(1)",
@@ -81,7 +81,7 @@ const useStyles = makeStyles()((theme, { transform }) => ({
   },
 }))
 
-const Item = forwardRef((props, ref) => {
+const Item = forwardRef((props: any, ref) => {
   const { sx, className, fadeIn, dragging, transition, transform, listeners, name, image, dragOverlay } = props
   const { cx, classes } = useStyles({ transform })
   useEffect(() => {
