@@ -9,6 +9,14 @@ export const defaultProjectList = {
       project: "Nuri",
     },
     {
+      name: "Maverick",
+      project: "Maverick",
+    },
+    {
+      name: "Vessel",
+      project: "Vessel",
+    },
+    {
       name: "Others",
       project: "Others",
       items: [
@@ -25,12 +33,16 @@ export const defaultProjectList = {
           project: "SyncSwap",
         },
         {
+          name: "Zebra",
+          project: "Zebra",
+        },
+        {
           name: "Wombat",
           project: "Wombat",
         },
         {
-          name: "Zebra",
-          project: "Zebra",
+          name: "Scribe",
+          project: "Scribe",
         },
       ],
     },
@@ -40,7 +52,10 @@ export const defaultProjectList = {
       name: "Aave",
       project: "Aave",
     },
-
+    {
+      name: "Huma",
+      project: "Huma",
+    },
     {
       name: "Rho Markets",
       project: "Rho Markets",
@@ -157,6 +172,30 @@ const PROJECT_LIST = [
   //   logo: "/imgs/canvas/ScrollCanvas.svg",
   //   website: "/canvas",
   // },
+  {
+    name: "Vessel",
+    key: "Vessel",
+    logo: "https://scroll-eco-list.netlify.app/logos/Vessel.jpg",
+    website: "https://vessel.finance/",
+  },
+  {
+    name: "Maverick",
+    key: "Maverick",
+    logo: "https://scroll-eco-list.netlify.app/logos/Maverick%20Protocol.jpg",
+    website: "https://app.mav.xyz/add-liquidity?chain=534352",
+  },
+  {
+    name: "Huma",
+    key: "Huma",
+    logo: "/imgs/sessions/tokens/Huma.svg",
+    website: "https://app.huma.finance/#/",
+  },
+  {
+    name: "Scribe",
+    key: "Scribe",
+    logo: "/imgs/sessions/tokens/Scribe.png",
+    website: "https://app.scribe.exchange/pools",
+  },
 ]
 
 export const PROJECT_MAP = new Proxy(PROJECT_LIST, {

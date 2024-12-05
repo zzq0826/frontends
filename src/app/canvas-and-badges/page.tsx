@@ -3,6 +3,7 @@
 import dynamic from "next/dynamic"
 
 import Badges from "./Badges"
+import FeaturedBadges from "./FeaturedBadges"
 import Introduction from "./Introduction"
 
 const Header = dynamic(() => import("./Header"), { ssr: false })
@@ -12,6 +13,7 @@ const CanvasBadge = () => {
     <>
       <Header></Header>
       <Introduction></Introduction>
+      <FeaturedBadges></FeaturedBadges>
       <Badges></Badges>
     </>
   )

@@ -15,11 +15,6 @@ const FadeInDiv = styled("div")<FadeInBoxProps>(({ delay, backgroundurl, animati
   animation: `${fadeIn} 1s ease-in-out ${delay ?? ""} forwards ${animation ? `, ${animation}` : ""}`,
   opacity: 0,
   position: "absolute",
-  // left: "0",
-  // right: "0",
-  // bottom: 0,
-  // width: "100%",
-  // height: "56.4vw",
   background: `url(${backgroundurl}) no-repeat center / cover`,
   ...style,
 }))
@@ -112,7 +107,6 @@ const Header = () => {
         backgroundSize: "cover",
         position: "relative",
         textAlign: "center",
-        mb: "2.4rem",
         backgroundColor: "#f6fdfd",
       }}
     >
@@ -126,7 +120,7 @@ const Header = () => {
       )}
       <Typography
         sx={{
-          fontSize: ["3rem", "7.8rem"],
+          fontSize: ["3rem", "6.4rem"],
           lineHeight: ["4rem", "8.8rem"],
           paddingTop: ["6rem", "11rem", "10.5vw"],
           marginBottom: ["1.5rem"],

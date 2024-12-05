@@ -6,7 +6,6 @@ import { Box, Card, CardContent, CardMedia, SvgIcon, Typography } from "@mui/mat
 
 import ExternaLinkIcon from "@/assets/svgs/common/external-link.svg"
 import Link from "@/components/Link"
-import ScrollLogo from "@/components/ScrollLogo"
 import useCheckViewport from "@/hooks/useCheckViewport"
 
 const useStyles = makeStyles<any>()((theme, { cover }) => ({
@@ -25,11 +24,12 @@ const useStyles = makeStyles<any>()((theme, { cover }) => ({
 
   cardMediaTitle: {
     position: "absolute",
-    top: "2.4rem",
+    top: "50%",
+    transform: "translateY(-50%)",
     left: "3rem",
     color: (theme as any).vars.palette.primary.contrastText,
     fontWeight: 600,
-    fontSize: "5rem",
+    fontSize: "4rem",
     lineHeight: 1,
     [theme.breakpoints.down("sm")]: {
       fontSize: "3.2rem",
@@ -84,9 +84,17 @@ const useStyles = makeStyles<any>()((theme, { cover }) => ({
   withCover: {
     gridTemplateAreas: ` 
     "title icon"
-    "content content"
+    "content ."
     `,
     gridTemplateRows: "min-content 1fr",
+
+    [theme.breakpoints.down("md")]: {
+      gridTemplateAreas: ` 
+      "title icon"
+      "content content"
+      `,
+    },
+
     ".building-story-card-icon": {
       alignSelf: "flex-start",
       marginTop: "8px",
@@ -114,13 +122,12 @@ const StoryCard = props => {
   const { isPortrait } = useCheckViewport()
 
   return (
-    <Link href={href} external>
+    <Link href={href} external={href.startsWith("http")}>
       <Card {...restProps} elevation={0} className={classes.card}>
         {cover && (
           <Box className={classes.cardMediaWrapper}>
             <CardMedia sx={{ height: ["13rem", "23rem"] }} classes={{ root: classes.cardMedia }} image={cover} />
             <Typography className={classes.cardMediaTitle}>{imageTitle}</Typography>
-            <ScrollLogo light className={classes.cardMediaLogo}></ScrollLogo>
           </Box>
         )}
 

@@ -1,5 +1,6 @@
 import { default as NavLink } from "next/link"
 import React, { useEffect, useState } from "react"
+import ReactGA from "react-ga4"
 
 import { ExpandMore } from "@mui/icons-material"
 import { Box, Collapse, List, ListItemButton, Stack, Typography } from "@mui/material"
@@ -147,11 +148,37 @@ const App = ({ currentMenu }) => {
               sx={{ py: "1rem" }}
               onClick={() => toggleCollapse(item.key)}
             >
-              {item.label} <ExpandMoreIcon fontSize="large" className={activeCollapse === item.key ? "active" : ""} />
+              <Stack direction="row" alignItems="center" spacing="0.8rem">
+                <span>{item.label} </span>
+                {item.new && (
+                  <Box
+                    sx={{
+                      backgroundColor: "#B5F5EC",
+                      padding: "0 0.8rem",
+                      height: "2rem",
+                      lineHeight: "2rem",
+                      borderRadius: "0.4rem",
+                    }}
+                  >
+                    <Typography sx={{ fontSize: "1.2rem", lineHeight: "2rem", fontWeight: 600 }}>NEW</Typography>
+                  </Box>
+                )}
+              </Stack>
+              <ExpandMoreIcon fontSize="large" className={activeCollapse === item.key ? "active" : ""} />{" "}
             </ListItem>
           ) : (
             <ListItem dark={dark} className={activeCollapse === item.key ? "active" : ""} sx={{ py: "1rem" }} onClick={() => toggleDrawer(false)}>
-              <MenuLinkStyledButton href={item.href} dark={dark} reloadDocument={item.reload}>
+              <MenuLinkStyledButton
+                href={item.href}
+                dark={dark}
+                reloadDocument={item.reload}
+                onClick={() =>
+                  ReactGA.event("click_menu", {
+                    label: item.label,
+                    device: "mobile",
+                  })
+                }
+              >
                 {item.label}
               </MenuLinkStyledButton>
             </ListItem>
@@ -168,10 +195,28 @@ const App = ({ currentMenu }) => {
                       {section.label}
                     </Typography>
                   )}
-                  {section.children
-                    // only show sub items with href
-                    ?.filter(subItem => subItem.href)
-                    .map(subItem => <SubmenuLink key={subItem.label} dark={dark} {...subItem}></SubmenuLink>)}
+                  {section.type === "grid" ? (
+                    <Stack direction="column" spacing="2rem">
+                      {section.children.map((item, index) => (
+                        <Stack key={item.label} direction="column" spacing="1.6rem">
+                          {/* <Divider textAlign="left" sx={{ color: "text.primary",  }}>
+                            {item.label}
+                          </Divider> */}
+                          <Typography sx={{ fontSize: "1.4rem", fontWeight: 700 }}>{item.label}</Typography>
+                          {item.items.map(item => (
+                            <SubmenuLink key={item.label} {...item}></SubmenuLink>
+                          ))}
+                        </Stack>
+                      ))}
+                    </Stack>
+                  ) : (
+                    <>
+                      {section.children
+                        // only show sub items with href
+                        ?.filter(subItem => subItem.href)
+                        .map(subItem => <SubmenuLink key={subItem.label} dark={dark} {...subItem}></SubmenuLink>)}
+                    </>
+                  )}
                 </SectionList>
               ))}
             </List>

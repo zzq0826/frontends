@@ -3,7 +3,7 @@ import DiscordIcon from "@/assets/svgs/community/discord.svg"
 import ForumIcon from "@/assets/svgs/community/forum.svg"
 
 export const DISCORD_LINK = "https://discord.gg/scroll"
-export const COMMUNITY_FORUM_LINK = "https://community.scroll.io/"
+export const COMMUNITY_FORUM_LINK = "https://gov.scroll.io/forum"
 export const CONTRIBUTE_TO_SCROLL_LINK = "https://github.com/scroll-tech/contribute-to-scroll"
 
 export const COMMUNITY_EXPLORER_LIST = [
@@ -16,7 +16,7 @@ export const COMMUNITY_EXPLORER_LIST = [
   {
     icon: ForumIcon,
     href: COMMUNITY_FORUM_LINK,
-    title: "Community Forum",
+    title: "Governance Forum",
     content: "Discuss and propose changes to Scroll",
   },
   {
@@ -37,6 +37,7 @@ export const COMMUNITY_REGION_LIST = [
   "Europe",
   "Middle East",
   "North America",
+  "Online",
   "Pacific",
   "South America",
 ]

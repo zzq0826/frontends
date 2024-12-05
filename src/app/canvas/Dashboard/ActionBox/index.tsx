@@ -14,7 +14,7 @@ import EthSvg from "@/assets/svgs/canvas/eth.svg"
 import ShareSvg from "@/assets/svgs/canvas/share.svg"
 import ExternalLinkSvg from "@/assets/svgs/common/external-link.svg"
 import TwitterSvg from "@/assets/svgs/nft/twitter.svg"
-import { BADGE_INTEGRATION_GUIDE } from "@/constants"
+import { ISSUE_BADGES_URL } from "@/constants"
 import { EXPLORE_BADGES_URL } from "@/constants"
 import { useRainbowContext } from "@/contexts/RainbowProvider"
 import useCheckViewport from "@/hooks/useCheckViewport"
@@ -250,7 +250,7 @@ const ActionBox = () => {
               label: "Issue badges",
               external: true,
               onClick: () => {
-                window.open(BADGE_INTEGRATION_GUIDE)
+                window.open(ISSUE_BADGES_URL)
               },
             },
           ],

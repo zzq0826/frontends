@@ -5,6 +5,8 @@ import packageJson from "./package.json" with { type: "json" };
 import "./scripts/download-blog-posts.data.json.mjs"
 
 // const { withSentryConfig } = require("@sentry/nextjs")
+
+console.log(packageJson.version,'packageJson.version')
 const nextConfig = {
   env: {
     NEXT_PUBLIC_VERSION: packageJson.version,
@@ -34,7 +36,13 @@ const nextConfig = {
       { source: "/blog/visionAndValues", destination: "/blog/vision-and-values", permanent: true },
       { source: "/blog/zkEVM", destination: "/blog/zkevm", permanent: true },
       { source: "/blog/scrollsFreshCoat", destination: "/blog/scrolls-fresh-coat", permanent: true },
+
       { source: "/sticker-vote", destination: "/sticker-winners", permanent: true },
+      { source: "/canvas/listing", destination: "https://badge-registry.canvas.scroll.cat/badge-registry", permanent: true },
+      { source: "/badge-registry/:path*", destination: "https://badge-registry.canvas.scroll.cat/badge-registry/:path*", permanent: false},
+      { source: "/airdrop-faq", destination: "https://scroll-faqs.gitbook.io/faqs", permanent: false},
+      { source: "/gov-docs/:path*", destination: "https://scroll-governance-documentation.vercel.app/:path*", permanent: false},
+
     ]
   },
   images: {

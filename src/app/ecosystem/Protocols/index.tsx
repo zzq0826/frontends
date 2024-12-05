@@ -7,9 +7,8 @@ import { withStyles } from "tss-react/mui"
 import { Box, Stack, Typography } from "@mui/material"
 import useScrollTrigger from "@mui/material/useScrollTrigger"
 
-import Button from "@/components/Button"
 import SectionWrapper from "@/components/SectionWrapper"
-import { ECOSYSTEM_NETWORK_LIST, ECOSYSTEM_PAGE_SYMBOL, GET_IN_TOUCH_LINK, NORMAL_HEADER_HEIGHT } from "@/constants"
+import { ECOSYSTEM_NETWORK_LIST, ECOSYSTEM_PAGE_SYMBOL, NORMAL_HEADER_HEIGHT } from "@/constants"
 import useCheckViewport from "@/hooks/useCheckViewport"
 
 import Category from "./Category"
@@ -37,7 +36,7 @@ const Grid = withStyles(Box, theme => ({
 
 const Protocols = () => {
   const trigger = useScrollTrigger()
-  const { isMobile, isTablet, isLandscape } = useCheckViewport()
+  const { isLandscape } = useCheckViewport()
   const [searchInput, setSearchInput] = useState("")
   const [searchParams, setSearchParams] = useState({
     category: "All categories",
@@ -109,11 +108,6 @@ const Protocols = () => {
         >
           Browse all protocols
         </Typography>
-        {isMobile ? null : (
-          <Button width={isTablet ? "21.5rem" : "25rem"} href={GET_IN_TOUCH_LINK} target="_blank" color="primary">
-            Get in touch
-          </Button>
-        )}
       </Stack>
       <Grid id={`${ECOSYSTEM_PAGE_SYMBOL}-protocols`}>
         <Category top={stickyTop} value={searchParams.category} onChange={handleChangeCategory}></Category>

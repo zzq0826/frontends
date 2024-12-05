@@ -34,6 +34,24 @@ export const tokenList = [
     address: "0xf55BEC9cafDbE8730f096Aa55dad6D22d44099Df",
   },
   {
+    name: "sUSDe / USDe",
+    symbol: "sUSDe",
+    key: "sUSDe",
+    logoURI: "/imgs/sessions/tokens/sUSDe.svg",
+    additionalToken: "USDe",
+    thirdPartyBridge: {
+      url: "https://stargate.finance/bridge",
+      name: "Stargate",
+    },
+  },
+  {
+    name: "pufETH",
+    symbol: "pufETH",
+    key: "pufETH",
+    logoURI: "https://scroll-tech.github.io/token-list/data/PufETH/logo.svg",
+    address: "0xc4d46E8402F476F269c379677C99F18E22Ea030e",
+  },
+  {
     name: "weETH",
     symbol: "weETH",
     key: "weETH",
@@ -62,6 +80,17 @@ export const tokenList = [
     key: "wstETH",
     logoURI: "/imgs/sessions/tokens/wstETH.svg",
     address: "0xf610A9dfB7C89644979b4A0f27063E9e7d7Cda32",
+  },
+  {
+    name: "agETH",
+    symbol: "agETH",
+    key: "agETH",
+    logoURI: "/imgs/sessions/tokens/agETH.png",
+    address: "0x1bd0fe8e92a157d3ef66c9fb9e38621252b407c2",
+    thirdPartyBridge: {
+      url: "https://app.squidrouter.com/?chains=1%2C534352&tokens=0xe1b4d34e8754600962cd944b535180bd758e6c2e%2C0x1bd0fe8e92a157d3ef66c9fb9e38621252b407c2",
+      name: "Squid",
+    },
   },
   {
     name: "WBTC",
@@ -124,6 +153,35 @@ export const tokenList = [
     thirdPartyBridge: {
       url: "https://pencilsprotocol.io/staking",
       name: "Pencils",
+    },
+  },
+  {
+    name: "Assets on Mitosis",
+    key: "MITOSIS",
+    logoURI: "/imgs/sessions/tokens/Mitosis.png",
+    containedTokens: [{ logoURI: "/imgs/sessions/tokens/weETH.png", symbol: "weETH" }],
+    thirdPartyBridge: {
+      url: "https://app.mitosis.org/?asset=weETH&type=deposit&to=scroll",
+      name: "Mitosis",
+    },
+  },
+  {
+    name: "Assets on Loop",
+    key: "LOOPFI",
+    logoURI: "/imgs/sessions/tokens/Loop.jpg",
+    thirdPartyBridge: {
+      url: "https://www.loopfi.xyz/",
+      name: "Loop",
+    },
+  },
+  {
+    name: "Trust Wallet Campaign",
+    key: "TRUST",
+    logoURI: "/imgs/sessions/tokens/Trust.jpg",
+    withTokens: [{ logoURI: "/imgs/sessions/tokens/Pencils.jpeg", key: "PENCILS" }],
+    thirdPartyBridge: {
+      url: "https://trustwallet.com/?utm_source=cryptwerk",
+      name: "Trust",
     },
   },
 ]

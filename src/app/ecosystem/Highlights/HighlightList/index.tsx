@@ -8,8 +8,8 @@ import useCheckViewport from "@/hooks/useCheckViewport"
 
 import BlogCard from "./Card"
 
-const StyledSwiper = styled(Swiper)(({}) => ({
-  marginTop: "2.4rem",
+const StyledSwiper = styled<any>(Swiper)(({ theme }) => ({
+  marginTop: "4.4rem",
   "&.swiper": {
     paddingBottom: "5rem",
   },
@@ -23,6 +23,9 @@ const StyledSwiper = styled(Swiper)(({}) => ({
   },
   "& .swiper-pagination-bullet-active": {
     backgroundColor: "#fff",
+  },
+  [theme.breakpoints.down("sm")]: {
+    marginTop: "2.4rem",
   },
 }))
 

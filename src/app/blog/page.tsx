@@ -3,7 +3,6 @@
 import { orderBy } from "lodash"
 import { useSearchParams } from "next/navigation"
 import { useEffect, useMemo, useState } from "react"
-import useStorage from "squirrel-gill"
 
 import { Tune as TuneIcon } from "@mui/icons-material"
 import { Box, Modal, Typography } from "@mui/material"
@@ -12,8 +11,8 @@ import { styled } from "@mui/system"
 import ArticleCard from "@/components/ArticleCard"
 import SectionWrapper from "@/components/SectionWrapper"
 import { LANGUAGE_MAP, getBlogCategoryList, getBlogSortList } from "@/constants"
-import { BLOG_LANGUAGE } from "@/constants/storageKey"
 import useCheckViewport from "@/hooks/useCheckViewport"
+import useUserLanguage from "@/hooks/useUserLanguage"
 import { filterBlogsByLanguage } from "@/utils"
 
 import blogSource from "./[blogId]/data.json"
@@ -47,11 +46,11 @@ const Header = styled(Box)(({ theme }) => ({
 }))
 
 const Title = styled(Typography)(({ theme }) => ({
-  fontSize: "7.8rem",
+  fontSize: "6.4rem",
   lineHeight: 1,
   fontWeight: 600,
   [theme.breakpoints.down("sm")]: {
-    fontSize: "4rem",
+    fontSize: "3.6rem",
   },
 }))
 
@@ -167,7 +166,7 @@ const BlogList = styled("ul")(({ theme }) => ({
 const Blog = () => {
   const searchParams = useSearchParams()
   const { isDesktop } = useCheckViewport()
-  const [language] = useStorage(localStorage, BLOG_LANGUAGE, "en")
+  const [language] = useUserLanguage()
   const BLOG_CATEGORY_LIST = useMemo(() => getBlogCategoryList(language), [language])
   const BLOG_SORT_LIST = useMemo(() => getBlogSortList(language), [language])
   const BLOG_COPY = useMemo(() => LANGUAGE_MAP[language], [language])

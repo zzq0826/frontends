@@ -13,7 +13,8 @@ const Statistic = props => {
       sx={{
         flex: 1,
         borderRadius: ["0.8rem", "1.6rem"],
-        p: ["0.8rem 1.2rem", "1.6rem 2.4rem"],
+        p: ["0.8rem 1.2rem", "1.6rem 1.6rem"],
+        minWidth: ["auto", "20rem"],
         backgroundColor: theme => (theme as any).vars.palette.themeBackground.normal,
       }}
     >
@@ -23,6 +24,7 @@ const Statistic = props => {
           lineHeight: ["2rem", "2.8rem"],
           fontWeight: 600,
           textAlign: "center",
+          whiteSpace: ["pre-wrap", "pre-wrap", "nowrap"],
           [theme.breakpoints.down("md")]: {
             flex: 1,
             display: "inline-flex",
@@ -34,7 +36,7 @@ const Statistic = props => {
         {label}
       </Typography>
       <NumberTypography
-        sx={{ fontSize: ["2rem", "4.8rem"], lineHeight: ["3.2rem", "5.6rem"], fontWeight: 600, textAlign: "center", whiteSpace: "nowrap" }}
+        sx={{ fontSize: ["2rem", "3.2rem"], lineHeight: ["3.2rem", "4rem"], fontWeight: 600, textAlign: "center", whiteSpace: "nowrap" }}
       >
         {loading ? <Skeleton sx={{ borderRadius: "1rem", width: "50%", display: "inline-block" }}></Skeleton> : <>{children}</>}
       </NumberTypography>

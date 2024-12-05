@@ -55,10 +55,10 @@ const StyledListItemText = styled(ListItemText)(({ theme }) => ({
 }))
 
 const BadgeItem = props => {
-  const { badge, action, onClick } = props
+  const { badge, action } = props
 
   return (
-    <StyledListItem onClick={onClick ?? "void 0"}>
+    <StyledListItem>
       <StyledListItemAvatar>
         <Img
           src={badge.image}
@@ -81,9 +81,9 @@ const BadgeItem = props => {
                 margin: "0 0.4rem 0 0.8rem",
                 borderRadius: "2px",
               }}
-              src={badge.issuer.logo}
+              src={badge.issuer?.logo}
             />
-            {badge.issuer.name}
+            {badge.issuer?.name}
           </Typography>
         }
       />

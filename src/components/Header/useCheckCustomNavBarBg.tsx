@@ -3,7 +3,7 @@ import { useMemo } from "react"
 
 import useScrollTrigger from "@mui/material/useScrollTrigger"
 
-const TRANSPARENT_BG_PAGE_LIST = ["/story", "/sessions"]
+const TRANSPARENT_BG_PAGE_LIST = ["/", "/ecosystem", "/story", "/sessions"]
 // themeBackground
 const CUSTOM_BG_PAGE_MAP = {
   "/brand-kit": "brand",

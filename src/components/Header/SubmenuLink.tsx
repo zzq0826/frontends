@@ -1,9 +1,11 @@
 import { default as NavLink } from "next/link"
+import ReactGA from "react-ga4"
 
 import { Box, Link, Stack, SvgIcon, Typography } from "@mui/material"
 import { CSSObject, Theme, styled } from "@mui/material/styles"
 
 import ExternalSvg from "@/assets/svgs/header/External.svg"
+import useCheckViewport from "@/hooks/useCheckViewport"
 
 const linkStyles = (theme: Theme, dark: boolean): CSSObject => ({
   fontSize: "1.8rem",
@@ -51,29 +53,40 @@ const StyledLink = styled(Link, {
   shouldForwardProp: prop => prop !== "dark",
 })<StyledLinkProps>(({ theme, dark }) => linkStyles(theme, !!dark))
 
-const SubmenuLinkContent = ({ icon, label, text, isExternal }: { icon: any; label: string; text?: string; isExternal?: boolean }) => (
-  <Stack direction="row" alignItems="center" spacing="1.6rem" sx={{ width: "100%" }}>
-    {icon && <SvgIcon sx={{ fontSize: "2.4rem" }} component={icon} inheritViewBox></SvgIcon>}
-    <Box>
-      {text && <Typography fontWeight={600}>{text}</Typography>}
-      <Typography>{label}</Typography>
-    </Box>
-    {isExternal && (
-      <SvgIcon
-        sx={{
-          fontSize: "1.2rem",
-          marginLeft: "0 !important",
-          transition: "all 0.3s ease",
-          position: "relative",
-          left: 0,
-          opacity: 0,
-        }}
-        component={ExternalSvg}
-        inheritViewBox
-      ></SvgIcon>
-    )}
-  </Stack>
-)
+const SubmenuLinkContent = ({ icon, label, text, isExternal }: { icon: any; label: string; text?: string; isExternal?: boolean }) => {
+  const { isDesktop } = useCheckViewport()
+
+  const handleClick = () => {
+    ReactGA.event("click_menu", {
+      label: text || label,
+      device: isDesktop ? "desktop" : "mobile",
+    })
+  }
+
+  return (
+    <Stack direction="row" alignItems="center" spacing="1.6rem" sx={{ width: "100%" }} onClick={handleClick}>
+      {icon && <SvgIcon sx={{ fontSize: "2.4rem" }} component={icon} inheritViewBox></SvgIcon>}
+      <Box>
+        {text && <Typography fontWeight={600}>{text}</Typography>}
+        <Typography sx={{ whiteSpace: ["pre-wrap", "nowrap"] }}>{label}</Typography>
+      </Box>
+      {isExternal && (
+        <SvgIcon
+          sx={{
+            fontSize: "1.2rem",
+            marginLeft: "0 !important",
+            transition: "all 0.3s ease",
+            position: "relative",
+            left: 0,
+            opacity: 0,
+          }}
+          component={ExternalSvg}
+          inheritViewBox
+        ></SvgIcon>
+      )}
+    </Stack>
+  )
+}
 
 const SubmenuLink = ({
   label,
@@ -83,6 +96,7 @@ const SubmenuLink = ({
   icon,
   dark,
   reload,
+  onClick,
 }: {
   label: string
   text?: string
@@ -91,14 +105,15 @@ const SubmenuLink = ({
   icon?: any
   dark?: boolean
   reload?: boolean
+  onClick?: () => {}
 }) => (
   <>
     {isExternal ? (
-      <StyledLink dark={dark} href={href} target="_blank" rel="noopener noreferrer">
+      <StyledLink dark={dark} href={href} onClick={onClick} target="_blank" rel="noopener noreferrer">
         <SubmenuLinkContent icon={icon} label={label} text={text} isExternal={isExternal} />
       </StyledLink>
     ) : (
-      <StyledNavLink dark={dark} href={href} reloadDocument={reload}>
+      <StyledNavLink dark={dark} href={href} onClick={onClick} reloadDocument={reload}>
         <SubmenuLinkContent icon={icon} label={label} text={text} isExternal={isExternal} />
       </StyledNavLink>
     )}

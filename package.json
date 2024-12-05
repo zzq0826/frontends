@@ -1,6 +1,6 @@
 {
   "name": "scroll.io",
-  "version": "5.0.65",
+  "version": "5.4.0",
   "private": false,
   "license": "MIT",
   "scripts": {
@@ -63,7 +63,7 @@
     "use-debounce": "^10.0.0",
     "viem": "2.9.31",
     "wagmi": "^2.9.2",
-    "zustand": "^4.1.3"
+    "zustand": "^5.0.1"
   },
   "devDependencies": {
     "@emotion/babel-plugin": "^11.11.0",
