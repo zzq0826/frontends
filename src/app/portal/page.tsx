@@ -1,3 +1,5 @@
+"use client"
+
 import { Box, Container, Stack, Typography } from "@mui/material"
 
 import { L2_NAME } from "@/constants"

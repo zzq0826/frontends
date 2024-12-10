@@ -111,7 +111,7 @@ const Badge = () => {
         badgeDetail.rarity = NFT_RARITY_MAP[rarityNum]
       }
       setDetail(badgeDetail)
-    } catch (e) {
+    } catch (_error) {
       alertWarning("Failed to fetch badge detail")
     } finally {
       setLoading(false)

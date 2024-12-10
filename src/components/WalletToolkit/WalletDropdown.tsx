@@ -4,7 +4,7 @@ import { useCallback, useEffect, useMemo, useState } from "react"
 import Img from "react-cool-img"
 import { makeStyles } from "tss-react/mui"
 
-import { Box, ButtonBase, Fade, LinearProgress, ListItemIcon, ListItemText, Menu, MenuItem, SvgIcon } from "@mui/material"
+import { Box, ButtonBase, Fade, LinearProgress, ListItemIcon, ListItemText, Menu, MenuItem } from "@mui/material"
 
 import { getSmallAvatarURL } from "@/apis/canvas"
 import CopySuccessSvg from "@/assets/svgs/bridge/copy-success.svg"
@@ -181,7 +181,7 @@ const WalletDropdown = props => {
       return (
         <ButtonBase classes={{ root: classes.button }} sx={{ position: "relative", overflow: "hidden", ...sx }} onClick={handleClick}>
           {truncateAddress(walletCurrentAddress as string)}
-          <SvgIcon className={cx(classes.endIcon, open && classes.reverseEndIcon)} component={DownTriangleSvg} inheritViewBox></SvgIcon>
+          <DownTriangleSvg className={cx(classes.endIcon, open && classes.reverseEndIcon)}></DownTriangleSvg>
           {<LinearProgress sx={{ position: "absolute", width: "100%", bottom: 0, height: "2px" }} />}
         </ButtonBase>
       )
@@ -197,14 +197,14 @@ const WalletDropdown = props => {
             <strong style={{ fontSize: "1.2rem", lineHeight: "1.6rem" }}>{username}</strong>
             <p style={{ fontSize: "1.2rem", lineHeight: "1.6rem" }}>{truncateAddress(walletCurrentAddress as string)}</p>
           </Box>
-          <SvgIcon className={cx(classes.endIcon, open && classes.reverseEndIcon)} component={DownTriangleSvg} inheritViewBox></SvgIcon>
+          <DownTriangleSvg className={cx(classes.endIcon, open && classes.reverseEndIcon)}></DownTriangleSvg>
         </ButtonBase>
       )
     }
     return (
       <ButtonBase classes={{ root: classes.button }} sx={sx} onClick={handleClick}>
         {truncateAddress(walletCurrentAddress as string)}
-        <SvgIcon className={cx(classes.endIcon, open && classes.reverseEndIcon)} component={DownTriangleSvg} inheritViewBox></SvgIcon>
+        <DownTriangleSvg className={cx(classes.endIcon, open && classes.reverseEndIcon)}></DownTriangleSvg>
       </ButtonBase>
     )
   }
@@ -234,10 +234,10 @@ const WalletDropdown = props => {
         }}
         classes={{ paper: classes.paper, list: classes.list }}
       >
-        {operations.map(({ icon, label, action }) => (
+        {operations.map(({ icon: IconSvg, label, action }) => (
           <MenuItem key={label} classes={{ root: classes.listItem }} onClick={action}>
             <ListItemIcon classes={{ root: classes.listItemIcon }}>
-              <SvgIcon sx={{ fontSize: "1.6rem" }} component={icon} inheritViewBox></SvgIcon>
+              <IconSvg className="w-[16px] h-auto"></IconSvg>
             </ListItemIcon>
             <ListItemText classes={{ primary: classes.listItemText }}>{label}</ListItemText>
           </MenuItem>

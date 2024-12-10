@@ -1,10 +1,10 @@
-import { default as NavLink } from "next/link"
 import ReactGA from "react-ga4"
 
-import { Box, Link, Stack, SvgIcon, Typography } from "@mui/material"
+import { Box, Stack, SvgIcon, Typography } from "@mui/material"
 import { CSSObject, Theme, styled } from "@mui/material/styles"
 
 import ExternalSvg from "@/assets/svgs/header/External.svg"
+import Link from "@/components/Link"
 import useCheckViewport from "@/hooks/useCheckViewport"
 
 const linkStyles = (theme: Theme, dark: boolean): CSSObject => ({
@@ -40,18 +40,9 @@ interface StyledNavLinkProps {
   reloadDocument?: boolean
 }
 
-interface StyledLinkProps {
-  dark?: boolean
-  href?: string
-}
-
-const StyledNavLink = styled(NavLink, {
+const StyledNavLink = styled(Link, {
   shouldForwardProp: prop => prop !== "dark",
 })<StyledNavLinkProps>(({ theme, dark }) => linkStyles(theme, !!dark))
-
-const StyledLink = styled(Link, {
-  shouldForwardProp: prop => prop !== "dark",
-})<StyledLinkProps>(({ theme, dark }) => linkStyles(theme, !!dark))
 
 const SubmenuLinkContent = ({ icon, label, text, isExternal }: { icon: any; label: string; text?: string; isExternal?: boolean }) => {
   const { isDesktop } = useCheckViewport()
@@ -96,6 +87,7 @@ const SubmenuLink = ({
   icon,
   dark,
   reload,
+  className,
   onClick,
 }: {
   label: string
@@ -105,18 +97,13 @@ const SubmenuLink = ({
   icon?: any
   dark?: boolean
   reload?: boolean
+  className?: string
   onClick?: () => {}
 }) => (
   <>
-    {isExternal ? (
-      <StyledLink dark={dark} href={href} onClick={onClick} target="_blank" rel="noopener noreferrer">
-        <SubmenuLinkContent icon={icon} label={label} text={text} isExternal={isExternal} />
-      </StyledLink>
-    ) : (
-      <StyledNavLink dark={dark} href={href} onClick={onClick} reloadDocument={reload}>
-        <SubmenuLinkContent icon={icon} label={label} text={text} isExternal={isExternal} />
-      </StyledNavLink>
-    )}
+    <StyledNavLink className={className} dark={dark} href={href} external={isExternal} reloadDocument={reload} onClick={onClick}>
+      <SubmenuLinkContent icon={icon} label={label} text={text} isExternal={isExternal} />
+    </StyledNavLink>
   </>
 )
 

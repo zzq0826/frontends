@@ -72,7 +72,7 @@ const useApprove = (fromNetwork, selectedToken, amount) => {
       } else {
         return parsedAmount > approvedAmount
       }
-    } catch (err) {
+    } catch (_error) {
       return undefined
     }
   }, [tokenInstance, selectedToken, walletCurrentAddress, approveAddress, amount])

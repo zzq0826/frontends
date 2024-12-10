@@ -72,7 +72,7 @@ const useGasFee = (selectedToken, needApproval) => {
           checkApproved(needApproval, DepositBatchMode.Economy) && BATCH_DEPOSIT_TOKENS.includes(selectedToken.symbol)
             ? await estimateBatchDeposit()
             : BigInt(0)
-      } catch (error) {
+      } catch (_error) {
         gasLimitBatch = 100000n
       }
 

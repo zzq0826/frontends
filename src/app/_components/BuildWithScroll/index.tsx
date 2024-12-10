@@ -1,6 +1,6 @@
 "use client"
 
-import Img from "react-cool-img"
+import Image from "next/image"
 
 import { Stack, SvgIcon, Typography } from "@mui/material"
 import { Button as MuiButton } from "@mui/material"
@@ -36,7 +36,7 @@ const Feature = () => {
       return (
         <OrientationToView key={feature.title}>
           <Stack key={featureIdx} direction="column" spacing="2.4rem" sx={{ maxWidth: "56rem" }}>
-            <Img src={feature.icon} width={isMobile ? 320 : 400}></Img>
+            <Image src={feature.icon} alt={feature.title} width={isMobile ? 320 : 400} height={isMobile ? 320 : 400}></Image>
             <Typography sx={{ fontSize: ["2rem", "2.4rem"], fontWeight: 600 }}>{feature.title}</Typography>
             <Typography sx={{ fontSize: ["1.6rem", "2rem"], mt: ["0.8rem !important", 0] }}>{feature.description}</Typography>
             <MuiButton

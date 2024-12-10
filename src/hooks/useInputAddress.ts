@@ -52,7 +52,7 @@ const useInputAddressStore = create<InputAddressStore>((set, get) => ({
     if (!ens.endsWith(".eth")) return
     try {
       namehash(normalize(ens))
-    } catch (err) {
+    } catch (_error) {
       return
     }
     set({ ens })
@@ -113,7 +113,7 @@ export default function useInputAddress({
       } else {
         onAddressChange(null)
       }
-    } catch (err) {}
+    } catch (_error) {}
   }, [store.address])
 
   useEffect(() => {
@@ -124,7 +124,7 @@ export default function useInputAddress({
       } else {
         onEnsChange(null)
       }
-    } catch (err) {}
+    } catch (_error) {}
   }, [store.ens])
 
   return store

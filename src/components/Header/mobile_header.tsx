@@ -1,4 +1,3 @@
-import { default as NavLink } from "next/link"
 import React, { useEffect, useState } from "react"
 import ReactGA from "react-ga4"
 
@@ -7,6 +6,7 @@ import { Box, Collapse, List, ListItemButton, Stack, Typography } from "@mui/mat
 import { styled } from "@mui/system"
 
 import LanguageSelect from "@/components/LanguageSelect"
+import Link from "@/components/Link"
 import WalletToolkit from "@/components/WalletToolkit"
 import useShowLanguageSelect from "@/hooks/useShowLanguageSelect"
 import useShowWalletConnector from "@/hooks/useShowWalletToolkit"
@@ -69,7 +69,7 @@ const ListItem = styled<any>(ListItemButton, { shouldForwardProp: prop => prop !
   },
 }))
 
-const MenuLinkStyledButton = styled<any>(NavLink, { shouldForwardProp: prop => prop !== "dark" })(({ theme, dark }) => ({
+const MenuItemLink = styled<any>(Link, { shouldForwardProp: prop => prop !== "dark" })(({ theme, dark }) => ({
   fontWeight: 600,
   fontSize: "2rem",
   height: "5.5rem",
@@ -114,7 +114,7 @@ const App = ({ currentMenu }) => {
   const [activeCollapse, setActiveCollapse] = useState("")
 
   useEffect(() => {
-    setActiveCollapse(currentMenu)
+    setActiveCollapse(currentMenu[1])
   }, [currentMenu])
 
   const toggleDrawer = isOpen => {
@@ -123,7 +123,7 @@ const App = ({ currentMenu }) => {
       window.document.body.classList.add("mobile-top-nav-open")
     } else {
       window.document.body.classList.remove("mobile-top-nav-open")
-      setActiveCollapse(currentMenu)
+      setActiveCollapse(currentMenu[1])
     }
   }
 
@@ -168,7 +168,7 @@ const App = ({ currentMenu }) => {
             </ListItem>
           ) : (
             <ListItem dark={dark} className={activeCollapse === item.key ? "active" : ""} sx={{ py: "1rem" }} onClick={() => toggleDrawer(false)}>
-              <MenuLinkStyledButton
+              <MenuItemLink
                 href={item.href}
                 dark={dark}
                 reloadDocument={item.reload}
@@ -180,7 +180,7 @@ const App = ({ currentMenu }) => {
                 }
               >
                 {item.label}
-              </MenuLinkStyledButton>
+              </MenuItemLink>
             </ListItem>
           )}
 
@@ -233,11 +233,11 @@ const App = ({ currentMenu }) => {
     >
       <Announcement />
       <NavStack direction="row" justifyContent="space-between" alignItems="center">
-        <NavLink href="/" className="flex">
+        <Link href="/" className="flex">
           <Box onClick={() => toggleDrawer(false)}>
             <Logo light={dark} />
           </Box>
-        </NavLink>
+        </Link>
         <Stack direction="row" spacing="1.6rem" alignItems="center">
           {showWalletConnector && <WalletToolkit dark={dark}></WalletToolkit>}
           {showLanguageSelect && <LanguageSelect></LanguageSelect>}

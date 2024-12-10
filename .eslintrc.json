@@ -50,6 +50,7 @@
       "warn",
       {
         "args": "none",
+        "varsIgnorePattern": "^_error$",
         "ignoreRestSiblings": true
       }
     ],

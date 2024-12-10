@@ -29,7 +29,7 @@ const useAddToken = () => {
     try {
       const [name, symbol, decimals] = await Promise.all([contract.name(), contract.symbol(), contract.decimals()])
       return { name, symbol, decimals: Number(decimals) }
-    } catch (error) {
+    } catch (_error) {
       // console.log(error)
     }
   }
@@ -71,7 +71,7 @@ const useAddToken = () => {
       storeNewToken(l1Token)
       storeNewToken(l2Token)
       setIsLoading(false)
-    } catch (error) {
+    } catch (_error) {
       setIsLoading(false)
     }
   }

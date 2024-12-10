@@ -122,7 +122,7 @@ const getBadgeMetadata = async (provider, badgeContractAddress, badgeUID = ether
     }
     const metadata = await scrollRequest(badgeTokenBrowserURL, { timeout: 5e3 })
     return metadata
-  } catch (error) {
+  } catch (_error) {
     return {}
   }
 }
@@ -169,7 +169,7 @@ const queryUserBadgesWrapped = async (provider, userAddress, withMetadata = true
     })
     const formattedBadges = await Promise.all(formattedBadgesPromises)
     return formattedBadges
-  } catch (error) {
+  } catch (_error) {
     throw new Error("Failed to query user badges")
   }
 }
@@ -275,7 +275,7 @@ const mintOriginNFTBadge = async (signer, walletCurrentAddress, badgeAddress, nf
   try {
     tokenId = await nftContract.tokenOfOwnerByIndex(walletCurrentAddress, 0)
     nftVersion = 0
-  } catch (error) {
+  } catch (_error) {
     tokenId = await nftV2Contract.tokenOfOwnerByIndex(walletCurrentAddress, 0)
     nftVersion = 1
   }
@@ -388,7 +388,7 @@ const checkBadgeUpgradable = async (provider, badge) => {
     const badgeInstance = new ethers.Contract(badgeContract, BadgeABI, provider)
     const upgradable = await badgeInstance.canUpgrade(id)
     return { ...badge, upgradable }
-  } catch (e) {
+  } catch (_error) {
     return { ...badge, upgradable: false }
   }
 }
@@ -422,7 +422,7 @@ const checkIfHasBadgeByAddress = async (provider, userAddress, badgeAddress) => 
     const badgeContract = new ethers.Contract(badgeAddress, BadgeABI, provider)
     const hasBadge = await badgeContract.hasBadge(userAddress)
     return hasBadge
-  } catch (error) {
+  } catch (_error) {
     return false
   }
 }
@@ -439,7 +439,7 @@ const fetchNotionBadgeByAddr = async addr => {
     }
     const data = await scrollRequest(fetchBadgeByAddrURL(addr))
     return data
-  } catch (e) {
+  } catch (_error) {
     return {}
   }
 }
@@ -458,7 +458,7 @@ export const fetchIssuer = async issuerName => {
       origin: website,
     }
     return issuer
-  } catch (error) {
+  } catch (_error) {
     return {}
   }
 }

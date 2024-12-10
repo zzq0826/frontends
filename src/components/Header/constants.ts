@@ -250,7 +250,6 @@ const mainnetNavigations = [
             rootKey: "ecosystem",
             href: "/community",
             icon: CommunitySvg,
-            reload: true,
           },
         ],
       },

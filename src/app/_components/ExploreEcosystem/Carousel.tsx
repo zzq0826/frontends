@@ -1,3 +1,5 @@
+import Image from "next/image"
+
 import { Box } from "@mui/material"
 import { keyframes, styled } from "@mui/system"
 
@@ -172,7 +174,7 @@ const TrackRight = styled("div")(({ theme }) => ({
   width: "max-content",
 }))
 
-const Logo = styled("img")(({ theme }) => ({
+const Logo = styled(Image)(({ theme }) => ({
   width: "8.8rem",
   height: "8.8rem",
   marginRight: "10rem",

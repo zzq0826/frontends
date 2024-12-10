@@ -167,16 +167,7 @@ const ProtocolCard = props => {
         >
           {name}
         </Typography>
-        <Link
-          external
-          href={TWITTER_ORIGIN + twitterHandle}
-          sx={{
-            color: "inherit",
-            "&:hover": {
-              color: theme => (theme as any).vars.palette.primary.main,
-            },
-          }}
-        >
+        <Link external href={TWITTER_ORIGIN + twitterHandle} undefined="hover" className="text-inherit hover:text-[var(--mui-palette-link-main)]">
           <SvgIcon sx={{ fontSize: "1.4rem" }} component={TwitterSvg} inheritViewBox></SvgIcon>
         </Link>
         {isDesktop && (
@@ -223,7 +214,7 @@ const ProtocolCard = props => {
         </Box>
       )}
       <Button
-        href={website}
+        href={website ?? ""}
         target="_blank"
         classes={{ root: classes.action }}
         endIcon={<SvgIcon sx={{ fontSize: ["1.2rem !important", "1.4rem !important"] }} component={ArrowSvg} inheritViewBox></SvgIcon>}

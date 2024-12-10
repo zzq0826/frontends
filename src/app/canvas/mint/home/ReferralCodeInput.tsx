@@ -124,7 +124,7 @@ const ReferralCode = ({ isChecking, setIsChecking, code, codeStatus, setCodeStat
         changeReferralCode("")
         setCodeStatus(CodeStatus.INVALID)
       }
-    } catch (e) {
+    } catch (_error) {
       changeReferralCode("")
       setCodeStatus(CodeStatus.ERROR)
       inputRefs.current[INVITE_CODE_LENGTH - 1]?.focus()

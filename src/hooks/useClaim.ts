@@ -44,7 +44,7 @@ export function useClaim(props) {
         .finally(() => {
           setLoading(false)
         })
-    } catch (error) {
+    } catch (_error) {
       addEstimatedTimeMap(`progress_${tx.hash}`, 0)
       setLoading(false)
     }

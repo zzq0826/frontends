@@ -9,7 +9,7 @@ import Dialog from "@mui/material/Dialog"
 import DialogTitle from "@mui/material/DialogTitle"
 import ListItemText from "@mui/material/ListItemText"
 
-import { tokenList } from "@/app/sessions-one/SessionZeroMarks/tokenList"
+import { tokenList } from "@/app/sessions/SessionZeroMarks/tokenList"
 import CloseSvg from "@/assets/svgs/bridge/token-list-close.svg"
 import SearchSvg from "@/assets/svgs/bridge/token-list-search.svg"
 import { EXPLORER_URL } from "@/constants"

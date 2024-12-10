@@ -16,7 +16,7 @@ const useLastFinalizedBatchIndex = () => {
       }
       const scrollChain = new ethers.Contract(process.env.NEXT_PUBLIC_SCROLL_CHAIN, ScrollChain, provider)
       return await scrollChain.lastFinalizedBatchIndex()
-    } catch (error) {}
+    } catch (_error) {}
   }
 
   const { data, error, isLoading } = useSWR(() => "lastFinalizedBatchIndex", fetchLastFinalizedBatchIndex, {

@@ -45,7 +45,7 @@ const MintHome = () => {
       const totalSupply = await fetchTotalSupply(instance)
       const totalSupply2 = await fetchTotalSupply(instance2)
       setMintedAmount(totalSupply + totalSupply2)
-    } catch (e) {
+    } catch (_error) {
     } finally {
       setLoading(false)
     }

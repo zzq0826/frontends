@@ -9,9 +9,9 @@ import useScrollTrigger from "@mui/material/useScrollTrigger"
 import { keyframes } from "@mui/system"
 
 import { ecosystemListUrl } from "@/apis/ecosystem"
-import Link from "@/components/Link"
 import LoadingButton from "@/components/LoadingButton"
 import LoadingPage from "@/components/LoadingPage"
+import TextButton from "@/components/TextButton"
 import { ECOSYSTEM_NETWORK_LIST } from "@/constants"
 import { isAboveScreen } from "@/utils/dom"
 
@@ -168,7 +168,7 @@ const ProtocolList = props => {
 
         {hasMore && (
           <Box sx={{ gridColumn: ["1 / 3", "1 / 3", "2 / 4"], textAlign: "center", mt: "1.6rem" }}>
-            <Link
+            <TextButton
               underline="always"
               component="button"
               sx={{
@@ -182,7 +182,7 @@ const ProtocolList = props => {
               onClick={onAddPage}
             >
               Load more
-            </Link>
+            </TextButton>
           </Box>
         )}
       </>

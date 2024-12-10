@@ -1,4 +1,4 @@
-import { default as NavLink } from "next/link"
+// import { default as NavLink } from "next/link"
 import React, { useState } from "react"
 import ReactGA from "react-ga4"
 import { useStyles } from "tss-react/mui"
@@ -8,6 +8,7 @@ import { styled } from "@mui/material/styles"
 
 import TriangleDownSvg from "@/assets/svgs/common/header-triangle-down.svg"
 import LanguageSelect from "@/components/LanguageSelect"
+import NavLink from "@/components/Link"
 import Logo from "@/components/ScrollLogo"
 import WalletToolkit from "@/components/WalletToolkit"
 import useCheckViewport from "@/hooks/useCheckViewport"
@@ -129,7 +130,8 @@ const SectionList = styled<any>(Box)(({ theme }) => ({
   },
 }))
 
-const App = ({ currentMenu }) => {
+const DesktopHeader = ({ currentMenu }) => {
+  console.log(currentMenu, "currentMenu")
   const { cx } = useStyles()
   const [isHover, setIsHover] = useState(false)
   const navbarBg = useCheckCustomNavBarBg({ isHover })
@@ -173,10 +175,15 @@ const App = ({ currentMenu }) => {
             }}
           >
             {section.children.map((item, index) => (
-              <Stack key={item.label} direction="column" spacing="2.4rem" sx={{ gridRow: !index ? "1/3" : "unset", height: "min-content" }}>
+              <Stack key={item.key} direction="column" spacing="2.4rem" sx={{ gridRow: !index ? "1/3" : "unset", height: "min-content" }}>
                 <Typography sx={{ fontSize: "1.4rem", fontWeight: 700 }}>{item.label}</Typography>
                 {item.items.map(item => (
-                  <SubmenuLink key={item.label} {...item} onClick={handleResetIsHover}></SubmenuLink>
+                  <SubmenuLink
+                    key={item.key}
+                    className={cx(item.key === currentMenu[0] && "active")}
+                    {...item}
+                    onClick={handleResetIsHover}
+                  ></SubmenuLink>
                 ))}
               </Stack>
             ))}
@@ -186,7 +193,14 @@ const App = ({ currentMenu }) => {
             {section.children
               // only show sub menu item when the href is set
               ?.filter(subItem => subItem.href)
-              .map(subItem => <SubmenuLink key={subItem.label} {...subItem} onClick={handleResetIsHover}></SubmenuLink>)}
+              .map(subItem => (
+                <SubmenuLink
+                  key={subItem.key}
+                  className={cx(subItem.key === currentMenu[0] && "active")}
+                  {...subItem}
+                  onClick={handleResetIsHover}
+                ></SubmenuLink>
+              ))}
           </>
         )}
       </SectionList>
@@ -200,7 +214,7 @@ const App = ({ currentMenu }) => {
           direction="row"
           alignItems="center"
           dark={dark}
-          className={currentMenu === item.key ? "active" : ""}
+          className={currentMenu.includes(item.key) ? "active" : ""}
           onMouseEnter={e => handleMouseEnter(e, item.key)}
           onMouseLeave={handleMouseLeave}
         >
@@ -236,7 +250,7 @@ const App = ({ currentMenu }) => {
     } else {
       return (
         <LinkStyledButton
-          className={currentMenu === item.key ? "active" : ""}
+          className={currentMenu.includes(item.key) ? "active" : ""}
           dark={dark}
           href={item.href}
           end={item.end}
@@ -293,4 +307,4 @@ const App = ({ currentMenu }) => {
   )
 }
 
-export default App
+export default DesktopHeader

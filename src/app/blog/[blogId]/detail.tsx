@@ -81,7 +81,7 @@ const BlogDetail = () => {
             setLoading(false)
             setBlogContent(text)
           })
-      } catch (error) {
+      } catch (_error) {
         router.push("/404")
       }
     } else if (blogIdMatch && language === "en") {

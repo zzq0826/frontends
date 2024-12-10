@@ -76,7 +76,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         <AppRouterCacheProvider options={{ key: "css" }}>
-          {/* <NextAppDirEmotionCacheProvider > */}
           <ScrollThemeProvider>
             <VersionChecker>
               <RainbowProvider>
@@ -88,7 +87,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </VersionChecker>
             <ScrollToTop />
           </ScrollThemeProvider>
-          {/* </NextAppDirEmotionCacheProvider> */}
         </AppRouterCacheProvider>
         {process.env.NODE_ENV === "production" && (
           <>
