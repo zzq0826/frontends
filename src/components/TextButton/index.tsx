@@ -20,6 +20,7 @@ const TextButton = props => {
         textDecorationColor: "inherit",
         ...sx,
       }}
+      className={className}
       underline={underline}
       {...restProps}
     >

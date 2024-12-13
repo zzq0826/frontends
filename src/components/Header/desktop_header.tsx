@@ -8,7 +8,7 @@ import { styled } from "@mui/material/styles"
 
 import TriangleDownSvg from "@/assets/svgs/common/header-triangle-down.svg"
 import LanguageSelect from "@/components/LanguageSelect"
-import NavLink from "@/components/Link"
+import ScrollLink from "@/components/Link"
 import Logo from "@/components/ScrollLogo"
 import WalletToolkit from "@/components/WalletToolkit"
 import useCheckViewport from "@/hooks/useCheckViewport"
@@ -70,7 +70,7 @@ const MenuLinkButton = styled<any>(Link, { shouldForwardProp: prop => prop !== "
   },
 }))
 
-const LinkStyledButton = styled<any>(NavLink, { shouldForwardProp: prop => prop !== "dark" })(({ theme, dark }) => ({
+const LinkStyledButton = styled<any>(ScrollLink, { shouldForwardProp: prop => prop !== "dark" })(({ theme, dark }) => ({
   fontSize: "1.8rem",
   fontWeight: 400,
   marginLeft: "0.5rem",
@@ -131,7 +131,6 @@ const SectionList = styled<any>(Box)(({ theme }) => ({
 }))
 
 const DesktopHeader = ({ currentMenu }) => {
-  console.log(currentMenu, "currentMenu")
   const { cx } = useStyles()
   const [isHover, setIsHover] = useState(false)
   const navbarBg = useCheckCustomNavBarBg({ isHover })
@@ -214,7 +213,7 @@ const DesktopHeader = ({ currentMenu }) => {
           direction="row"
           alignItems="center"
           dark={dark}
-          className={currentMenu.includes(item.key) ? "active" : ""}
+          className={cx(currentMenu.includes(item.key) && "active")}
           onMouseEnter={e => handleMouseEnter(e, item.key)}
           onMouseLeave={handleMouseLeave}
         >
@@ -293,9 +292,9 @@ const DesktopHeader = ({ currentMenu }) => {
       <Announcement />
       <Container>
         <HeaderContainer>
-          <NavLink href="/" className="flex">
+          <ScrollLink href="/" className="flex">
             <Logo light={dark} />
-          </NavLink>
+          </ScrollLink>
           <Stack direction="row" spacing={isDesktop ? "4.4rem" : "2rem"} alignItems="center">
             <Box>{renderNavigationList()}</Box>
             {showWalletConnector && <WalletToolkit dark={dark}></WalletToolkit>}

@@ -27,7 +27,7 @@ const OthersModal = props => {
       sx={[
         {
           "& .MuiBackdrop-root": {
-            backgroundColor: theme => alpha(theme.palette.themeBackground.light, 0.8),
+            backgroundColor: alpha("#FFF8F3", 0.8),
           },
           "& .MuiDialog-paper": {
             // backgroundColor: theme => theme.palette.themeBackground.dark,

@@ -1,6 +1,6 @@
 import { makeStyles } from "tss-react/mui"
 
-import { Alert as MuiAlert, SvgIcon } from "@mui/material"
+import { Alert as MuiAlert } from "@mui/material"
 
 import ErrorSvg from "@/assets/svgs/bridge/alert-error.svg"
 import SuccessSvg from "@/assets/svgs/bridge/alert-success.svg"
@@ -38,8 +38,8 @@ const Alert = props => {
   return (
     <MuiAlert
       iconMapping={{
-        success: <SvgIcon sx={{ fontSize: "3.2rem" }} component={SuccessSvg} inheritViewBox></SvgIcon>,
-        error: <SvgIcon sx={{ fontSize: "3.2rem" }} component={ErrorSvg} inheritViewBox></SvgIcon>,
+        success: <SuccessSvg className="w-[3.2rem] h-auto" />,
+        error: <ErrorSvg className="w-[3.2rem] h-auto" />,
       }}
       classes={{
         root: classes.root,

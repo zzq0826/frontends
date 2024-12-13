@@ -123,14 +123,15 @@ const useStyles = makeStyles()(theme => ({
 const Perks = () => {
   const { classes } = useStyles()
   // const { isMobile } = useCheckViewport()
+  // <IconSvg className={`w-[width] h-[3.4rem]`}></IconSvg>
 
   return (
     <SectionWrapper>
       <Typography sx={{ fontSize: ["3.2rem", "4.8rem"], mb: ["3.2rem", "5.6rem"] }}>Perks & benefits</Typography>
       <SuccessionToView className={classes.grid}>
-        {PERKS.map((item, index) => (
+        {PERKS.map(({ icon: IconSvg, width, title, content }, index) => (
           <SuccessionItem key={index}>
-            <SvgIcon sx={{ width: item.width, height: "3.4rem" }} component={item.icon} inheritViewBox></SvgIcon>
+            <IconSvg className={`w-[${width}] h-[3.4rem]`}></IconSvg>
             <Typography
               sx={{
                 fontSize: ["2rem", "2.4rem"],
@@ -139,9 +140,9 @@ const Perks = () => {
                 mb: ["0.8rem", "1.4rem", "2rem"],
               }}
             >
-              {item.title}
+              {title}
             </Typography>
-            <Typography sx={{ fontSize: ["1.6rem", "2rem"] }}>{item.content}</Typography>
+            <Typography sx={{ fontSize: ["1.6rem", "2rem"] }}>{content}</Typography>
           </SuccessionItem>
         ))}
       </SuccessionToView>

@@ -25,7 +25,7 @@ const Introduction = () => {
           }}
         >
           Unlike NFTs, badges are non-transferable proofs of your unique traits, status and achievements, thanks to integration with{" "}
-          <Link underline="always" href="https://attest.org/" external sx={{ fontSize: "inherit" }}>
+          <Link underline="always" href="https://attest.org/" external className="text-same-size">
             Ethereum Attestation Service
           </Link>
           .

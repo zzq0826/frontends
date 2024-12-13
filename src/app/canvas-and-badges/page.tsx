@@ -4,6 +4,7 @@ import dynamic from "next/dynamic"
 
 import Badges from "./Badges"
 import FeaturedBadges from "./FeaturedBadges"
+// import Header from "./Header"
 import Introduction from "./Introduction"
 
 const Header = dynamic(() => import("./Header"), { ssr: false })

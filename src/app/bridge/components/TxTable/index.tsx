@@ -284,10 +284,9 @@ const TxRow = props => {
             {tx.isL1 ? "Ethereum" : "Scroll"}:{" "}
             <Link
               external
-              sx={{ color: "#0F8E7E" }}
               underline="always"
               href={generateExploreLink(NETWORKS[+!tx.isL1].explorer, tx.hash)}
-              className="leading-normal flex-1"
+              className="text-[#0F8E7E] leading-normal flex-1"
             >
               {truncateHash(tx.replayTxHash || tx.hash)}
             </Link>
@@ -300,10 +299,9 @@ const TxRow = props => {
             {tx.toHash ? (
               <Link
                 external
-                sx={{ color: "#0F8E7E" }}
                 underline="always"
                 href={generateExploreLink(NETWORKS[+tx.isL1].explorer, tx.toHash)}
-                className="leading-normal flex-1"
+                className="text-[#0F8E7E] leading-normal flex-1"
               >
                 {truncateHash(tx.toHash)}
               </Link>

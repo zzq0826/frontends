@@ -117,6 +117,7 @@ const config: Config = {
         "base-middle": ["16px", "16px"],
         lg: ["20px", "30px"],
         xl: ["34px", "45px"],
+        "same-size": "inherit",
       },
     },
     fontFamily: {

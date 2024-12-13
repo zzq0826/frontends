@@ -86,14 +86,7 @@ const Faq = props => {
         <Typography variant="H1">FAQs</Typography>
       </div>
       <Link
-        sx={{
-          fontSize: ["1.6rem", "2rem"],
-          fontWeight: 500,
-          color: "text.primary",
-          lineHeight: 1,
-          mb: ["1rem", "3.6rem"],
-          display: "inline-block",
-        }}
+        className="text-[1.6rem] font-medium leading-[1] mb-[1rem] sm:text-[2rem] sm:mb-[3.6rem] text-[var(--mui-palette-text-primary)]"
         underline="always"
         href={backUrl}
       >

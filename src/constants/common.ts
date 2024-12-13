@@ -55,6 +55,7 @@ export const BATCH_BRIDGE_GATEWAY_PROXY_ADDR = {
 export const DOCUMENTATION_URL = {
   Mainnet: "https://docs.scroll.io/en/developers/developer-quickstart/",
   Sepolia: "https://docs.scroll.io/en/user-guide/",
+  Staging: "https://docs.scroll.io/en/developers/developer-quickstart/",
 }
 
 export const BRANCH_NAME = process.env.NEXT_PUBLIC_SCROLL_ENVIRONMENT!.toLocaleLowerCase()

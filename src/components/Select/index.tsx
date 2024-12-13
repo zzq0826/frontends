@@ -64,7 +64,7 @@ const useStyles = makeStyles()(theme => ({
 }))
 
 const Select = props => {
-  const { className, icon, ...restProps } = props
+  const { className, icon: IconSvg, ...restProps } = props
   const { classes, cx } = useStyles()
 
   const [isUnderneath, setIsUnderneath] = useState(true)
@@ -114,7 +114,7 @@ const Select = props => {
                 cursor: "inherit",
               }}
             >
-              {icon && <SvgIcon sx={{ fontSize: ["1.6rem", "2rem"], marginRight: ["0.8rem"] }} component={icon} inheritViewBox></SvgIcon>}
+              {IconSvg && <IconSvg className="w-[1.6rem] sm:w-[2rem] h-auto mr-[0.8rem]"></IconSvg>}
               {selected as string}
             </Typography>
           </Stack>

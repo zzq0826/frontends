@@ -7,26 +7,41 @@ const ScrollLink = props => {
   const { external, underline = "none", className, reloadDocument, children, href, ...restProps } = props
   const { cx } = useStyles()
 
+  const handleClick = e => {
+    e.preventDefault()
+    window.location.href = href
+  }
+
   if (reloadDocument) {
     return (
-      <Link href={href} target={external ? "_blank" : ""} {...restProps} passHref legacyBehavior>
-        <a className={cx(underline === "always" && "underline", className)} rel="noopener noreferrer">
-          {children}
-        </a>
-      </Link>
+      <a
+        className={cx(
+          "text-[1.6rem] font-semibold text-[var(--mui-palette-link-main)] decoration-inherit",
+          underline === "always" && "underline",
+          underline === "hover" && "hover:underline",
+          className,
+        )}
+        href={href}
+        target="_self"
+        rel="noopener noreferrer"
+        onClick={handleClick}
+        {...restProps}
+      >
+        {children}
+      </a>
     )
   }
   return (
     <Link
       className={cx(
-        "font-semibold text-[var(--mui-palette-link-main)] decoration-inherit",
+        "text-[1.6rem] font-semibold text-[var(--mui-palette-link-main)] decoration-inherit",
         underline === "always" && "underline",
         underline === "hover" && "hover:underline",
         className,
       )}
       href={href}
-      rel="noopener noreferrer"
       target={external ? "_blank" : ""}
+      rel="noopener noreferrer"
       {...restProps}
     >
       {children}

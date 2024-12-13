@@ -24,7 +24,7 @@ const isMajorOrMinorBumped = (oldVersion: string, newVersion: string): boolean =
   return oldSemver.major !== newSemver.major || oldSemver.minor !== newSemver.minor
 }
 
-const Environment = process.env.NEXT_PUBLIC_SCROLL_ENVIRONMENT.toLocaleLowerCase()
+const Environment = process.env.NEXT_PUBLIC_SCROLL_ENVIRONMENT!.toLocaleLowerCase()
 
 const handleEnvironmentChange = () => {
   if (getItem(ENVIRONMENT_NAME) !== Environment) {

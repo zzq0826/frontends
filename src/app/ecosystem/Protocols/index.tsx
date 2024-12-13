@@ -52,7 +52,7 @@ const Protocols = () => {
     if (isLandscape) {
       const handleDetectSticky = () => {
         const categoryEle = document.querySelector(".ecosystem-protocols-category") as HTMLElement
-        setIsSticky(categoryEle.getBoundingClientRect().top >= parseFloat(stickyTop) * 10)
+        setIsSticky(categoryEle!.getBoundingClientRect().top >= parseFloat(stickyTop) * 10)
       }
       window.addEventListener("scroll", handleDetectSticky, false)
       return () => {

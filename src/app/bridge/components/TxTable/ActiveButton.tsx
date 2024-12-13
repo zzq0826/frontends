@@ -41,7 +41,8 @@ const StyledChip = styled(Chip)(({ theme }) => ({
 
   "&.loading": {
     borderRadius: "0.5rem",
-    backgroundColor: alpha((theme as any).vars.palette.primary.main, 0.6),
+    // TODO:
+    backgroundColor: `${alpha("#FF684B", 0.6)}`,
     color: (theme as any).vars.palette.primary.contrastText,
   },
 }))

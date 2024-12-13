@@ -14,7 +14,7 @@ const useStyles = makeStyles<any>()(theme => ({
     borderRadius: 2,
   },
   colorPrimary: {
-    backgroundColor: alpha((theme as any).vars.palette.background.default, 0.6),
+    backgroundColor: alpha("#ffffff", 0.6),
   },
   bar: {
     backgroundColor: "#62E3D1",

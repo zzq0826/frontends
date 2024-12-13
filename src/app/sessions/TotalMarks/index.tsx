@@ -172,17 +172,15 @@ const TotalPoints = () => {
                     title={
                       <>
                         Marks below the 200 threshold are carried over to Session 2.{" "}
-                        <Link
-                          underline="always"
-                          href={SESSION_AIRDROP_LINK}
-                          sx={{ color: "inherit", fontSize: "inherit", fontWeight: 400, whiteSpace: "nowrap" }}
-                        >
+                        <Link underline="always" href={SESSION_AIRDROP_LINK} className="text-inherit text-same-size font-normal whitespace-nowrap">
                           Learn more
                         </Link>
                       </>
                     }
                   >
-                    <SvgIcon component={QaSvg} sx={{ fontSize: "1.6rem" }} inheritViewBox></SvgIcon>
+                    <span>
+                      <SvgIcon component={QaSvg} sx={{ fontSize: "1.6rem" }} inheritViewBox></SvgIcon>
+                    </span>
                   </Tooltip>
                 </>
               ) : (
@@ -191,7 +189,7 @@ const TotalPoints = () => {
                     sx={{ fontSize: ["1.4rem", "1.6rem"], lineHeight: ["2rem", "2.4rem"], fontFamily: "var(--developer-page-font-family)" }}
                   >
                     Check eligibility{" "}
-                    <Link underline="always" href={SESSION_AIRDROP_LINK} sx={{ color: "inherit", fontSize: "inherit", fontWeight: 400 }}>
+                    <Link underline="always" href={SESSION_AIRDROP_LINK} className="text-inherit text-same-size font-normal whitespace-nowrap">
                       here
                     </Link>
                   </Typography>
@@ -228,7 +226,7 @@ const TotalPoints = () => {
             </Typography>
             <Typography sx={{ fontSize: ["1.4rem", "1.6rem"], lineHeight: ["2rem", "2.4rem"], fontFamily: "var(--developer-page-font-family)" }}>
               Keep engaging in this{" "}
-              <Link underline="always" href={SESSION_2_LINK} sx={{ color: "inherit", fontSize: "inherit", fontWeight: 400 }}>
+              <Link underline="always" href={SESSION_2_LINK} className="text-inherit text-same-size font-normal whitespace-nowrap">
                 new phase
               </Link>
             </Typography>

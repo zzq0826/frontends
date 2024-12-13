@@ -6,7 +6,7 @@ import { useSignMessage } from "wagmi"
 import { Dialog, DialogContent, DialogTitle, IconButton, Stack, SvgIcon } from "@mui/material"
 
 import { checkSignStatus, updateSignStatus } from "@/apis/sessions"
-import SessionsTerms from "@/app/sessions-terms/page"
+import SessionsTerms from "@/app/sessions-terms-of-use/page"
 import CloseSvg from "@/assets/svgs/bridge/close.svg"
 import Button from "@/components/Button"
 import { SIGNED_TERMS } from "@/constants/storageKey"

@@ -1,4 +1,4 @@
-import { Stack, SvgIcon, Typography } from "@mui/material"
+import { Stack, Typography } from "@mui/material"
 
 import EmptySvg from "@/assets/svgs/ecosystem/empty.svg"
 import useCheckViewport from "@/hooks/useCheckViewport"
@@ -8,7 +8,7 @@ const NoData = props => {
   const { isMobile } = useCheckViewport()
   return (
     <Stack direction="column" alignItems="center" justifyContent="center" spacing={isMobile ? "0.4rem" : "0.8rem"} {...restProps}>
-      <SvgIcon sx={{ fontSize: "3.2rem", color: dark ? "themeBackground.highlight" : "#5B5B4B" }} component={EmptySvg} inheritViewBox></SvgIcon>
+      <EmptySvg className={`w-[3.2rem] text-[${dark ? "#FFDEB5" : "#5B5B4B"}]`}></EmptySvg>
       <Typography sx={{ fontSize: "1.6rem", fontWeight: 600, lineHeight: "2.4rem", color: dark ? "themeBackground.highlight" : "#5B5B4B" }}>
         {title}
       </Typography>

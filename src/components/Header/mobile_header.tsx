@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react"
 import ReactGA from "react-ga4"
+import { useStyles } from "tss-react/mui"
 
 import { ExpandMore } from "@mui/icons-material"
 import { Box, Collapse, List, ListItemButton, Stack, Typography } from "@mui/material"
@@ -104,10 +105,11 @@ const ExpandMoreIcon = styled(ExpandMore)(({}) => ({
   },
 }))
 
-const App = ({ currentMenu }) => {
+const MobileHeader = ({ currentMenu }) => {
   const navbarBg = useCheckCustomNavBarBg()
   const showWalletConnector = useShowWalletConnector()
   const showLanguageSelect = useShowLanguageSelect()
+  const { cx } = useStyles()
 
   const dark = useCheckTheme()
   const [open, setOpen] = useState(false)
@@ -167,10 +169,11 @@ const App = ({ currentMenu }) => {
               <ExpandMoreIcon fontSize="large" className={activeCollapse === item.key ? "active" : ""} />{" "}
             </ListItem>
           ) : (
-            <ListItem dark={dark} className={activeCollapse === item.key ? "active" : ""} sx={{ py: "1rem" }} onClick={() => toggleDrawer(false)}>
+            <ListItem dark={dark} className={cx(activeCollapse === item.key && "active")} sx={{ py: "1rem" }} onClick={() => toggleDrawer(false)}>
               <MenuItemLink
                 href={item.href}
                 dark={dark}
+                className={cx(currentMenu.includes(item.key) && "active")}
                 reloadDocument={item.reload}
                 onClick={() =>
                   ReactGA.event("click_menu", {
@@ -204,7 +207,7 @@ const App = ({ currentMenu }) => {
                           </Divider> */}
                           <Typography sx={{ fontSize: "1.4rem", fontWeight: 700 }}>{item.label}</Typography>
                           {item.items.map(item => (
-                            <SubmenuLink key={item.label} {...item}></SubmenuLink>
+                            <SubmenuLink className={cx(item.key === currentMenu[0] && "active")} key={item.label} {...item}></SubmenuLink>
                           ))}
                         </Stack>
                       ))}
@@ -214,7 +217,14 @@ const App = ({ currentMenu }) => {
                       {section.children
                         // only show sub items with href
                         ?.filter(subItem => subItem.href)
-                        .map(subItem => <SubmenuLink key={subItem.label} dark={dark} {...subItem}></SubmenuLink>)}
+                        .map(subItem => (
+                          <SubmenuLink
+                            key={subItem.label}
+                            className={cx(subItem.key === currentMenu[0] && "active")}
+                            dark={dark}
+                            {...subItem}
+                          ></SubmenuLink>
+                        ))}
                     </>
                   )}
                 </SectionList>
@@ -266,4 +276,4 @@ const App = ({ currentMenu }) => {
   )
 }
 
-export default App
+export default MobileHeader

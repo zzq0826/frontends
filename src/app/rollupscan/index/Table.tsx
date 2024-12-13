@@ -4,7 +4,7 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation"
 import React, { forwardRef, useMemo } from "react"
 import { useStyles } from "tss-react/mui"
 
-import { Chip, Pagination, TableBody, TableContainer, TableHead, TablePagination, TableRow, Typography } from "@mui/material"
+import { Chip, Pagination, TableBody, TableContainer, TableHead, TablePagination, TableRow, Typography, alpha } from "@mui/material"
 import { styled } from "@mui/material/styles"
 
 import Link from "@/components/Link"
@@ -108,7 +108,7 @@ const CustomTableRow = styled(TableRow)(({ theme }) => ({
     transition: "all 0.5s ease",
   },
   "&.rowActive": {
-    backgroundColor: `${(theme as any).vars.palette.primary.main}10`,
+    backgroundColor: `${alpha("#FF684B", 0.05)}`,
     "&:after": {
       backgroundColor: (theme as any).vars.palette.primary.main,
     },

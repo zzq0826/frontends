@@ -1,3 +1,5 @@
+"use client"
+
 import { Flip } from "number-flip"
 import { useEffect, useRef } from "react"
 import { usePrevious } from "react-use"

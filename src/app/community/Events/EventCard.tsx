@@ -51,7 +51,7 @@ const DateTag = props => {
         padding: "0rem 1.2rem",
       }}
     >
-      <SvgIcon sx={{ fontSize: ["1.6rem"], marginRight: ["0.6rem"] }} component={TimeIcon} inheritViewBox></SvgIcon>
+      <TimeIcon className="w-[1.6rem] h-auto mr-[0.6rem]"></TimeIcon>
       {!endDate && dayjs(startDate).format("MMMM D, YYYY")}
       {endDate && `${dayjs(startDate).format("MMM D")} - ${dayjs(endDate).format("MMM D, YYYY")}`}
     </Typography>
@@ -80,7 +80,7 @@ const EventCard = props => {
               padding: "0rem 1.2rem",
             }}
           >
-            <SvgIcon sx={{ fontSize: ["1.6rem"], marginRight: ["0.6rem"] }} component={RegionIcon} inheritViewBox></SvgIcon>
+            <RegionIcon className="w-[1.6rem] mr-[0.6rem]"></RegionIcon>
             {city}, {country}
           </Typography>
         </Stack>

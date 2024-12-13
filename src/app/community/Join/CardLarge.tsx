@@ -5,7 +5,6 @@ import { Box, Button, Card, Stack, SvgIcon, Typography } from "@mui/material"
 import CombinationMarkIcon from "@/assets/svgs/community/combination_mark.svg"
 import ScrollGenericIcon from "@/assets/svgs/community/scroll_generic.svg"
 import ArrowSvg from "@/assets/svgs/ecosystem/arrow.svg"
-import Link from "@/components/Link"
 
 const useStyles = makeStyles()(theme => ({
   card: {
@@ -37,63 +36,61 @@ const useStyles = makeStyles()(theme => ({
   },
 }))
 
-const ContributeCard = props => {
+const CardLarge = props => {
   const { href, ...restProps } = props
 
   const { classes } = useStyles()
 
   return (
-    <Link href={href} external>
-      <Card {...restProps} elevation={0} classes={{ root: classes.card }}>
-        <Stack direction="row" justifyContent="space-between" position="relative">
-          <Box>
-            <SvgIcon
-              sx={{
-                height: ["2.7rem", "2.7rem"],
-                width: ["15.7rem", "15.7rem"],
-                mb: ["3.2rem"],
-              }}
-              component={CombinationMarkIcon}
-              inheritViewBox
-            ></SvgIcon>
-            <Typography
-              sx={{
-                fontSize: ["1.6rem", "2.4rem"],
-                fontWeight: 600,
-                lineHeight: [1.6, "normal"],
-                mb: ["0.8rem"],
-                cursor: "inherit",
-              }}
-            >
-              Learn, build and innovate
-            </Typography>
-            <Typography
-              sx={{
-                fontSize: ["1.6rem", "2rem"],
-                lineHeight: [1.5, "normal"],
-                cursor: "inherit",
-                marginBottom: ["3.2rem"],
-                maxWidth: ["100%", "58rem"],
-              }}
-            >
-              Complete our level up challenges and join a study group of dedicated developers
-            </Typography>
-            <Button
-              href={"https://levelupweb3.xyz/"}
-              target="_blank"
-              classes={{ root: classes.action }}
-              endIcon={<SvgIcon sx={{ fontSize: ["1.2rem !important", "1.3rem !important"] }} component={ArrowSvg} inheritViewBox></SvgIcon>}
-            >
-              Visit Level Up Site
-            </Button>
-          </Box>
-          <Box sx={{ justifySelf: "flex-end", position: ["absolute", "unset"], right: "-1.3rem", bottom: "-0.8rem" }}>
-            <SvgIcon sx={{ height: ["10rem", "100%"], width: ["auto", "auto"] }} component={ScrollGenericIcon} inheritViewBox></SvgIcon>
-          </Box>
-        </Stack>
-      </Card>
-    </Link>
+    <Card {...restProps} elevation={0} classes={{ root: classes.card }}>
+      <Stack direction="row" justifyContent="space-between" position="relative">
+        <Box>
+          <SvgIcon
+            sx={{
+              height: ["2.7rem", "2.7rem"],
+              width: ["15.7rem", "15.7rem"],
+              mb: ["3.2rem"],
+            }}
+            component={CombinationMarkIcon}
+            inheritViewBox
+          ></SvgIcon>
+          <Typography
+            sx={{
+              fontSize: ["1.6rem", "2.4rem"],
+              fontWeight: 600,
+              lineHeight: [1.6, "normal"],
+              mb: ["0.8rem"],
+              cursor: "inherit",
+            }}
+          >
+            Learn, build and innovate
+          </Typography>
+          <Typography
+            sx={{
+              fontSize: ["1.6rem", "2rem"],
+              lineHeight: [1.5, "normal"],
+              cursor: "inherit",
+              marginBottom: ["3.2rem"],
+              maxWidth: ["100%", "58rem"],
+            }}
+          >
+            Complete our level up challenges and join a study group of dedicated developers
+          </Typography>
+          <Button
+            href={"https://levelupweb3.xyz/"}
+            target="_blank"
+            classes={{ root: classes.action }}
+            endIcon={<SvgIcon sx={{ fontSize: ["1.2rem !important", "1.3rem !important"] }} component={ArrowSvg} inheritViewBox></SvgIcon>}
+          >
+            Visit Level Up Site
+          </Button>
+        </Box>
+        <Box sx={{ justifySelf: "flex-end", position: ["absolute", "unset"], right: "-1.3rem", bottom: "-0.8rem" }}>
+          <SvgIcon sx={{ height: ["10rem", "100%"], width: ["auto", "auto"] }} component={ScrollGenericIcon} inheritViewBox></SvgIcon>
+        </Box>
+      </Stack>
+    </Card>
   )
 }
 
-export default ContributeCard
+export default CardLarge
