@@ -1,3 +1,5 @@
+"use client"
+
 import { useMemo, useState } from "react"
 import { useDebounce } from "react-use"
 import { makeStyles } from "tss-react/mui"
@@ -82,6 +84,20 @@ const Badges = () => {
     keyword: "",
     page: 1,
   })
+
+  // useEffect(() => {
+  //   if (hash) {
+  //     setTimeout(() => {
+  //       const targetEl = document.getElementById(`${CANVAS_AND_BADGES_PAGE_SYMBOL}-${hash.slice(1)}`)
+  //       console.log(targetEl, "targetEl")
+  //       if (targetEl) {
+  //         targetEl.scrollIntoView({
+  //           behavior: "instant",
+  //         })
+  //       }
+  //     }, 3e2)
+  //   }
+  // }, [hash])
 
   useDebounce(
     () => {

@@ -20,7 +20,7 @@ import useCanvasStore from "@/stores/canvasStore"
 import { generateShareTwitterURL } from "@/utils"
 
 const CouponBox = styled(Box)(({ theme }) => ({
-  background: `url(${couponBackground}) no-repeat center center`,
+  background: `url(${couponBackground.src}) no-repeat center center`,
   width: "65.2rem",
   height: "26.2rem",
   margin: "0 15.4rem 9.6rem",
@@ -32,7 +32,7 @@ const CouponBox = styled(Box)(({ theme }) => ({
     width: "100%",
     height: "auto",
     aspectRatio: "320/158",
-    background: `url(${couponMobileBackground}) no-repeat center center`,
+    background: `url(${couponMobileBackground.src}) no-repeat center center`,
     backgroundSize: "contain",
     padding: "1.4rem 1.2rem",
     margin: 0,

@@ -51,7 +51,7 @@ const Header = () => {
 
   useEffect(() => {
     if (hash) {
-      const targetEl = document.getElementById(`${CANVAS_AND_BADGES_PAGE_SYMBOL}-${hash.slice(1)}`)
+      const targetEl = document.getElementById(`${CANVAS_AND_BADGES_PAGE_SYMBOL}-${hash}`)
       if (targetEl) {
         targetEl.scrollIntoView({
           behavior: "instant",

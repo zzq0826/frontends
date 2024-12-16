@@ -7,7 +7,7 @@ import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter"
 import GlobalComponents from "@/components/GlobalComponents"
 import GoogleAnalytics from "@/components/GoogleAnalytics"
 import ScrollToTop from "@/components/ScrollToTop"
-import SentrySetting from "@/components/SentrySetting"
+// import SentrySetting from "@/components/SentrySetting"
 import WebVitals from "@/components/WebVitals"
 import { DEFAULT_METADATA } from "@/constants/route"
 import BridgeContextProvider from "@/contexts/BridgeContextProvider"
@@ -80,7 +80,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <>
             <GoogleAnalytics></GoogleAnalytics>
             <WebVitals></WebVitals>
-            <SentrySetting></SentrySetting>
+            {/* <SentrySetting></SentrySetting> */}
           </>
         )}
       </body>

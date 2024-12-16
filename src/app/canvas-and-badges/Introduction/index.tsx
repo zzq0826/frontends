@@ -1,3 +1,5 @@
+"use client"
+
 import { Box, Stack, SvgIcon, Typography } from "@mui/material"
 
 import Button from "@/components/Button"

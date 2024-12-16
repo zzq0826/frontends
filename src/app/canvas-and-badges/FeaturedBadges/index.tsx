@@ -1,4 +1,4 @@
-import { Box, Stack, SvgIcon, Typography } from "@mui/material"
+import { Box, Stack, Typography } from "@mui/material"
 
 import Button from "@/app/canvas/components/Button"
 import ExternalLinkSvg from "@/assets/svgs/canvas-badge/external-link.svg"
@@ -28,7 +28,7 @@ const FeaturedBadges = () => {
           }}
         >
           <Stack direction="column" gap={["1.6rem", "2.4rem"]}>
-            <SvgIcon sx={{ width: ["71px", "147px"], height: "auto" }} component={PassportSvg} inheritViewBox></SvgIcon>
+            <PassportSvg className="w-[71px] sm:w-[147px] h-auto"></PassportSvg>
             <Typography sx={{ fontSize: ["2rem", "4rem"], fontWeight: 500, lineHeight: ["3.2rem", "4.8rem"], color: "primary.contrastText" }}>
               Show your ZK talent
             </Typography>
@@ -49,7 +49,7 @@ const FeaturedBadges = () => {
               variant="contained"
               sx={{ borderRadius: "0.8rem", width: ["20rem", "21.2rem"], height: "4.8rem !important", padding: 0 }}
             >
-              View details <SvgIcon sx={{ fontSize: "1.2rem", ml: "8px" }} component={ExternalLinkSvg} inheritViewBox></SvgIcon>
+              View details <ExternalLinkSvg className="w-1.2rem h-auto ml-[8px]"></ExternalLinkSvg>
             </Button>
           </Stack>
         </Box>

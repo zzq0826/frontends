@@ -46,19 +46,15 @@ const Container = styled(Box)(({ theme }) => ({
       },
     },
   },
-  [`.MuiTypography-root`]: {
-    fontWeight: "500",
-  },
-  // [`${TitleTypography}`]: {
-  //   fontWeight: "500",
-  // },
 }))
 
 const TitleTypography = styled(Typography)(() => ({
   textAlign: "center",
+  fontWeight: "500 !important",
 }))
 
 const DashTypography = styled("h3")(({ theme }) => ({
+  fontWeight: "500 !important",
   "&::before": {
     content: '"-"',
     margin: "0 3rem",

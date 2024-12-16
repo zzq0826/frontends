@@ -1,3 +1,5 @@
+"use client"
+
 import { makeStyles } from "tss-react/mui"
 
 import { ButtonProps, CircularProgress, Button as ScrollButton } from "@mui/material"

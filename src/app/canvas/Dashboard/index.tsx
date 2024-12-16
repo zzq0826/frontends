@@ -34,6 +34,7 @@ const Dashboard = () => {
   const { unsignedProfileRegistryContract, publicProvider } = useCanvasContext()
 
   const {
+    canvasUsername,
     attachedBadges,
     fetchCurrentCanvasDetail,
     fetchOthersCanvasDetail,
@@ -47,6 +48,12 @@ const Dashboard = () => {
     pickUpgradableBadges,
     pickUpgradableBadgesLoading,
   } = useCanvasStore()
+
+  const metadata = {
+    title: `Scroll -  ${canvasUsername}'s Canvas`,
+    description: "Collect onchain badges and build your story on Scroll",
+    image: `${process.env.NEXT_PUBLIC_CANVAS_BACKEND_URI}/canvas/${othersWalletAddress || walletCurrentAddress}.png`,
+  }
 
   useEffect(() => {
     if (badgesDialogVisible === BadgesDialogType.UPGRADE) {
@@ -144,6 +151,16 @@ const Dashboard = () => {
   }
   return (
     <>
+      <head key="canvas">
+        <title>{metadata.title}</title>
+        <meta name="description" content={metadata.description} />
+        <meta property="og:title" content={metadata.title} />
+        <meta property="og:description" content={metadata.description} />
+        <meta property="og:image" content={metadata.image} />
+        <meta name="twitter:title" content={metadata.title} />
+        <meta name="twitter:description" content={metadata.description} />
+        <meta name="twitter:image" content={metadata.image} />
+      </head>
       {!!profileDetailLoading ? (
         <LoadingPage></LoadingPage>
       ) : (

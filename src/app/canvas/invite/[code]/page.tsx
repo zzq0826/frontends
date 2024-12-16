@@ -13,8 +13,7 @@ export async function generateMetadata({ params }): Promise<Metadata> {
 
   const imgUrl = getImgByCode(params.code)
 
-  const title = "Scroll - Canvas Invite"
-  const ogTitle = "Scroll Canvas - your unique space for onchain presence on Scroll"
+  const title = "Scroll Canvas - your unique space for onchain presence on Scroll"
   const description = "Use my referral code to save 50% on Scroll Canvas mint!"
   const url = `${process.env.NEXT_PUBLIC_FFRONTENDS_URL}/canvas?code=${params.code}`
 
@@ -23,13 +22,13 @@ export async function generateMetadata({ params }): Promise<Metadata> {
     title,
     description,
     openGraph: {
-      title: ogTitle,
+      title,
       description,
       url,
       images: [imgUrl],
     },
     twitter: {
-      title: ogTitle,
+      title,
       description,
       images: [imgUrl],
     },
