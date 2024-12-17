@@ -38,7 +38,7 @@ const FinalStep = () => {
   }, [realNFTInstance, walletCurrentAddress, swiperSlide.isActive])
 
   const shareTwitterURL = useMemo(() => {
-    const viewerUrl = `${process.env.REACT_APP_NFT_VIEWER_URL}/developer-nft/${tokenId}`
+    const viewerUrl = `${process.env.NEXT_PUBLIC_NFT_API_URI}/developer-nft/${tokenId}`
     return `https://twitter.com/intent/tweet?original_referer=${encodeURIComponent(
       window.location.href,
     )}&url=${encodeURIComponent(viewerUrl)}&via=Scroll_ZKP`

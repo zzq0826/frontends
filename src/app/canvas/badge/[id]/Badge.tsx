@@ -52,7 +52,7 @@ const Badge = () => {
   )
 
   const shareBadgeURL = useMemo(() => {
-    const viewURL = `${process.env.NEXT_PUBLIC_FFRONTENDS_URL}/canvas/badge/${id}`
+    const viewURL = `${process.env.NEXT_PUBLIC_FRONTENDS_URL}/canvas/badge/${id}`
     const myText = `I just minted ${detail.name} badge. Find out your eligibility on Scroll Canvas, too!`
     const othersText = "Checkout this badge and check your eligibility!"
     const text = username && detail.owner && detail.owner === username ? myText : othersText

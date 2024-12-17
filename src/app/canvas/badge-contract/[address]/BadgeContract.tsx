@@ -62,7 +62,7 @@ const BadgeContractDetail = () => {
   }, [provider, isL2, walletCurrentAddress, badgeForMint])
 
   const shareBadgeURL = useMemo(() => {
-    const viewURL = `${process.env.NEXT_PUBLIC_FFRONTENDS_URL}/canvas/badge-contract/${address}`
+    const viewURL = `${process.env.NEXT_PUBLIC_FRONTENDS_URL}/canvas/badge-contract/${address}`
     return generateShareTwitterURL(viewURL, `Find out your eligibility to mint a ${badgeForMint.name} badge on Scroll Canvas.`)
   }, [address, badgeForMint])
 

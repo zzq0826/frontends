@@ -1,4 +1,3 @@
-// declare global {
 declare namespace NodeJS {
   interface ProcessEnv {
     NEXT_PUBLIC_MAIN_ENVIRONMENT: string
@@ -8,7 +7,6 @@ declare namespace NodeJS {
     NEXT_PUBLIC_GOOGLE_ANALYTICS_ID: string
     NEXT_PUBLIC_CONNECT_WALLET_PROJECT_ID: string
     NEXT_PUBLIC_UNIFRA_API_KEY: string
-    NEXT_PUBLIC_NFT_VIEWER_URL: string
     NEXT_PUBLIC_NFT_API_URI: string
     NEXT_PUBLIC_SCROLL_ENVIRONMENT: string
     NEXT_PUBLIC_API_BASE_URI: string
@@ -53,4 +51,3 @@ declare namespace NodeJS {
     [key: string]: string
   }
 }
-// }

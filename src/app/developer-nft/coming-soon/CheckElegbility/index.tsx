@@ -11,8 +11,8 @@ import { useRainbowContext } from "@/contexts/RainbowProvider"
 import useCheckViewport from "@/hooks/useCheckViewport"
 import { formatDate } from "@/utils"
 
-const L2_SCAN_URI = process.env.REACT_APP_L2_SCAN_URI
-const UNIFRA_API_KEY = process.env.REACT_APP_UNIFRA_API_KEY
+const L2_SCAN_URI = process.env.NEXT_PUBLIC_L2_SCAN_URI
+const UNIFRA_API_KEY = process.env.NEXT_PUBLIC_UNIFRA_API_KEY
 
 const CheckElegbility = () => {
   const { connect, walletCurrentAddress } = useRainbowContext()
@@ -92,7 +92,7 @@ const CheckElegbility = () => {
         <Link
           underline="always"
           external
-          href={process.env.REACT_APP_L2_SCAN_URI}
+          href={process.env.NEXT_PUBLIC_L2_SCAN_URI}
           sx={{
             fontWeight: 700,
             fontSize: "inherit",

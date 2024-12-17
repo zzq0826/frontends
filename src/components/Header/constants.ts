@@ -72,7 +72,7 @@ const sepoliaNavigations = [
           {
             label: "L2 Scan",
             key: "l2-scan",
-            href: process.env.NEXT_PUBLIC_REACT_APP_L2_SCAN_URI,
+            href: process.env.NEXT_PUBLIC_L2_SCAN_URI,
             isExternal: true,
           },
           {

@@ -14,7 +14,7 @@ export const fetchCodeByAdd = add => `${baseUrl}/acc/${add}/code`
 
 export const checkCodeValidation = code => `${baseUrl}/code/${code}/active`
 
-export const getInviteUrlByCode = code => `${process.env.NEXT_PUBLIC_FFRONTENDS_URL}/canvas/invite/${code}`
+export const getInviteUrlByCode = code => `${process.env.NEXT_PUBLIC_FRONTENDS_URL}/canvas/invite/${code}`
 
 export const viewEASScanURL = id => `${process.env.NEXT_PUBLIC_EAS_EXPLORER_URL}/attestation/view/${id}`
 

@@ -6,10 +6,10 @@ import "./scripts/download-blog-posts.data.json.mjs"
 
 // const { withSentryConfig } = require("@sentry/nextjs")
 
-console.log(packageJson.version,'packageJson.version')
 const nextConfig = {
   env: {
     NEXT_PUBLIC_VERSION: packageJson.version,
+    NEXT_PUBLIC_FRONTENDS_URL: process.env.VERCEL_ENV === "production" ? "https://scroll.io" : process.env.VERCEL_BRANCH_URL?`https://${process.env.VERCEL_BRANCH_URL}`:"http://localhost:3000",
   },
   images: {
     deviceSizes: [600, 900, 1200, 1536],

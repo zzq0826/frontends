@@ -48,14 +48,14 @@ const MyNFT = props => {
 
   const scrollscanURL = useMemo(
     () =>
-      `${process.env.REACT_APP_ETHERSCAN_L2}/token/${
-        nftVersion === 1 ? process.env.REACT_APP_SCROLL_ORIGINS_NFT : process.env.REACT_APP_SCROLL_ORIGINS_NFT_V2
+      `${process.env.NEXT_PUBLIC_ETHERSCAN_L2}/token/${
+        nftVersion === 1 ? process.env.NEXT_PUBLIC_SCROLL_ORIGINS_NFT : process.env.NEXT_PUBLIC_SCROLL_ORIGINS_NFT_V2
       }?a=${tokenId}`,
     [tokenId],
   )
 
   const shareTwitterURL = useMemo(() => {
-    const viewerUrl = `${process.env.REACT_APP_NFT_VIEWER_URL}/developer-nft/${tokenId}`
+    const viewerUrl = `${process.env.NEXT_PUBLIC_NFT_API_URI}/developer-nft/${tokenId}`
     return `https://twitter.com/intent/tweet?original_referer=${encodeURIComponent(
       window.location.href,
     )}&url=${encodeURIComponent(viewerUrl)}&text=${encodeURIComponent("I have minted a Scroll Origins NFT!")}&via=Scroll_ZKP`

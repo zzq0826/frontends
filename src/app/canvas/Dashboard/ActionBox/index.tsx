@@ -152,7 +152,7 @@ const ActionBox = () => {
   const [copied, setCopied] = useState(false)
 
   const canvasUrl = useMemo(
-    () => `${process.env.NEXT_PUBLIC_FFRONTENDS_URL}/canvas/${othersWalletAddress || walletCurrentAddress}`,
+    () => `${process.env.NEXT_PUBLIC_FRONTENDS_URL}/canvas/${othersWalletAddress || walletCurrentAddress}`,
     [othersWalletAddress, walletCurrentAddress],
   )
 

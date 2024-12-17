@@ -90,14 +90,14 @@ const BadgeDetailDialog = () => {
   })
 
   const shareBadgeURL = useMemo(() => {
-    const viewURL = `${process.env.NEXT_PUBLIC_FFRONTENDS_URL}/canvas/badge/${selectedBadge.id}`
+    const viewURL = `${process.env.NEXT_PUBLIC_FRONTENDS_URL}/canvas/badge/${selectedBadge.id}`
     const myText = `I just minted ${selectedBadge.name} badge. Find out your eligibility on Scroll Canvas, too!`
     const othersText = "Checkout this badge and check your eligibility!"
     return generateShareTwitterURL(viewURL, othersWalletAddress ? othersText : myText)
   }, [selectedBadge, othersWalletAddress, canvasUsername])
 
   const shareBadgeContractURL = useMemo(() => {
-    const viewURL = `${process.env.NEXT_PUBLIC_FFRONTENDS_URL}/canvas/badge-contract/${selectedBadge.badgeContract}`
+    const viewURL = `${process.env.NEXT_PUBLIC_FRONTENDS_URL}/canvas/badge-contract/${selectedBadge.badgeContract}`
     return generateShareTwitterURL(viewURL, `Find out your eligibility to mint a ${selectedBadge.name} badge on Scroll Canvas.`)
   }, [selectedBadge])
 

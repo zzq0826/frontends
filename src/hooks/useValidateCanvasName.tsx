@@ -62,7 +62,7 @@ const useValidateName = value => {
       //   args: [name],
       // })
       // const callParams = {
-      //   to: requireEnv("REACT_APP_PROFILE_REGISTRY_ADDRESS"),
+      //   to: process.env.NEXT_PUBLIC_PROFILE_REGISTRY_ADDRESS,
       //   data: isUsernameUsedCallData,
       // }
       //
