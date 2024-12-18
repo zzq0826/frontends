@@ -34,7 +34,7 @@ const sepoliaRoutes: PageMetadata[] = [
   },
   {
     name: "Resources",
-    path: "portal",
+    path: "/portal",
   },
   {
     name: "Bridge",
