@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import { headers } from "next/headers"
+import { notFound } from "next/navigation"
 
 import { getImgByCode } from "@/apis/canvas"
 
@@ -36,6 +37,9 @@ export async function generateMetadata({ params }): Promise<Metadata> {
 }
 
 const CanvasInvite = () => {
+  if (process.env.NEXT_PUBLIC_SCROLL_ENVIRONMENT === "Sepolia") {
+    notFound()
+  }
   return <CanvasMint></CanvasMint>
 }
 

@@ -1,10 +1,20 @@
 import Image from "next/image"
+import { notFound } from "next/navigation"
 
 import { Container, Typography } from "@mui/material"
 
 import ScrollySad from "@/assets/images/common/scrolly-sad.png"
+import { genMeta } from "@/utils/route"
+
+export const generateMetadata = genMeta(() => ({
+  titleSuffix: "Scroll Sessions Restricted",
+  relativeURL: "/sessions-restricted",
+}))
 
 const SessionsRestricted = () => {
+  if (process.env.NEXT_PUBLIC_SCROLL_ENVIRONMENT === "Sepolia") {
+    notFound()
+  }
   return (
     <Container
       sx={{

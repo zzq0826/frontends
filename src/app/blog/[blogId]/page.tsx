@@ -1,39 +1,23 @@
-import type { Metadata } from "next"
-import { headers } from "next/headers"
+import { genMeta } from "@/utils/route"
 
 import blogSource from "./data.json"
 import Detail from "./detail"
 
-export async function generateMetadata({ params }): Promise<Metadata> {
-  const { origin } = new URL(headers().get("x-url")!)
+export const generateMetadata = genMeta(({ params }) => {
   const currentBlog = blogSource.find(blog => blog.id === params.blogId)
-
-  const title = `${currentBlog?.title} - Scroll`
-  const description = currentBlog?.summary
   const imgUrl = currentBlog?.ogImg || currentBlog?.posterImg || ""
 
-  const url = currentBlog?.canonical || `https://scroll.io/blog/${currentBlog?.id}`
-
   return {
-    metadataBase: new URL(origin),
-    title,
-    description,
-    openGraph: {
-      title,
-      description,
-      url,
-      images: [imgUrl],
-    },
-    twitter: {
-      title,
-      description,
-      images: [imgUrl],
-    },
+    titleSuffix: currentBlog?.title,
+    relativeURL: currentBlog?.canonical || `https://scroll.io/blog/${currentBlog?.id}`,
+    description: currentBlog?.summary,
+    ogImg: imgUrl,
+    twitterImg: imgUrl,
     alternates: {
       canonical: currentBlog?.canonical,
     },
   }
-}
+})
 
 const BlogDetail = () => {
   return (

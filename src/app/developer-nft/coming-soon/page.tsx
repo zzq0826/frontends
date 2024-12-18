@@ -1,3 +1,7 @@
+"use client"
+
+import { notFound } from "next/navigation"
+
 import { Stack } from "@mui/material"
 
 import Alert from "@/components/Alert/NFTAlert"
@@ -14,6 +18,10 @@ import Stepper from "./Stepper"
 
 const ComingSoon = () => {
   const { phrase } = useNFTStore()
+
+  if (process.env.NEXT_PUBLIC_SCROLL_ENVIRONMENT === "Sepolia") {
+    notFound()
+  }
 
   return (
     <SectionWrapper
