@@ -39,7 +39,7 @@ const DisclaimerBox = styled(Box)(({}) => ({
 }))
 
 const BadgeDetail = props => {
-  const { detail, metadata, loading, breadcrumb, property, onUpgrade, children } = props
+  const { detail, loading, breadcrumb, property, onUpgrade, children } = props
   const { isBadgeUpgrading } = useCanvasStore()
   const { isLandscape } = useCheckViewport()
   const [actionHeight, setActionHeight] = useState("auto")
@@ -83,16 +83,6 @@ const BadgeDetail = props => {
 
   return (
     <>
-      <head key="badge-detail">
-        <title>{metadata.title}</title>
-        <meta name="description" content={metadata.description} />
-        <meta property="og:title" content={metadata.title} />
-        <meta property="og:description" content={metadata.description} />
-        <meta property="og:image" content={metadata.image} />
-        <meta name="twitter:title" content={metadata.title} />
-        <meta name="twitter:description" content={metadata.description} />
-        <meta name="twitter:image" content={metadata.image} />
-      </head>
       <SectionWrapper
         dark
         className="detail-container"

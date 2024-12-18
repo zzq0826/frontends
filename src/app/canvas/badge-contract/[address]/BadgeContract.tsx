@@ -66,15 +66,6 @@ const BadgeContractDetail = () => {
     return generateShareTwitterURL(viewURL, `Find out your eligibility to mint a ${badgeForMint.name} badge on Scroll Canvas.`)
   }, [address, badgeForMint])
 
-  const metadata = useMemo(
-    () => ({
-      title: `Canvas Badge - ${badgeForMint.name}`,
-      description: `I found a badge called ${badgeForMint.name} you may like`,
-      image: `${process.env.NEXT_PUBLIC_CANVAS_BACKEND_URI}/badge-contract/${address}.png`,
-    }),
-    [badgeForMint],
-  )
-
   const badgeId = useMemo(() => userBadges.find(item => item?.badgeContract === address)?.id, [userBadges, address])
 
   useEffect(() => {
@@ -262,7 +253,7 @@ const BadgeContractDetail = () => {
     return <NavLink href="/404"></NavLink>
   }
   return (
-    <BadgeDetail detail={badgeForMint} metadata={metadata} loading={isFetching} property={["issuer"]} breadcrumb={isNewTab ? null : <Back></Back>}>
+    <BadgeDetail detail={badgeForMint} loading={isFetching} property={["issuer"]} breadcrumb={isNewTab ? null : <Back></Back>}>
       {renderAction()}
 
       {badgeForMint.thirdParty ? (

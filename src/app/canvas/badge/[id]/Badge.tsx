@@ -42,15 +42,6 @@ const Badge = () => {
   const [detail, setDetail] = useState<any>({})
   const [loading, setLoading] = useState(false)
 
-  const metadata = useMemo(
-    () => ({
-      title: `Canvas Badge - ${detail.name} Owned by ${detail.owner}`,
-      description: `I have minted the ${detail.name}`,
-      image: `${process.env.NEXT_PUBLIC_CANVAS_BACKEND_URI}/badge/${id}.png`,
-    }),
-    [detail],
-  )
-
   const shareBadgeURL = useMemo(() => {
     const viewURL = `${process.env.NEXT_PUBLIC_FRONTENDS_URL}/canvas/badge/${id}`
     const myText = `I just minted ${detail.name} badge. Find out your eligibility on Scroll Canvas, too!`
@@ -156,7 +147,6 @@ const Badge = () => {
     <>
       <BadgeDetail
         detail={detail}
-        metadata={metadata}
         loading={loading}
         property={["owner", "issuer", "mintedOn", isOriginsNFTBadge(detail.badgeContract) ? "rarity" : undefined]}
         breadcrumb={<BackToCanvas username={detail.owner} loading={loading} href={viewCanvasURL}></BackToCanvas>}

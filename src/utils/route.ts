@@ -2,7 +2,7 @@ import { isNil, isPlainObject, mergeWith } from "lodash"
 import type { Metadata } from "next"
 import { match } from "path-to-regexp"
 
-import { ROOT_METADATA } from "@/constants/route"
+import { DEFAULT_METADATA } from "@/constants/route"
 
 type RouteParams = {
   params: Record<string, string>
@@ -22,9 +22,11 @@ type GenMetaParams = {
   twitterImg?: string
 } & Partial<Metadata>
 
-type MetaGeneratorFn = (paramsProps: RouteParams, parent: Metadata) => GenMetaParams
+type MetaGeneratorResult = Promise<GenMetaParams> | GenMetaParams
 
-function defaultGenMetaFn(paramsProps: RouteParams, parent: Metadata): GenMetaParams {
+type MetaGeneratorFn = (paramsProps: RouteParams, parent: Metadata) => MetaGeneratorResult
+
+async function defaultGenMetaFn(paramsProps: RouteParams, parent: Metadata): Promise<GenMetaParams> {
   return {}
 }
 
@@ -89,19 +91,20 @@ export function mergeNoNullish<T extends object>(target: T, ...sources: Partial<
 
 export function genMeta(fn: MetaGeneratorFn = defaultGenMetaFn) {
   return async function (paramsProps, parent) {
-    // eslint-disable-next-line no-unused-vars
     const { metadataBase, ...restParent } = await parent
-    let { titleSuffix, description, relativeURL, ogImg, twitterImg, ...otherOpts } = fn(paramsProps, restParent)
+    let { title, titleSuffix, description, relativeURL, ogImg, twitterImg, ...otherOpts } = await fn(paramsProps, restParent)
 
     // nextjs has title.template for this nested title
     // but it won't work for titles in og and twitter
-    const title = `${ROOT_METADATA.title}${titleSuffix ? " - " + titleSuffix : ""}`
-    description = description || ROOT_METADATA.description
+    title = title || `${DEFAULT_METADATA.title}${titleSuffix ? " - " + titleSuffix : ""}`
+    description = (description || DEFAULT_METADATA.description) as string
+    const openGraphImages = ogImg ? [ogImg] : [DEFAULT_METADATA.ogImg]
+    const twitterImages = twitterImg ? [twitterImg] : [DEFAULT_METADATA.twitterImg]
 
     const currentRoute: Metadata = {
       title,
-      openGraph: { title, description, url: relativeURL, images: ogImg ? [ogImg] : undefined },
-      twitter: { title, description, images: twitterImg ? [twitterImg] : undefined },
+      openGraph: { title, description, url: relativeURL, images: openGraphImages },
+      twitter: { title, description, images: twitterImages },
     }
 
     // nextjs complains about null deprecated value (colorScheme, ...)

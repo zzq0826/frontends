@@ -1,3 +1,5 @@
+import { Metadata } from "next"
+
 export interface PageMetadata {
   name: string
   path: string
@@ -14,7 +16,7 @@ export const DEFAULT_METADATA = {
   twitterImg: "/og_scroll.png",
 }
 
-export const ROOT_METADATA = {
+export const ROOT_METADATA: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_FRONTENDS_URL),
   title: DEFAULT_METADATA.title,
   applicationName: DEFAULT_METADATA.title,

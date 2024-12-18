@@ -1,3 +1,4 @@
+import { Metadata } from "next"
 import React from "react"
 
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter"
@@ -5,8 +6,9 @@ import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter"
 import GlobalComponents from "@/components/GlobalComponents"
 import GoogleAnalytics from "@/components/GoogleAnalytics"
 import ScrollToTop from "@/components/ScrollToTop"
-// import SentrySetting from "@/components/SentrySetting"
 import WebVitals from "@/components/WebVitals"
+// import SentrySetting from "@/components/SentrySetting"
+import { ROOT_METADATA } from "@/constants/route"
 import BridgeContextProvider from "@/contexts/BridgeContextProvider"
 import CanvasContextProvider from "@/contexts/CanvasContextProvider"
 import RainbowProvider from "@/contexts/RainbowProvider"
@@ -14,6 +16,8 @@ import { VersionChecker } from "@/hooks/useVersionCheck"
 import ScrollThemeProvider from "@/theme"
 
 import "./globals.css"
+
+export const metadata: Metadata = ROOT_METADATA
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
