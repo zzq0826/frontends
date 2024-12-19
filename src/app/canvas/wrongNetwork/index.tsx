@@ -1,4 +1,4 @@
-import { Box, SvgIcon, Typography } from "@mui/material"
+import { Box, Typography } from "@mui/material"
 import { styled } from "@mui/system"
 
 import Dialog from "@/app/canvas/components/Dialog"
@@ -46,11 +46,7 @@ const WrongNetwork = () => {
   return (
     <StyledDialog open noClose>
       <StyledDialogContent>
-        <SvgIcon
-          sx={{ fontSize: ["12rem", "18rem"], height: "auto", marginBottom: ["1.6rem", "4rem"] }}
-          component={ConnectStickerSvg}
-          inheritViewBox
-        ></SvgIcon>
+        <ConnectStickerSvg className="w-[12rem] sm:w-[18rem] h-auto mb-[1.6rem] sm:mb-[4rem] "></ConnectStickerSvg>
         <Typography
           sx={{
             fontSize: ["2rem", "3.2rem"],
