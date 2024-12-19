@@ -52,15 +52,27 @@ const nextConfig = {
       { source: "/blog/technicalPrinciples", destination: "/blog/technical-principles", permanent: true },
       { source: "/blog/preAlphaTestnet", destination: "/blog/pre-alpha-testnet", permanent: true },
       { source: "/blog/visionAndValues", destination: "/blog/vision-and-values", permanent: true },
-      { source: "/blog/zkEVM", destination: "/blog/zkevm", permanent: true },
       { source: "/blog/scrollsFreshCoat", destination: "/blog/scrolls-fresh-coat", permanent: true },
 
       { source: "/sticker-vote", destination: "/sticker-winners", permanent: true },
-      { source: "/canvas/listing", destination: "https://badge-registry.canvas.scroll.cat/badge-registry", permanent: true },
-      { source: "/badge-registry/:path*", destination: "https://badge-registry.canvas.scroll.cat/badge-registry/:path*", permanent: false},
       { source: "/airdrop-faq", destination: "https://scroll-faqs.gitbook.io/faqs", permanent: false},
-      { source: "/gov-docs/:path*", destination: "https://scroll-governance-documentation.vercel.app/:path*", permanent: false},
 
+    ]
+  },
+  async rewrites() {
+    return [
+      {
+        source: '/canvas/listing',
+        destination: 'https://badge-registry.canvas.scroll.cat/badge-registry'
+      },
+      {
+        source: '/badge-registry/:path*',
+        destination: 'https://badge-registry.canvas.scroll.cat/badge-registry/:path*'
+      },
+      {
+        source: '/gov-docs/:path*',
+        destination: 'https://scroll-governance-documentation.vercel.app/:path*'
+      }
     ]
   },
   images: {

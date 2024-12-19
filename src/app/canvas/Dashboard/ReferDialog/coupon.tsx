@@ -200,11 +200,11 @@ const Coupon = props => {
             Share to <SvgIcon sx={{ fontSize: ["1.2rem", "1.3rem"], ml: "6px" }} component={TwitterSvg} inheritViewBox></SvgIcon>
           </MenuItem>
           <MenuItem classes={{ root: classes.item }} onClick={handleCopyLink}>
-            {copied === 1 && <SvgIcon sx={{ ml: "0.6rem" }} component={CopySuccessSvg} inheritViewBox></SvgIcon>}
+            {copied === 1 && <CopySuccessSvg className="mr-[0.6rem]"></CopySuccessSvg>}
             <>{copied === 1 ? "Link copied" : "Copy link"}</>
           </MenuItem>
           <MenuItem classes={{ root: classes.item }} onClick={handleCopyCode}>
-            {copied === 2 && <SvgIcon sx={{ ml: "0.6rem" }} component={CopySuccessSvg} inheritViewBox></SvgIcon>}
+            {copied === 2 && <CopySuccessSvg className="mr-[0.6rem]"></CopySuccessSvg>}
             <>{copied === 2 ? "Code copied" : "Copy code"}</>
           </MenuItem>
         </Menu>

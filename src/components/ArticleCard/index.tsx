@@ -95,7 +95,7 @@ const ArticleCard = props => {
       <ArticleInfo>
         <ArticleTitle variant="H4">{blog.title}</ArticleTitle>
         <ArticleSummary variant="Body3">{blog.summary}</ArticleSummary>
-        <ArticleDate variant="body2">
+        <ArticleDate>
           {blog.date} ・ {blog.type}
         </ArticleDate>
       </ArticleInfo>
