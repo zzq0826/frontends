@@ -1,9 +1,9 @@
 import ContributeIcon from "@/assets/svgs/community/contribute.svg"
 import DiscordIcon from "@/assets/svgs/community/discord.svg"
-import ForumIcon from "@/assets/svgs/community/forum.svg"
+import GovernanceIcon from "@/assets/svgs/community/governance.svg"
 
 export const DISCORD_LINK = "https://discord.gg/scroll"
-export const COMMUNITY_FORUM_LINK = "https://gov.scroll.io/forum"
+export const COMMUNITY_FORUM_LINK = "https://gov.scroll.io/info"
 export const CONTRIBUTE_TO_SCROLL_LINK = "https://github.com/scroll-tech/contribute-to-scroll"
 
 export const COMMUNITY_EXPLORER_LIST = [
@@ -14,9 +14,9 @@ export const COMMUNITY_EXPLORER_LIST = [
     content: "Connect with other Scroll developers and users",
   },
   {
-    icon: ForumIcon,
+    icon: GovernanceIcon,
     href: COMMUNITY_FORUM_LINK,
-    title: "Governance Forum",
+    title: "Go to Governance",
     content: "Discuss and propose changes to Scroll",
   },
   {

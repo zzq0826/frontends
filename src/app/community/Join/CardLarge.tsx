@@ -1,9 +1,10 @@
+import Image from "next/image"
 import { makeStyles } from "tss-react/mui"
 
 import { Box, Button, Card, Stack, SvgIcon, Typography } from "@mui/material"
 
+import ScrollGenericIcon from "@/assets/images/community/scroll_generic.png"
 import CombinationMarkIcon from "@/assets/svgs/community/combination_mark.svg"
-import ScrollGenericIcon from "@/assets/svgs/community/scroll_generic.svg"
 import ArrowSvg from "@/assets/svgs/ecosystem/arrow.svg"
 
 const useStyles = makeStyles()(theme => ({
@@ -34,6 +35,14 @@ const useStyles = makeStyles()(theme => ({
       marginBottom: "3.3rem",
     },
   },
+  genericIcon: {
+    maxHeight: "22rem",
+    width: "auto",
+    [theme.breakpoints.down("sm")]: {
+      height: "auto",
+      width: "100%",
+    },
+  },
 }))
 
 const CardLarge = props => {
@@ -43,7 +52,7 @@ const CardLarge = props => {
 
   return (
     <Card {...restProps} elevation={0} classes={{ root: classes.card }}>
-      <Stack direction="row" justifyContent="space-between" position="relative">
+      <Stack direction={["column", "row"]} justifyContent="space-between" position="relative">
         <Box>
           <SvgIcon
             sx={{
@@ -85,8 +94,8 @@ const CardLarge = props => {
             Visit Level Up Site
           </Button>
         </Box>
-        <Box sx={{ justifySelf: "flex-end", position: ["absolute", "unset"], right: "-1.3rem", bottom: "-0.8rem" }}>
-          <SvgIcon sx={{ height: ["10rem", "100%"], width: ["auto", "auto"] }} component={ScrollGenericIcon} inheritViewBox></SvgIcon>
+        <Box sx={{ justifySelf: "flex-end", alignSelf: "end" }}>
+          <Image src={ScrollGenericIcon} className={classes.genericIcon} alt="Scroll Generic Icon" />
         </Box>
       </Stack>
     </Card>

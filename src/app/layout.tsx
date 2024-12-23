@@ -1,5 +1,5 @@
 import { Metadata } from "next"
-import React from "react"
+import React, { Suspense } from "react"
 
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter"
 
@@ -43,7 +43,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </AppRouterCacheProvider>
         {process.env.NODE_ENV === "production" && (
           <>
-            <GoogleAnalytics></GoogleAnalytics>
+            <Suspense fallback={null}>
+              <GoogleAnalytics></GoogleAnalytics>
+            </Suspense>
             <WebVitals></WebVitals>
             {/* <SentrySetting></SentrySetting> */}
           </>

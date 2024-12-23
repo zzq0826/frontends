@@ -1,6 +1,6 @@
 "use client"
 
-import { usePathname } from "next/navigation"
+import { usePathname, useSearchParams } from "next/navigation"
 import { useEffect } from "react"
 import { isMobile } from "react-device-detect"
 import ReactGA from "react-ga4"
@@ -15,7 +15,7 @@ if (process.env.NODE_ENV === "production" && isMainnet) {
     customBrowserType: !isMobile ? "desktop" : "web3" in window || "ethereum" in window ? "mobileWeb3" : "mobileRegular",
   })
   ReactGA.event("web_version", {
-    version: process.env.NEXT_PUBLIC_APP_VERSION,
+    version: process.env.NEXT_PUBLIC_VERSION,
   })
 }
 
@@ -23,11 +23,12 @@ if (process.env.NODE_ENV === "production" && isMainnet) {
 
 const GoogleAnalytics = () => {
   const pathname = usePathname()
+  const searchParams = useSearchParams()
   useEffect(() => {
     if (pathname) {
-      ReactGA.send({ hitType: "pageview", page: pathname })
+      ReactGA.send({ hitType: "pageview", page: `${pathname}?${searchParams}` })
     }
-  }, [pathname])
+  }, [pathname, searchParams])
 
   return null
 }
