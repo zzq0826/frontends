@@ -11,7 +11,7 @@ import useCheckViewport from "@/hooks/useCheckViewport"
 
 interface ScrollButtonProps extends ButtonProps {
   width?: string | number
-  color?: "primary" | "secondary" | "tertiary"
+  color?: "primary" | "secondary" | "tertiary" | "default"
   gloomy?: boolean
   loading?: boolean
   disabled?: boolean

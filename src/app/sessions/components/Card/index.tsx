@@ -1,18 +1,20 @@
-import { Stack } from "@mui/material"
+import { Box, Stack, Typography } from "@mui/material"
 
 const Card = props => {
-  const { sx, bottomDiff, ...restProps } = props
+  const { sx, title, children, ...restProps } = props
   return (
     <Stack
       sx={{
-        backgroundColor: "themeBackground.normal",
+        backgroundColor: "background.default",
         p: ["2.4rem", "3.2rem"],
-        pb: bottomDiff ? [`${bottomDiff} !important`, `${bottomDiff} !important`] : "auto",
         borderRadius: "1.6rem",
         ...sx,
       }}
       {...restProps}
-    ></Stack>
+    >
+      <Typography sx={{ fontSize: ["", "2rem"], lineHeight: ["", "3.2rem"], fontWeight: 600, textAlign: "center" }}>{title}</Typography>
+      <Box>{children}</Box>
+    </Stack>
   )
 }
 
