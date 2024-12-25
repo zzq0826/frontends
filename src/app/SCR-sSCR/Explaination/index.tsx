@@ -5,6 +5,7 @@ import { useRef } from "react"
 
 import { Box, Container, Stack, Typography } from "@mui/material"
 
+import WhySCRETH from "@/assets/svgs/defi/why-scr-eth.svg?url"
 import Button from "@/components/Button"
 import ScrollExpandedBg from "@/components/ScrollExpandedBg"
 import SectionHeader from "@/components/SectionHeader"
@@ -30,7 +31,7 @@ const Explaination = () => {
             }
           ></SectionHeader>
           <Stack direction="row" justifyContent="center" gap={["9.6rem"]}>
-            <Image src="/imgs/token/scr.svg" alt="scr" width="491" height="484" className="w-[calc(50% - 9.6rem)]"></Image>
+            <Image src={WhySCRETH} alt="scr" width="491" height="484" className="w-[calc(50% - 9.6rem)]"></Image>
             <Stack sx={{ width: "50%" }} direction="column" spacing="6.4rem">
               {data.map(({ icon: IconSvg, title, description }) => (
                 <Stack key={title} direction="column" spacing="1.6rem">

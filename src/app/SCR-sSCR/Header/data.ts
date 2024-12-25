@@ -44,8 +44,8 @@ const data = [
     title: "Get SCR",
     description: "SCR is the governance token of Scroll, which can be used to vote or raise proposals in the Scroll community.",
     values: [
-      { label: "Circulating supply", value: 1900000000 },
-      { label: "Votable supply", value: 6140000 },
+      { label: "Circulating supply", value: 0 },
+      { label: "Votable supply", value: 0 },
     ],
     actionLabel: "Get SCR now",
   },

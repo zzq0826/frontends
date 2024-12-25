@@ -2,15 +2,15 @@ import { Box, Stack, Typography } from "@mui/material"
 
 import { SCROLL_NATIVE_ASSET_LIST } from "@/constants"
 
-import Card from "../components/Card"
-import TokenCard from "../components/TokenCard"
+import Card from "../components/StepCard"
 import NativeAssetCard from "./NativeAssetCard"
+import TokenCard from "./TokenCard"
 import TOKEN_LIST from "./tokenList"
 
 const EligibleAssets = () => {
   return (
     <Card title="Step 1: Get eligible assets">
-      <Typography sx={{ fontSize: ["", "1.6rem"], lineHeight: ["2.4rem"] }}>
+      <Typography sx={{ fontSize: ["1.4rem", "1.6rem"], lineHeight: ["2.4rem"], mt: ["1.6rem", 0] }}>
         Marks are given to all eligible assets used in the protocols in our ecosystem. Marks can <strong className="text-primary">no longer</strong>{" "}
         be earned if you are only holding these assets.
       </Typography>
@@ -18,8 +18,8 @@ const EligibleAssets = () => {
         direction={["column", "row"]}
         justifyContent={["space-between"]}
         sx={{
-          gap: ["1.6rem"],
-          mt: "3.2rem",
+          gap: ["0.8rem", "1.6rem"],
+          mt: ["1.6rem", "3.2rem"],
         }}
       >
         {SCROLL_NATIVE_ASSET_LIST.map(item => (
@@ -29,9 +29,9 @@ const EligibleAssets = () => {
       <Box
         sx={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fill, minmax(12rem, 1fr))",
-          gap: "1.6rem",
-          mt: "1.6rem",
+          gridTemplateColumns: ["repeat(auto-fill, minmax(9rem, 1fr))", "repeat(auto-fill, minmax(12rem, 1fr))"],
+          gap: ["0.8rem", "1.6rem"],
+          mt: ["0.8rem", "1.6rem"],
         }}
       >
         {TOKEN_LIST.map(item => (

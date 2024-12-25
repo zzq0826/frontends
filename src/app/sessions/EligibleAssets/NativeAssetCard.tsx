@@ -40,9 +40,13 @@ const NativeAssetCard = props => {
             },
           }}
         ></Chip>
-        <Image src={imageURL} width={64} height={64} alt={name}></Image>
-        <Typography sx={{ fontSize: ["", "1.6rem"], lineHeight: ["", "2.4rem"], fontWeight: 600, mt: "1.6rem" }}>{name}</Typography>
-        <Typography sx={{ fontSize: ["", "1.6rem"], lineHeight: ["", "2.4rem"] }}>{description}</Typography>
+        <Image src={imageURL} width={64} height={64} className="w-[3.2rem] sm:w-[6.4rem] aspect-square" alt={name}></Image>
+        <Typography sx={{ fontSize: ["1.4rem", "1.6rem"], lineHeight: ["2rem", "2.4rem"], fontWeight: 600, mt: "1.6rem", cursor: "inherit" }}>
+          {name}
+        </Typography>
+        <Typography sx={{ fontSize: ["1.4rem", "1.6rem"], lineHeight: ["2rem", "2.4rem"], cursor: "inherit", textAlign: "center" }}>
+          {description}
+        </Typography>
       </Stack>
     </Link>
   )

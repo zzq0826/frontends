@@ -21,14 +21,15 @@ const Statistic = props => {
       ) : (
         <NumberTypography
           sx={{
-            fontSize: "1.6rem",
-            lineHeight: "2.4rem",
+            fontSize: ["1.4rem", "1.6rem"],
+            lineHeight: ["2rem", "2.4rem"],
             fontWeight: 600,
             width: "100%",
             textAlign: "center",
             overflow: "hidden",
             whiteSpace: "nowrap",
             textOverflow: "ellipsis",
+            cursor: "inherit",
           }}
         >
           {count}

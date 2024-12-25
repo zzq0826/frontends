@@ -12,11 +12,14 @@ import GetSCRDialog from "./GetSCRDialog"
 import Statistic from "./Statistic"
 import DATA from "./data"
 
-const Header = () => {
+const Header = props => {
+  const { circulatingSupply } = props
   const [getSCROpen, setGetSCROpen] = useState(false)
   const actionList = [
     {
       id: "get-scr",
+      // TODO: agora api
+      values: [circulatingSupply, circulatingSupply],
       action: () => {
         setGetSCROpen(true)
       },
@@ -57,9 +60,9 @@ const Header = () => {
             <Typography sx={{ fontSize: "3.2rem", lineHeight: "4.8rem", fontWeight: 600 }}>{item.title}</Typography>
             <Typography sx={{ fontSize: "1.8rem", lineHeight: "2.8rem", textAlign: "center" }}>{item.description}</Typography>
             <Stack direction="row" justifyContent="center" spacing="2.4rem" sx={{ mb: "2.4rem" }}>
-              {item.values.map(({ label, value }) => (
+              {item.values.map(({ label, value }, index) => (
                 <Statistic key={label} label={label}>
-                  {formatLargeNumber(value)}
+                  {formatLargeNumber(actionList.find(action => action.id === item.id)!.values?.[index] ?? value)}
                 </Statistic>
               ))}
             </Stack>

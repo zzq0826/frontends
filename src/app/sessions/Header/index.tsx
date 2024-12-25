@@ -1,6 +1,8 @@
 import { Box, Container, Stack, Typography } from "@mui/material"
 
-import TotalMarks from "../TotalMarks"
+import HeroBg from "@/assets/images/sessions/hero-bg.png"
+
+import TotalMarks from "./TotalMarks"
 
 const Header = () => {
   return (
@@ -9,23 +11,23 @@ const Header = () => {
         {
           position: "relative",
           height: ["calc(100vh - 6.2rem)", "72rem", "auto"],
-
-          background: [
-            "url(/imgs/ecosystem/ecosystem-bg-mobile.webp) bottom / contain no-repeat",
-            "url(/imgs/ecosystem/ecosystem-bg-mobile.webp) bottom / contain no-repeat",
-            "url(/imgs/ecosystem/ecosystem-bg.webp) bottom / cover no-repeat",
-          ],
+          background: `url(${HeroBg.src}) bottom / contain no-repeat`,
           aspectRatio: ["auto", "auto", "16 / 9"],
           marginTop: [0, 0, "-6.5rem"],
         },
       ]}
     >
       <Container>
-        <Stack direction="row" justifyContent="space-between" sx={{ pt: ["", "13rem"], px: ["2rem", "2rem", "6rem"] }}>
+        <Stack
+          direction={["column", "row"]}
+          justifyContent="space-between"
+          alignItems={["center", "flex-start"]}
+          sx={{ pt: ["3.4rem", "6rem", "13rem"], px: ["2rem", "2rem", "6rem"], gap: ["3.2rem", "unset"] }}
+        >
           <Typography
             sx={{
-              fontSize: ["3rem", "6.4rem"],
-              lineHeight: ["4rem", "8.8rem"],
+              fontSize: ["4rem", "6.4rem"],
+              lineHeight: ["4.8rem", "8.8rem"],
               fontWeight: 600,
             }}
           >

@@ -1,8 +1,30 @@
-import Card from "../components/Card"
+"use client"
+
+import { useQuery } from "@tanstack/react-query"
+
+import { fetchSession2PerProtocolMarksURL } from "@/apis/sessions"
+import { useRainbowContext } from "@/contexts/RainbowProvider"
+
+import Card from "../components/StepCard"
 import ProtocolSection from "./ProtocolSection"
 import PROTOCOL_LIST from "./protocolList"
+import { type ProtocolMarksMap } from "./protocolList"
 
 const Protocols = () => {
+  const { walletCurrentAddress } = useRainbowContext()
+
+  useQuery({
+    queryKey: ["perProtocolMarks", walletCurrentAddress],
+    queryFn: async (): Promise<ProtocolMarksMap> => {
+      const data = await scrollRequest(fetchSession2PerProtocolMarksURL(walletCurrentAddress))
+      if (data.status !== "1") {
+        return Promise.reject(new Error("Something went wrong, please try again later."))
+      }
+      return Object.fromEntries(data.result.map(({ project, marks }) => [project, marks]))
+    },
+    initialData: {} as ProtocolMarksMap,
+  })
+
   return (
     <Card title="Step 2: Utilize assets across protocols">
       {PROTOCOL_LIST.map(({ title, description, data, tag, tagTooltip }) => (

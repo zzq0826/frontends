@@ -6,13 +6,13 @@ const Card = props => {
     <Stack
       sx={{
         backgroundColor: "background.default",
-        p: ["2.4rem", "3.2rem"],
+        p: ["2rem 1.6rem", "3.2rem"],
         borderRadius: "1.6rem",
         ...sx,
       }}
       {...restProps}
     >
-      <Typography sx={{ fontSize: ["", "2rem"], lineHeight: ["", "3.2rem"], fontWeight: 600, textAlign: "center" }}>{title}</Typography>
+      <Typography sx={{ fontSize: ["1.6rem", "2rem"], lineHeight: ["2.4rem", "3.2rem"], fontWeight: 600, textAlign: "center" }}>{title}</Typography>
       <Box>{children}</Box>
     </Stack>
   )
