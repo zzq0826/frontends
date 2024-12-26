@@ -9,7 +9,7 @@ import { Box, ButtonBase, ButtonProps, CircularProgress, IconButton, SvgIcon } f
 import ArrowRightIcon from "@/assets/svgs/common/arrow-right.svg"
 import useCheckViewport from "@/hooks/useCheckViewport"
 
-interface ScrollButtonProps extends ButtonProps {
+interface ScrollButtonProps extends Omit<ButtonProps, "color"> {
   width?: string | number
   color?: "primary" | "secondary" | "tertiary" | "default"
   gloomy?: boolean
