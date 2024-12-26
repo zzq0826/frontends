@@ -50,7 +50,11 @@ const ProtocolSection = (props: ProtocolData & BoxProps) => {
       <Box
         sx={{
           display: "grid",
-          gridTemplateColumns: ["repeat(auto-fill, minmax(14rem, 1fr))", "repeat(auto-fill, minmax(19rem, 1fr))"],
+          gridTemplateColumns: [
+            "repeat(auto-fill, minmax(14rem, 1fr))",
+            "repeat(auto-fill, minmax(16rem, 1fr))",
+            "repeat(auto-fill, minmax(19rem, 1fr))",
+          ],
           gap: "1.6rem",
           mt: ["1.6rem", "3.2rem"],
         }}

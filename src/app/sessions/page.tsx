@@ -10,7 +10,10 @@ const Sessions = () => {
   return (
     <>
       <Header></Header>
-      <Stack sx={[{ maxWidth: "88.4rem", mx: "auto", mt: "2.4rem", mb: "12rem", width: ["calc(100% - 4.8rem)", "auto"] }]} spacing="2.4rem">
+      <Stack
+        sx={[{ maxWidth: "88.4rem", mx: "auto", mt: "2.4rem", mb: "12rem", width: ["calc(100% - 4rem)", "calc(100% - 4rem)", "auto"] }]}
+        spacing="2.4rem"
+      >
         <EligibleAssets></EligibleAssets>
         <Protocols></Protocols>
         <Guidance />
