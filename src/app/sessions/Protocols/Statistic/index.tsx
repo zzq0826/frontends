@@ -1,11 +1,14 @@
+import { forwardRef } from "react"
+
 import { Skeleton, Stack } from "@mui/material"
 
 import NumberTypography from "@/components/NumberTypography"
 
-const Statistic = props => {
-  const { count, sx, isLoading } = props
+const Statistic = forwardRef<any, any>((props, ref) => {
+  const { count, sx, isLoading, ...restProps } = props
   return (
     <Stack
+      ref={ref}
       alignItems="center"
       justifyContent="center"
       sx={{
@@ -15,6 +18,7 @@ const Statistic = props => {
         minWidth: "11rem",
         ...sx,
       }}
+      {...restProps}
     >
       {isLoading ? (
         <Skeleton sx={{ borderRadius: "1rem", width: "8rem", height: ["2.4rem", "2.8rem", "4rem"], display: "inline-block" }}></Skeleton>
@@ -37,6 +41,6 @@ const Statistic = props => {
       )}
     </Stack>
   )
-}
+})
 
 export default Statistic

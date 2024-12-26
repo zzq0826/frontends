@@ -40,9 +40,7 @@ const ProtocolCard = props => {
         <Image src={logoURL} width={40} height={40} alt={name} className="rounded-[7px] bg-white aspect-square"></Image>
         <Typography sx={{ fontSize: ["1.4rem", "1.6rem"], lineHeight: ["2rem", "2.4rem"], fontWeight: 600, cursor: "inherit" }}>{name}</Typography>
         <MarksTooltip key={project} disabled={!+marks} title={marks ? commafy(marks) : "--"}>
-          <span>
-            <Statistic count={marks ? formatLargeNumber(marks, 2) : "--"} isLoading={loading} sx={{ width: "min-content" }}></Statistic>
-          </span>
+          <Statistic count={marks ? formatLargeNumber(marks, 2) : "--"} isLoading={loading} sx={{ width: "min-content" }}></Statistic>
         </MarksTooltip>
       </Stack>
     </Link>
