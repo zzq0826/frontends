@@ -43,3 +43,4 @@ next-env.d.ts
 .turbo
 
 /src/app/blog/data.json
+/src/research-blog.data.json
