@@ -1,6 +1,7 @@
 import { Box, Container, Stack, Typography } from "@mui/material"
 
-import HeroBg from "@/assets/images/sessions/hero-bg.png"
+import MobileHeroBg from "@/assets/images/sessions/hero-bg-mobile.svg?url"
+import HeroBg from "@/assets/images/sessions/hero-bg.svg?url"
 
 import TotalMarks from "./TotalMarks"
 
@@ -10,8 +11,8 @@ const Header = () => {
       sx={[
         {
           position: "relative",
-          height: ["calc(100vh - 6.2rem)", "75rem", "auto"],
-          background: `url(${HeroBg.src}) bottom / contain no-repeat`,
+          height: ["120rem", "75rem", "auto"],
+          background: [`url(${MobileHeroBg.src}) bottom / contain no-repeat`, `url(${HeroBg.src}) bottom / contain no-repeat`],
           aspectRatio: ["auto", "auto", "16 / 9"],
           marginTop: [0, 0, "-6.5rem"],
         },

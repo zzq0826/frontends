@@ -16,9 +16,13 @@ const Sessions = () => {
             gap: ["2.4rem", "3.2rem"],
             maxWidth: "88.4rem",
             mx: "auto",
-            mt: ["2.4rem", "5.6rem"],
-            mb: "12rem",
+            mt: [0, "5.6rem"],
+            mb: ["6rem", "12rem"],
             width: ["calc(100% - 4rem)", "calc(100% - 4rem)", "auto"],
+
+            position: ["relative", "static"],
+            top: ["-38rem"],
+            height: ["292.2rem", "auto"],
           },
         ]}
       >
