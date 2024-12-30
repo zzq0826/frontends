@@ -9,35 +9,43 @@ import WhySCRETH from "@/assets/svgs/defi/why-scr-eth.svg?url"
 import Button from "@/components/Button"
 import ScrollExpandedBg from "@/components/ScrollExpandedBg"
 import SectionHeader from "@/components/SectionHeader"
+import useCheckViewport from "@/hooks/useCheckViewport"
 
 import data from "./data"
 
 const Explaination = () => {
   const wrapperRef = useRef()
+  const { isMobile } = useCheckViewport()
 
   return (
-    <ScrollExpandedBg sx={{ pt: "9.6rem", pb: "14rem" }} anchorEl={wrapperRef} fastScrollIn>
+    <ScrollExpandedBg sx={{ pt: ["6.4rem", "9.6rem"], pb: ["8rem", "14rem"] }} anchorEl={wrapperRef} fastScrollIn>
       <Box ref={wrapperRef}>
         <Container>
           <SectionHeader
             dark
-            sx={{ mb: ["4rem", "12rem"] }}
+            sx={{ mb: ["3.2rem", "12rem"] }}
             title="Why scrETH"
             content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ut urna iaculis quam mollis consequat."
             action={
-              <Button href="/ecosystem" color="primary">
+              <Button width={isMobile ? "19.5rem" : "23rem"} href="/ecosystem" color="primary">
                 Read more details
               </Button>
             }
           ></SectionHeader>
-          <Stack direction="row" justifyContent="center" gap={["9.6rem"]}>
-            <Image src={WhySCRETH} alt="why-scr-eth" width="491" height="484" className="w-[calc(50% - 9.6rem)]"></Image>
-            <Stack sx={{ width: "50%" }} direction="column" spacing="6.4rem">
+          <Stack direction={["column-reverse", "column-reverse", "row"]} justifyContent="center" gap={["4.8rem", "14rem"]}>
+            <Stack direction="row" sx={{ flex: 1, justifyContent: ["center", "center", "flex-end"], alignItems: "center" }}>
+              <Image src={WhySCRETH} alt="why-scr-eth" width="412" height="367"></Image>
+            </Stack>
+            <Stack sx={{ width: ["100%", "100%", "50%"], gap: ["4.8rem", "6.4rem"] }} direction="column">
               {data.map(({ icon: IconSvg, title, description }) => (
                 <Stack key={title} direction="column" spacing="1.6rem">
                   <IconSvg></IconSvg>
-                  <Typography sx={{ fontSize: "2rem", lineHeight: "3.2rem", fontWeight: 600, color: "primary.contrastText" }}>{title}</Typography>
-                  <Typography sx={{ fontSize: "2rem", lineHeight: "3.2rem", color: "primary.contrastText" }}>{description}</Typography>
+                  <Typography sx={{ fontSize: ["1.8rem", "2rem"], lineHeight: ["2.4rem", "3.2rem"], fontWeight: 600, color: "primary.contrastText" }}>
+                    {title}
+                  </Typography>
+                  <Typography sx={{ fontSize: ["1.6rem", "2rem"], lineHeight: ["2.4rem", "3.2rem"], color: "primary.contrastText" }}>
+                    {description}
+                  </Typography>
                 </Stack>
               ))}
             </Stack>

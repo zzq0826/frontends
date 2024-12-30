@@ -11,13 +11,17 @@ import { commafy, formatLargeNumber } from "@/utils"
 
 import MarksTooltip from "../components/MarksTooltip"
 import Statistic from "./Statistic"
+import { type ProtocolMarksMap } from "./protocolList"
 
 const ProtocolCard = props => {
-  const { name, logoURL, href, project, loading } = props
+  const { name, logoURL, href, project } = props
 
   const { walletCurrentAddress } = useRainbowContext()
   const queryClient = useQueryClient()
-  const protocolMarksMap = queryClient.getQueryData(["perProtocolMarks", walletCurrentAddress])
+  const { data: protocolMarksMap, fetchStatus } = queryClient.getQueryState<{ data: ProtocolMarksMap; fetchStatus: string }>([
+    "perProtocolMarks",
+    walletCurrentAddress,
+  ]) as any
 
   const marks = protocolMarksMap?.[project] ?? "0"
 
@@ -40,7 +44,11 @@ const ProtocolCard = props => {
         <Image src={logoURL} width={40} height={40} alt={name} className="rounded-[7px] bg-white aspect-square"></Image>
         <Typography sx={{ fontSize: ["1.4rem", "1.6rem"], lineHeight: ["2rem", "2.4rem"], fontWeight: 600, cursor: "inherit" }}>{name}</Typography>
         <MarksTooltip key={project} disabled={!+marks} title={marks ? commafy(marks) : "--"}>
-          <Statistic count={marks ? formatLargeNumber(marks, 2) : "--"} isLoading={loading} sx={{ width: "min-content" }}></Statistic>
+          <Statistic
+            count={marks ? formatLargeNumber(marks, 2) : "--"}
+            loading={fetchStatus === "fetching"}
+            sx={{ width: "min-content" }}
+          ></Statistic>
         </MarksTooltip>
       </Stack>
     </Link>

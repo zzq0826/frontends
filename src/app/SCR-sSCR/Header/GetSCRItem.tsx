@@ -7,10 +7,10 @@ import ArrowSvg from "@/assets/svgs/ecosystem/arrow.svg"
 const GetSCRItem = props => {
   const { name, logoURL, href } = props
   return (
-    <Stack sx={{ mt: "3.2rem" }} direction="row" justifyContent="space-between" alignItems="center">
+    <Stack sx={{ mt: ["2.4rem", "3.2rem"] }} direction="row" justifyContent="space-between" alignItems="center">
       <Stack direction="row" spacing="1.6rem" alignItems="center">
         <Image alt={name} src={logoURL} width={48} height={48} className="rounded-[7px]" />
-        <Typography sx={{ fontSize: "2rem", lineHeight: "3.2rem", fontWeight: 600 }}>{name}</Typography>
+        <Typography sx={{ fontSize: ["1.8rem", "2rem"], lineHeight: ["2.4rem", "3.2rem"], fontWeight: 600 }}>{name}</Typography>
       </Stack>
       <Button
         href={href}

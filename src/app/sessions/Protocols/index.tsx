@@ -4,6 +4,7 @@ import { useQuery } from "@tanstack/react-query"
 
 import { fetchSession2PerProtocolMarksURL } from "@/apis/sessions"
 import { useRainbowContext } from "@/contexts/RainbowProvider"
+import useSessionsStore from "@/stores/sessionsStore"
 
 import Card from "../components/StepCard"
 import ProtocolSection from "./ProtocolSection"
@@ -12,6 +13,7 @@ import { type ProtocolMarksMap } from "./protocolList"
 
 const Protocols = () => {
   const { walletCurrentAddress } = useRainbowContext()
+  const { hasSignedTerms } = useSessionsStore()
 
   useQuery({
     queryKey: ["perProtocolMarks", walletCurrentAddress],
@@ -23,6 +25,7 @@ const Protocols = () => {
       return Object.fromEntries(data.result.map(({ project, marks }) => [project, marks]))
     },
     initialData: {} as ProtocolMarksMap,
+    enabled: !!walletCurrentAddress && hasSignedTerms,
   })
 
   return (

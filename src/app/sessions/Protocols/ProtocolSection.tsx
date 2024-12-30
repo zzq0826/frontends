@@ -6,7 +6,9 @@ import MarksTooltip from "../components/MarksTooltip"
 import ProtocolCard from "./ProtocolCard"
 import { type Protocol, type ProtocolData } from "./protocolList"
 
-const ProtocolSection = (props: ProtocolData & BoxProps) => {
+type ProtocolSectionProps = ProtocolData & BoxProps
+
+const ProtocolSection = (props: ProtocolSectionProps) => {
   const { title, description, tag, tagTooltip, data, sx } = props
   return (
     <Box

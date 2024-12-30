@@ -5,7 +5,6 @@ import { motion } from "framer-motion"
 import { makeStyles } from "tss-react/mui"
 
 import { Box, Divider, Skeleton, Stack, Tooltip, Typography } from "@mui/material"
-import { styled } from "@mui/material/styles"
 
 import { fetchSession2TotalMarksURL } from "@/apis/sessions"
 import QaSvg from "@/assets/svgs/sessions/qa.svg"
@@ -39,12 +38,6 @@ const useStyles = makeStyles()(theme => ({
     color: "#111",
   },
 }))
-const StatisticSkeleton = styled(Skeleton)(({ theme }) => ({
-  borderRadius: "1rem",
-  width: "12rem",
-  height: "8rem",
-  display: "inline-block",
-}))
 
 const MotionBox = motion(Box)
 
@@ -56,7 +49,7 @@ const TotalPoints = () => {
 
   const { hasSignedTerms, changeSignatureRequestVisible } = useSessionsStore()
 
-  const { data, isLoading } = useQuery({
+  const { data, isFetching } = useQuery({
     queryKey: ["totalMarks", walletCurrentAddress],
     queryFn: async () => {
       const data = await scrollRequest(fetchSession2TotalMarksURL(walletCurrentAddress))
@@ -65,6 +58,7 @@ const TotalPoints = () => {
       }
       return data.result
     },
+    enabled: !!walletCurrentAddress && hasSignedTerms,
     initialData: {},
   })
 
@@ -103,7 +97,11 @@ const TotalPoints = () => {
                   fontFamily: "var(--developer-page-font-family)",
                 }}
               >
-                {isLoading ? <StatisticSkeleton></StatisticSkeleton> : <>{data.marks ? formatLargeNumber(data.marks, 2) : "--"}</>}
+                {isFetching ? (
+                  <Skeleton sx={{ borderRadius: "1rem", width: "12rem", height: "8rem", display: "inline-block" }}></Skeleton>
+                ) : (
+                  <>{data.marks ? formatLargeNumber(data.marks, 2) : "--"}</>
+                )}
               </Typography>
             </Tooltip>
             <Typography sx={{ fontSize: "1.4rem", lineHeight: ["2rem", "2.4rem"], fontFamily: "var(--developer-page-font-family)" }}>
@@ -124,7 +122,11 @@ const TotalPoints = () => {
                 fontFamily: "var(--developer-page-font-family)",
               }}
             >
-              {isLoading ? <StatisticSkeleton></StatisticSkeleton> : <>{data.boost ? formatLargeNumber(data.boost, 2) + "x" : "--"}</>}
+              {isFetching ? (
+                <Skeleton sx={{ borderRadius: "1rem", width: "12rem", height: "8rem", display: "inline-block" }}></Skeleton>
+              ) : (
+                <>{data.boost ? formatLargeNumber(data.boost, 2) + "x" : "--"}</>
+              )}
             </Typography>
             <Stack direction="row" alignItems="center" spacing="4px">
               <Typography sx={{ fontSize: "1.4rem", lineHeight: "2.4rem", fontFamily: "var(--developer-page-font-family)" }}>

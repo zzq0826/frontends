@@ -36,17 +36,16 @@ const TOKEN_LIST = [
     logoURI: "/imgs/sessions/tokens/sUSDe.svg",
     href: "https://app.ethena.fi/buy",
   },
-
-  {
-    name: "WBTC",
-    logoURI: "/imgs/sessions/tokens/WBTC.svg",
-    href: "/bridge?token=WBTC",
-  },
-  {
-    name: "SolvBTC",
-    logoURI: "/imgs/sessions/tokens/solvBTC.png",
-    href: "https://app.solv.finance/solvbtc?network=ethereum",
-  },
+  // {
+  //   name: "WBTC",
+  //   logoURI: "/imgs/sessions/tokens/WBTC.svg",
+  //   href: "/bridge?token=WBTC",
+  // },
+  // {
+  //   name: "SolvBTC",
+  //   logoURI: "/imgs/sessions/tokens/solvBTC.png",
+  //   href: "https://app.solv.finance/solvbtc?network=ethereum",
+  // },
   {
     name: "STONE",
     logoURI: "/imgs/sessions/tokens/stone-white.svg",
@@ -57,12 +56,12 @@ const TOKEN_LIST = [
   //   logoURI: "https://scroll-tech.github.io/token-list/data/PufETH/logo.svg",
   //   href: "/bridge?token=PufETH",
   // },
-  {
-    name: "agETH/ agETHWrapper",
-    logoURI: "/imgs/sessions/tokens/agETH.png",
-    href: "https://kelpdao.xyz/defi/",
-    narrow: true,
-  },
+  // {
+  //   name: "agETH/ agETHWrapper",
+  //   logoURI: "/imgs/sessions/tokens/agETH.png",
+  //   href: "https://kelpdao.xyz/defi/",
+  //   narrow: true,
+  // },
 ]
 
 export default TOKEN_LIST

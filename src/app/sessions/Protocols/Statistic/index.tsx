@@ -5,7 +5,7 @@ import { Skeleton, Stack } from "@mui/material"
 import NumberTypography from "@/components/NumberTypography"
 
 const Statistic = forwardRef<any, any>((props, ref) => {
-  const { count, sx, isLoading, ...restProps } = props
+  const { count, sx, loading, ...restProps } = props
   return (
     <Stack
       ref={ref}
@@ -20,8 +20,8 @@ const Statistic = forwardRef<any, any>((props, ref) => {
       }}
       {...restProps}
     >
-      {isLoading ? (
-        <Skeleton sx={{ borderRadius: "1rem", width: "8rem", height: ["2.4rem", "2.8rem", "4rem"], display: "inline-block" }}></Skeleton>
+      {loading ? (
+        <Skeleton sx={{ borderRadius: "0.6rem", width: "6rem", height: "2.4rem", display: "inline-block", transform: "unset" }}></Skeleton>
       ) : (
         <NumberTypography
           sx={{

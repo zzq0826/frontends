@@ -51,7 +51,7 @@ const GetSCRDialog = props => {
           lineHeight: "3.6rem",
           fontWeight: 600,
           p: 0,
-          mb: ["", "2.4rem"],
+          mb: ["0.8rem", "2.4rem"],
           textAlign: "center",
         }}
       >
@@ -66,9 +66,9 @@ const GetSCRDialog = props => {
       <DialogContent sx={{ p: 0, minHeight: "50rem" }}>
         {GER_SCR_DATA.map(({ title, data }, index) => (
           <>
-            {!!index && <Divider sx={{ my: "3.2rem", borderColor: "#E9E9E9" }}></Divider>}
+            {!!index && <Divider sx={{ my: ["2.4rem", "3.2rem"], borderColor: "#E9E9E9" }}></Divider>}
             <Box key={title}>
-              <Typography sx={{ fontSize: "1.8rem", lineHeight: "2.4rem", fontWeight: 600 }}>{title}</Typography>
+              <Typography sx={{ fontSize: ["1.6rem", "1.8rem"], lineHeight: "2.4rem", fontWeight: 600 }}>{title}</Typography>
               <Box>
                 {data.map(item => (
                   <GetSCRItem key={item.name} {...item}></GetSCRItem>

@@ -25,12 +25,6 @@ const DECENTRALIZED_EXCHANGES_DATA: ProtocolData = {
   tagTooltip: "Multiply Marks and maintain voting power",
   data: [
     {
-      name: "AAVE",
-      project: "Aave",
-      logoURL: "https://scroll-eco-list.netlify.app/logos/Aave.svg",
-      href: "https://app.aave.com/",
-    },
-    {
       name: "Ambient",
       project: "Ambient",
       logoURL: "https://scroll-eco-list.netlify.app/logos/Ambient%20Finance.png",
@@ -100,6 +94,12 @@ const LENDING_BORROWING_DATA: ProtocolData = {
   tag: "1x Marks",
   data: [
     {
+      name: "AAVE",
+      project: "Aave",
+      logoURL: "https://scroll-eco-list.netlify.app/logos/Aave.svg",
+      href: "https://app.aave.com/",
+    },
+    {
       name: "Compound",
       project: "Compound",
       logoURL: "https://scroll-eco-list.netlify.app/logos/Compound%20Finance.png",
@@ -139,17 +139,18 @@ const OTHERS_DATA: ProtocolData = {
       href: "https://app.beefy.com/",
     },
     {
+      name: "Euler Finance",
+      project: "Euler Finance",
+      logoURL: "/imgs/token/Euler.png",
+      href: "https://www.euler.finance/",
+    },
+    {
       name: "Loopfi",
       project: "Loopfi",
       logoURL: "https://scroll-eco-list.netlify.app/logos/Loop.jpg",
       href: "https://app.loopfi.xyz/",
     },
-    // {
-    //   name: "Mitosis",
-    //   project: "Mitosis",
-    //   logoURL: "https://scroll-eco-list.netlify.app/logos/Mitosis.jpg",
-    //   href: "https://mitosis.org/",
-    // },
+
     // {
     //   name: "Pencils",
     //   project: "Pencils",
