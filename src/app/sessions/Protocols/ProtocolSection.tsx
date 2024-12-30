@@ -23,7 +23,7 @@ const ProtocolSection = (props: ProtocolSectionProps) => {
         ...sx,
       }}
     >
-      <Stack direction="row" justifyContent="space-between" alignItems="center">
+      <Stack direction="row" justifyContent="space-between" spacing="1.6rem" alignItems="center">
         <Typography sx={{ fontSize: ["1.6rem", "1.8rem"], lineHeight: ["2.4rem", "2.8rem"], fontWeight: 600 }}>{title}</Typography>
         <MarksTooltip disabled={!tagTooltip} title={tagTooltip}>
           <Chip

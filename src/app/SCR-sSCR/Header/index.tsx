@@ -62,7 +62,7 @@ const Header = props => {
           SCR & sSCR
         </Typography>
       </Stack>
-      <Stack direction={["column", "column", "row"]} sx={{ mt: "5rem", gap: ["1.6rem", "3.2rem"] }}>
+      <Stack direction={["column", "column", "row"]} sx={{ mt: ["4rem", "5rem"], gap: ["1.6rem", "3.2rem"] }}>
         {DATA.map(item => (
           <Stack
             key={item.id}
