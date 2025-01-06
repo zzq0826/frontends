@@ -14,14 +14,13 @@ import Statistic from "./Statistic"
 import DATA from "./data"
 
 const Header = props => {
-  const { circulatingSupply } = props
+  const { circulatingSupply, votableSupply } = props
   const { isMobile } = useCheckViewport()
   const [getSCROpen, setGetSCROpen] = useState(false)
   const actionList = [
     {
       id: "get-scr",
-      // TODO: agora api
-      values: [circulatingSupply, circulatingSupply],
+      values: [circulatingSupply, votableSupply],
       action: () => {
         setGetSCROpen(true)
       },
