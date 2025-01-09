@@ -11,8 +11,8 @@ const EligibleAssets = () => {
   return (
     <Card title="Step 1: Get eligible assets">
       <Typography sx={{ fontSize: ["1.4rem", "1.6rem"], lineHeight: ["2.4rem"], mt: ["1.6rem", 0] }}>
-        Marks are given to all eligible assets used in the protocols in our ecosystem. Marks can <strong className="text-primary">no longer</strong>{" "}
-        be earned if you are only holding these assets.
+        Marks are awarded BASED on all eligible assets used within WHITELISTED protocols within our ecosystem. Marks WILL no longer be ACCRUED by
+        holding these assets. Multiply Marks and ACCRUE extra project rewards.
       </Typography>
       <Stack
         direction={["column", "row"]}

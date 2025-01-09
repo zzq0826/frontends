@@ -20,9 +20,8 @@ export interface Protocol {
 const DECENTRALIZED_EXCHANGES_DATA: ProtocolData = {
   title: "Decentralized Exchanges",
   description:
-    "Marks are given to users who deposit eligible assets into selected DEXs’ liquidity pools. Liquidity deposits with tighter ranges or more market depth are given Marks at a higher rate.",
+    "Marks are given to users who deposit eligible assets into selected DEX liquidity pools. Liquidity deposits with tighter ranges or more market depth are given Marks at a higher rate.",
   tag: "1x ~ 6x Marks",
-  tagTooltip: "Multiply Marks and maintain voting power",
   data: [
     {
       name: "Ambient",
@@ -48,18 +47,18 @@ const DECENTRALIZED_EXCHANGES_DATA: ProtocolData = {
       logoURL: "https://scroll-eco-list.netlify.app/logos/Oku%20Trade.jpeg",
       href: "https://oku.trade/",
     },
-    {
-      name: "Izumi",
-      project: "Izumi",
-      logoURL: "https://scroll-eco-list.netlify.app/logos/iZUMi%20Finance.png",
-      href: "https://izumi.finance/trade/swap",
-    },
-    {
-      name: "Scribe",
-      project: "Scribe",
-      logoURL: "/imgs/sessions/tokens/Scribe.png",
-      href: "https://scribe.exchange/",
-    },
+    // {
+    //   name: "Izumi",
+    //   project: "Izumi",
+    //   logoURL: "https://scroll-eco-list.netlify.app/logos/iZUMi%20Finance.png",
+    //   href: "https://izumi.finance/trade/swap",
+    // },
+    // {
+    //   name: "Scribe",
+    //   project: "Scribe",
+    //   logoURL: "/imgs/sessions/tokens/Scribe.png",
+    //   href: "https://scribe.exchange/",
+    // },
     {
       name: "SyncSwap",
       project: "SyncSwap",
@@ -78,12 +77,12 @@ const DECENTRALIZED_EXCHANGES_DATA: ProtocolData = {
     //   logoURL: "https://scroll-eco-list.netlify.app/logos/Wombat%20Exchange.png",
     //   href: "https://www.wombat.exchange/",
     // },
-    {
-      name: "Zebra",
-      project: "Zebra",
-      logoURL: "https://scroll-eco-list.netlify.app/logos/Zebra.png",
-      href: "https://app.zebra.xyz/#/swap",
-    },
+    // {
+    //   name: "Zebra",
+    //   project: "Zebra",
+    //   logoURL: "https://scroll-eco-list.netlify.app/logos/Zebra.png",
+    //   href: "https://app.zebra.xyz/#/swap",
+    // },
   ],
 }
 
@@ -111,25 +110,24 @@ const LENDING_BORROWING_DATA: ProtocolData = {
       logoURL: "/imgs/sessions/tokens/Huma.svg",
       href: "https://app.huma.finance/evm/#/",
     },
-    {
-      name: "Layer Bank",
-      project: "Layerbank",
-      logoURL: "https://scroll-eco-list.netlify.app/logos/LayerBank.png",
-      href: "https://app.layerbank.finance/scroll/bank",
-    },
-    {
-      name: "Rho Markets",
-      project: "Rho Markets",
-      logoURL: "https://scroll-eco-list.netlify.app/logos/Rho%20Markets.png",
-      href: "https://www.rhomarkets.xyz/",
-    },
+    // {
+    //   name: "Layer Bank",
+    //   project: "Layerbank",
+    //   logoURL: "https://scroll-eco-list.netlify.app/logos/LayerBank.png",
+    //   href: "https://app.layerbank.finance/scroll/bank",
+    // },
+    // {
+    //   name: "Rho Markets",
+    //   project: "Rho Markets",
+    //   logoURL: "https://scroll-eco-list.netlify.app/logos/Rho%20Markets.png",
+    //   href: "https://www.rhomarkets.xyz/",
+    // },
   ],
 }
 
 const OTHERS_DATA: ProtocolData = {
   title: "Others",
-  description:
-    "Marks are given to users who deposit eligible assets into selected DEXs’ liquidity pools. Liquidity deposits with tighter ranges or more market depth are given Marks at a higher rate.",
+  description: "Marks are given to users who deposit eligible assets into selected project’s vaults.",
   tag: "1x Marks",
   data: [
     {
@@ -138,19 +136,18 @@ const OTHERS_DATA: ProtocolData = {
       logoURL: "https://scroll-eco-list.netlify.app/logos/Beefy.png",
       href: "https://app.beefy.com/",
     },
-    {
-      name: "Euler Finance",
-      project: "Euler Finance",
-      logoURL: "/imgs/token/Euler.png",
-      href: "https://www.euler.finance/",
-    },
+    // {
+    //   name: "Euler Finance",
+    //   project: "Euler Finance",
+    //   logoURL: "/imgs/token/Euler.png",
+    //   href: "https://www.euler.finance/",
+    // },
     {
       name: "Loopfi",
       project: "Loopfi",
       logoURL: "https://scroll-eco-list.netlify.app/logos/Loop.jpg",
       href: "https://app.loopfi.xyz/",
     },
-
     // {
     //   name: "Pencils",
     //   project: "Pencils",

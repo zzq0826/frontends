@@ -1,16 +1,11 @@
-"use client"
-
 import Image from "next/image"
 
 import { Container, Stack, Typography } from "@mui/material"
 
 import SCRETHHero from "@/assets/svgs/defi/scr-eth-hero.svg?url"
 import Button from "@/components/Button"
-import useCheckViewport from "@/hooks/useCheckViewport"
 
 const Header = () => {
-  const { isMobile } = useCheckViewport()
-
   return (
     <Container
       sx={{
@@ -37,9 +32,9 @@ const Header = () => {
           textAlign: "center",
         }}
       >
-        scrETH is Scroll’s native ETH underlying Liquid Retaking Token. Stake ETH/WETH/WSTETH to obtain.
+        scrETH is Scroll’s native ETH underlying Liquid Restaking Token. Stake ETH/WETH/ wstETH to obtain scrETH.
       </Typography>
-      <Button width={isMobile ? "100%" : "20.8rem"} color="default" gloomy>
+      <Button className="!w-full sm:!w-[20.8rem]" color="default" gloomy>
         Coming soon
       </Button>
     </Container>

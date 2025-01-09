@@ -1,13 +1,14 @@
+import Link from "next/link"
+
 import { Card, Stack, Typography } from "@mui/material"
 
 import ExternaLinkIcon from "@/assets/svgs/common/external-link.svg"
-import Link from "@/components/Link"
 
 const GuidanceCard = props => {
   const { title, content, icon: IconSvg, href, ...restProps } = props
 
   return (
-    <Link href={href} external>
+    <Link href={href} target={href.includes("http") ? "_blank" : "_self"} rel="noopener noreferrer">
       <Card
         {...restProps}
         elevation={0}

@@ -25,7 +25,7 @@ const Explaination = () => {
             dark
             sx={{ mb: ["3.2rem", "12rem"] }}
             title="Why sSCR"
-            content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ut urna iaculis quam mollis consequat."
+            content="Unlock the potential of SCR whilst engaging with the Scroll ecosystem."
             action={
               <Button width={isMobile ? "19.5rem" : "23rem"} href="/ecosystem" color="primary">
                 Read more details
@@ -34,7 +34,7 @@ const Explaination = () => {
           ></SectionHeader>
           <Stack direction={["column-reverse", "column-reverse", "row"]} justifyContent="center" gap={["4.8rem", "14.2rem"]}>
             <Stack direction="row" sx={{ flex: 1, justifyContent: ["center", "center", "flex-end"], alignItems: "center" }}>
-              <Image src={WhySSCR} alt="scr" width="355" height="355"></Image>
+              <Image src={WhySSCR} alt="scr" width="355" height="355" className="w-[24.2rem] sm:w-[35.5rem] h-auto"></Image>
             </Stack>
             <Stack sx={{ width: ["100%", "100%", "50%"], gap: ["4.8rem", "6.4rem"], justifySelf: "right" }} direction="column">
               {data.map(({ icon: IconSvg, title, description }) => (

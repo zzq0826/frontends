@@ -2,11 +2,10 @@
 
 import { useQuery } from "@tanstack/react-query"
 import { motion } from "framer-motion"
-import { makeStyles } from "tss-react/mui"
 
-import { Box, Divider, Skeleton, Stack, Tooltip, Typography } from "@mui/material"
+import { Box, Divider, Skeleton, Stack, Typography } from "@mui/material"
 
-import { fetchSession2TotalMarksURL } from "@/apis/sessions"
+import { fetchSession0And1TotalMarksURL, fetchSession2TotalMarksURL } from "@/apis/sessions"
 import QaSvg from "@/assets/svgs/sessions/qa.svg"
 import Button from "@/components/Button"
 import Link from "@/components/Link"
@@ -15,44 +14,36 @@ import useCheckViewport from "@/hooks/useCheckViewport"
 import useSessionsStore from "@/stores/sessionsStore"
 import { commafy, formatLargeNumber } from "@/utils"
 
-const SESSION_AIRDROP_LINK = "/blog/introducing-scrolls-first-airdrop-a-celebration-of-the-global-community"
+import MarksTooltip from "../components/MarksTooltip"
+import QATooltip from "../components/QATooltip"
 
-const useStyles = makeStyles()(theme => ({
-  tooltip: {
-    background: "linear-gradient(180deg, #262626 0%, #111 100%)",
-    padding: "1.2rem 1.4rem",
-    fontSize: "1.8rem",
-    lineHeight: "2.4rem",
-    fontFamily: "var(--developer-page-font-family)",
-  },
-  notEnoughTooltip: {
-    backgroundColor: "#111",
-    padding: "1.6rem",
-    maxWidth: "35rem",
-    fontSize: "1.8rem",
-    lineHeight: "2.8rem",
-    borderRadius: "2rem",
-    fontWeight: 400,
-  },
-  notEnoughArrow: {
-    color: "#111",
-  },
-}))
+const SESSION_AIRDROP_LINK = "/blog/introducing-scrolls-first-airdrop-a-celebration-of-the-global-community"
 
 const MotionBox = motion(Box)
 
 const TotalPoints = () => {
-  const { classes } = useStyles()
-
   const { walletCurrentAddress, connect } = useRainbowContext()
   const { isMobile, isPortrait } = useCheckViewport()
 
   const { hasSignedTerms, changeSignatureRequestVisible } = useSessionsStore()
 
-  const { data, isFetching } = useQuery({
-    queryKey: ["totalMarks", walletCurrentAddress],
+  const { data: session2Data, isFetching: session2Loading } = useQuery({
+    queryKey: ["session2Marks", walletCurrentAddress],
     queryFn: async () => {
       const data = await scrollRequest(fetchSession2TotalMarksURL(walletCurrentAddress))
+      if (data.status !== "1") {
+        return Promise.reject(new Error("Something went wrong, please try again later."))
+      }
+      return data.result
+    },
+    enabled: !!walletCurrentAddress && hasSignedTerms,
+    initialData: {},
+  })
+
+  const { data: session0And1Data, isFetching: session0And1Loading } = useQuery({
+    queryKey: ["session0And1Marks", walletCurrentAddress],
+    queryFn: async () => {
+      const data = await scrollRequest(fetchSession0And1TotalMarksURL(walletCurrentAddress))
       if (data.status !== "1") {
         return Promise.reject(new Error("Something went wrong, please try again later."))
       }
@@ -66,8 +57,8 @@ const TotalPoints = () => {
     <MotionBox
       sx={[
         {
-          width: ["100%", "100%", "56.4rem"],
-          height: ["auto", "auto", "19rem"],
+          width: ["100%", "100%", "auto"],
+          height: ["auto", "auto", "22rem"],
           backgroundColor: "background.default",
           borderRadius: "1.6rem",
           p: "2.4rem",
@@ -83,12 +74,7 @@ const TotalPoints = () => {
         <Stack direction={["column", "row"]} sx={{ gap: "2.4rem", textAlign: "center", width: "100%", justifyContent: "space-evenly" }}>
           <Stack direction="column" alignItems="center" sx={{ gap: ["0.8rem", 0] }}>
             <Typography sx={{ fontSize: "1.8rem", lineHeight: "2.8rem", fontWeight: 600 }}>Session 2 Marks</Typography>
-            <Tooltip
-              disableHoverListener={!data.marks}
-              title={data.marks ? commafy(data.marks) : "--"}
-              followCursor
-              classes={{ tooltip: classes.tooltip }}
-            >
+            <MarksTooltip disabled={!session2Data.marks} title={session2Data.marks ? commafy(session2Data.marks) : "--"}>
               <Typography
                 sx={{
                   fontSize: ["4rem", "5.6rem"],
@@ -97,22 +83,30 @@ const TotalPoints = () => {
                   fontFamily: "var(--developer-page-font-family)",
                 }}
               >
-                {isFetching ? (
+                {session2Loading ? (
                   <Skeleton sx={{ borderRadius: "1rem", width: "12rem", height: "8rem", display: "inline-block" }}></Skeleton>
                 ) : (
-                  <>{data.marks ? formatLargeNumber(data.marks, 2) : "--"}</>
+                  <>{session2Data.marks ? formatLargeNumber(session2Data.marks, 2) : "--"}</>
                 )}
               </Typography>
-            </Tooltip>
+            </MarksTooltip>
             <Typography sx={{ fontSize: "1.4rem", lineHeight: ["2rem", "2.4rem"], fontFamily: "var(--developer-page-font-family)" }}>
               Marks are updated every 5 mins
+            </Typography>
+            <Typography sx={{ fontSize: "1.4rem", lineHeight: ["2rem", "2.4rem"], fontFamily: "var(--developer-page-font-family)" }}>
+              Marks carried over from Session 0 & 1:{" "}
+              {session0And1Loading ? (
+                <Skeleton sx={{ borderRadius: "1rem", width: "4rem", height: "1.4rem", display: "inline-block" }}></Skeleton>
+              ) : (
+                <>{session0And1Data.marks ? formatLargeNumber(session0And1Data.marks, 2) : "--"}</>
+              )}
             </Typography>
             <Link underline="always" href={SESSION_AIRDROP_LINK} className="font-developer !text-inherit !text-[1.4rem] !font-normal">
               Learn more
             </Link>
           </Stack>
           <Divider sx={{ borderColor: "#E9E9E9", borderLeftWidth: [0, "1px"] }} flexItem></Divider>
-          <Stack direction="column" alignItems="center">
+          <Stack direction="column" alignItems="center" sx={{ minWidth: ["auto", "auto", "20.5rem"] }}>
             <Typography sx={{ fontSize: "1.8rem", lineHeight: "2.8rem", fontWeight: 600 }}>Total boost</Typography>
             <Typography
               sx={{
@@ -122,21 +116,21 @@ const TotalPoints = () => {
                 fontFamily: "var(--developer-page-font-family)",
               }}
             >
-              {isFetching ? (
+              {session2Loading ? (
                 <Skeleton sx={{ borderRadius: "1rem", width: "12rem", height: "8rem", display: "inline-block" }}></Skeleton>
               ) : (
-                <>{data.boost ? formatLargeNumber(data.boost, 2) + "x" : "--"}</>
+                <>{session2Data.boost ? formatLargeNumber(session2Data.boost, 2) + "x" : "--"}</>
               )}
             </Typography>
             <Stack direction="row" alignItems="center" spacing="4px">
               <Typography sx={{ fontSize: "1.4rem", lineHeight: "2.4rem", fontFamily: "var(--developer-page-font-family)" }}>
                 How does this work
               </Typography>
-              <Tooltip title="lorem ipsm...." classes={{ tooltip: classes.tooltip }}>
-                <span>
+              <QATooltip title="lorem ipsm....">
+                <span className="text-[0] cursor-pointer">
                   <QaSvg></QaSvg>
                 </span>
-              </Tooltip>
+              </QATooltip>
             </Stack>
             <Typography></Typography>
           </Stack>

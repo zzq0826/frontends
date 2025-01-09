@@ -12,5 +12,6 @@ export const fetchProjectsMarksUrl = address => `${baseUrl}/scroll/project-marks
 export const checkSignStatus = address => `${venusUrl}/v1/signature/address?address=${address}`
 export const updateSignStatus = `${venusUrl}/v1/signature/sign`
 
+export const fetchSession0And1TotalMarksURL = address => `${baseUrl}/session1-marks/${address}`
 export const fetchSession2TotalMarksURL = address => `${baseUrl}/session2-marks/${address}`
 export const fetchSession2PerProtocolMarksURL = address => `${baseUrl}/session2-project-marks/${address}`

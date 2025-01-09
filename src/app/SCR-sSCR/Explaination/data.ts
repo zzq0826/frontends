@@ -16,7 +16,7 @@ const data = [
   {
     icon: UpSvg,
     title: "Multiply earnings in Defi",
-    description: "sSCR gives additional multiplier to Marks from Sessions while earning project rewards.",
+    description: "An additional Marks multiplier is applied for users that deposit sSCR into eligible DeFi destinations.",
   },
 ]
 

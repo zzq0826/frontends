@@ -6,7 +6,6 @@ import { useState } from "react"
 import { Container, Stack, Typography } from "@mui/material"
 
 import Button from "@/components/Button"
-import useCheckViewport from "@/hooks/useCheckViewport"
 import { formatLargeNumber } from "@/utils"
 
 import GetSCRDialog from "./GetSCRDialog"
@@ -15,7 +14,6 @@ import DATA from "./data"
 
 const Header = props => {
   const { circulatingSupply, votableSupply } = props
-  const { isMobile } = useCheckViewport()
   const [getSCROpen, setGetSCROpen] = useState(false)
   const actionList = [
     {
@@ -86,7 +84,7 @@ const Header = props => {
             </Stack>
             <Button
               color={item.upcoming ? "default" : "primary"}
-              width={isMobile ? "100%" : "20.8rem"}
+              className="!w-full sm:!w-[20.8rem]"
               gloomy={!!item.upcoming}
               onClick={actionList.find(action => action.id === item.id)!.action}
             >

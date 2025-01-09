@@ -9,13 +9,11 @@ import WhySCRETH from "@/assets/svgs/defi/why-scr-eth.svg?url"
 import Button from "@/components/Button"
 import ScrollExpandedBg from "@/components/ScrollExpandedBg"
 import SectionHeader from "@/components/SectionHeader"
-import useCheckViewport from "@/hooks/useCheckViewport"
 
 import data from "./data"
 
 const Explaination = () => {
   const wrapperRef = useRef()
-  const { isMobile } = useCheckViewport()
 
   return (
     <ScrollExpandedBg sx={{ pt: ["6.4rem", "9.6rem"], pb: ["8rem", "14rem"] }} anchorEl={wrapperRef} fastScrollIn>
@@ -25,9 +23,9 @@ const Explaination = () => {
             dark
             sx={{ mb: ["3.2rem", "12rem"] }}
             title="Why scrETH"
-            content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ut urna iaculis quam mollis consequat."
+            content="A Scroll Native LRT ensures the security of your assets while maximizing your earning potential."
             action={
-              <Button width={isMobile ? "19.5rem" : "23rem"} href="/ecosystem" color="primary">
+              <Button className="!w-[19.5rem] sm:!w-[23rem]" href="/ecosystem" color="primary">
                 Read more details
               </Button>
             }
