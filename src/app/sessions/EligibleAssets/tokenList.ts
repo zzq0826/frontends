@@ -51,6 +51,11 @@ const TOKEN_LIST = [
     logoURI: "/imgs/sessions/tokens/stone-white.svg",
     href: "https://poc.routerintents.com/apps/stakestone",
   },
+  {
+    name: "SCR",
+    logoURI: "/imgs/token/scr.svg",
+    href: "",
+  },
   // {
   //   name: "pufETH",
   //   logoURI: "https://scroll-tech.github.io/token-list/data/PufETH/logo.svg",

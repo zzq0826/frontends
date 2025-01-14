@@ -15,6 +15,7 @@ export interface Protocol {
   project: string // corresponds to "project" value in the api
   logoURL: string
   href: string
+  upcoming?: boolean
 }
 
 const DECENTRALIZED_EXCHANGES_DATA: ProtocolData = {
@@ -159,6 +160,7 @@ const OTHERS_DATA: ProtocolData = {
       project: "Tempest",
       logoURL: "https://scroll-eco-list.netlify.app/logos/Tempest%20Finance.png",
       href: "https://app.tempestfinance.xyz/vaults",
+      upcoming: true,
     },
     // {
     //   name: "Tranchess",

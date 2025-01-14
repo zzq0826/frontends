@@ -23,7 +23,7 @@ const Header = () => {
           direction={["column", "column", "row"]}
           justifyContent="space-between"
           alignItems={["center", "center", "flex-start"]}
-          sx={{ pt: ["3.4rem", "5rem", "13rem"], px: ["2rem", "2rem", "6rem"], gap: ["3.2rem", "3.2rem", "unset"] }}
+          sx={{ pt: ["3.4rem", "5rem", "13rem"], px: ["2rem", "2rem", "6rem"], gap: ["3.2rem", "3.2rem", "3.2rem", "unset"] }}
         >
           <Typography
             sx={{

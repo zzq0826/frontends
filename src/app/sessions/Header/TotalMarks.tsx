@@ -37,6 +37,7 @@ const TotalPoints = () => {
       return data.result
     },
     enabled: !!walletCurrentAddress && hasSignedTerms,
+    refetchOnWindowFocus: false,
     initialData: {},
   })
 
@@ -50,6 +51,7 @@ const TotalPoints = () => {
       return data.result
     },
     enabled: !!walletCurrentAddress && hasSignedTerms,
+    refetchOnWindowFocus: false,
     initialData: {},
   })
 
@@ -58,7 +60,7 @@ const TotalPoints = () => {
       sx={[
         {
           width: ["100%", "100%", "auto"],
-          height: ["auto", "auto", "22rem"],
+          height: ["auto", "auto", "auto", "22rem"],
           backgroundColor: "background.default",
           borderRadius: "1.6rem",
           p: "2.4rem",
@@ -91,12 +93,12 @@ const TotalPoints = () => {
               </Typography>
             </MarksTooltip>
             <Typography sx={{ fontSize: "1.4rem", lineHeight: ["2rem", "2.4rem"], fontFamily: "var(--developer-page-font-family)" }}>
-              Marks are updated every 5 mins
+              Marks are updated every 24 hrs
             </Typography>
             <Typography sx={{ fontSize: "1.4rem", lineHeight: ["2rem", "2.4rem"], fontFamily: "var(--developer-page-font-family)" }}>
               Marks carried over from Session 0 & 1:{" "}
               {session0And1Loading ? (
-                <Skeleton sx={{ borderRadius: "1rem", width: "4rem", height: "1.4rem", display: "inline-block" }}></Skeleton>
+                <Skeleton sx={{ borderRadius: "0.4rem", width: "3.2rem", height: "2rem", display: "inline-block" }}></Skeleton>
               ) : (
                 <>{session0And1Data.marks ? formatLargeNumber(session0And1Data.marks, 2) : "--"}</>
               )}
