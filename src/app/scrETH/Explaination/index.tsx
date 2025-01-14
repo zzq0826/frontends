@@ -6,7 +6,7 @@ import { useRef } from "react"
 import { Box, Container, Stack, Typography } from "@mui/material"
 
 import WhySCRETH from "@/assets/svgs/defi/why-scr-eth.svg?url"
-import Button from "@/components/Button"
+// import Button from "@/components/Button"
 import ScrollExpandedBg from "@/components/ScrollExpandedBg"
 import SectionHeader from "@/components/SectionHeader"
 
@@ -24,11 +24,11 @@ const Explaination = () => {
             sx={{ mb: ["3.2rem", "12rem"] }}
             title="Why scrETH"
             content="A Scroll Native LRT ensures the security of your assets while maximizing your earning potential."
-            action={
-              <Button className="!w-[19.5rem] sm:!w-[23rem]" href="/ecosystem" color="primary">
-                Read more details
-              </Button>
-            }
+            // action={
+            //   <Button className="!w-[19.5rem] sm:!w-[23rem]" href="/ecosystem" color="primary">
+            //     Read more details
+            //   </Button>
+            // }
           ></SectionHeader>
           <Stack direction={["column-reverse", "column-reverse", "row"]} justifyContent="center" gap={["4.8rem", "14rem"]}>
             <Stack direction="row" sx={{ flex: 1, justifyContent: ["center", "center", "flex-end"], alignItems: "center" }}>

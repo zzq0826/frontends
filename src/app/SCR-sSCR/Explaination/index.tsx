@@ -6,16 +6,14 @@ import { useRef } from "react"
 import { Box, Container, Stack, Typography } from "@mui/material"
 
 import WhySSCR from "@/assets/svgs/defi/why-sSCR.svg?url"
-import Button from "@/components/Button"
+// import Button from "@/components/Button"
 import ScrollExpandedBg from "@/components/ScrollExpandedBg"
 import SectionHeader from "@/components/SectionHeader"
-import useCheckViewport from "@/hooks/useCheckViewport"
 
 import data from "./data"
 
 const Explaination = () => {
   const wrapperRef = useRef()
-  const { isMobile } = useCheckViewport()
 
   return (
     <ScrollExpandedBg sx={{ pt: ["6rem", "9.6rem"], pb: ["8rem", "14rem"] }} anchorEl={wrapperRef} fastScrollIn>
@@ -26,11 +24,11 @@ const Explaination = () => {
             sx={{ mb: ["3.2rem", "12rem"] }}
             title="Why sSCR"
             content="Unlock the potential of SCR whilst engaging with the Scroll ecosystem."
-            action={
-              <Button width={isMobile ? "19.5rem" : "23rem"} href="/ecosystem" color="primary">
-                Read more details
-              </Button>
-            }
+            // action={
+            //   <Button className="!w-[19.5rem] sm:!w-[23rem]" href="/ecosystem" color="primary">
+            //     Read more details
+            //   </Button>
+            // }
           ></SectionHeader>
           <Stack direction={["column-reverse", "column-reverse", "row"]} justifyContent="center" gap={["4.8rem", "14.2rem"]}>
             <Stack direction="row" sx={{ flex: 1, justifyContent: ["center", "center", "flex-end"], alignItems: "center" }}>
