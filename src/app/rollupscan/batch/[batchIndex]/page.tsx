@@ -2,7 +2,7 @@
 
 import dayjs from "dayjs"
 import { default as RouterLink } from "next/link"
-import { useEffect } from "react"
+import { use, useEffect } from "react"
 
 import { InfoOutlined, NavigateNext, OpenInNew } from "@mui/icons-material"
 import { Box, Breadcrumbs, Chip, Container, Divider, Stack, Tooltip, Typography } from "@mui/material"
@@ -74,7 +74,8 @@ const BoxItem = styled(Box)(({ theme }) => ({
   },
 }))
 
-const Batch = ({ params }) => {
+const Batch = props => {
+  const params = use(props.params)
   const { batch, isLoading } = useBatchDetail(params.batchIndex)
   const { isLandscape } = useCheckViewport()
 

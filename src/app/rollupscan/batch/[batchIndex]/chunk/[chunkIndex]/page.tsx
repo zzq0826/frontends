@@ -2,7 +2,7 @@
 
 import dayjs from "dayjs"
 import { default as RouterLink } from "next/link"
-import { useMemo } from "react"
+import { use, useMemo } from "react"
 
 import { InfoOutlined, NavigateNext } from "@mui/icons-material"
 import { Box, Breadcrumbs, Divider, Tooltip, Typography } from "@mui/material"
@@ -44,7 +44,8 @@ const BoxItem = styled(Box)(({ theme }) => ({
   },
 }))
 
-const Chunk = ({ params }) => {
+const Chunk = props => {
+  const params = use(props.params)
   const { chunks = [], isLoading } = useChunkList(params.batchIndex)
 
   const { isLandscape } = useCheckViewport()
