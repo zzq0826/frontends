@@ -13,9 +13,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: "https://scroll.io/rollupscan", changeFrequency: "monthly", priority: 0.6 },
     { url: "https://scroll.io/developer-nft", changeFrequency: "monthly", priority: 0.6 },
     { url: "https://scroll.io/developer-nft/mint", changeFrequency: "monthly", priority: 0.6 },
-    { url: "https://scroll.io/canvas", changeFrequency: "weekly", priority: 0.7 },
-    { url: "https://scroll.io/canvas/mint", changeFrequency: "monthly", priority: 0.7 },
-    { url: "https://scroll.io/canvas-and-badges", changeFrequency: "weekly", priority: 0.7 },
     { url: "https://scroll.io/sessions", changeFrequency: "weekly", priority: 0.6 },
     { url: "https://scroll.io/community", changeFrequency: "monthly", priority: 0.6 },
 
