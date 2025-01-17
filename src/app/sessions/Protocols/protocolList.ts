@@ -41,6 +41,7 @@ const DECENTRALIZED_EXCHANGES_DATA: ProtocolData = {
       project: "Nuri",
       logoURL: "https://scroll-eco-list.netlify.app/logos/Nuri%20Exchange.png",
       href: "https://www.nuri.exchange/",
+      upcoming: true,
     },
     {
       name: "Oku Trade",
@@ -117,12 +118,13 @@ const LENDING_BORROWING_DATA: ProtocolData = {
     //   logoURL: "https://scroll-eco-list.netlify.app/logos/LayerBank.png",
     //   href: "https://app.layerbank.finance/scroll/bank",
     // },
-    // {
-    //   name: "Rho Markets",
-    //   project: "Rho Markets",
-    //   logoURL: "https://scroll-eco-list.netlify.app/logos/Rho%20Markets.png",
-    //   href: "https://www.rhomarkets.xyz/",
-    // },
+    {
+      name: "Rho Markets",
+      project: "Rho Markets",
+      logoURL: "https://scroll-eco-list.netlify.app/logos/Rho%20Markets.png",
+      href: "https://www.rhomarkets.xyz/",
+      upcoming: true,
+    },
   ],
 }
 
@@ -136,6 +138,7 @@ const OTHERS_DATA: ProtocolData = {
       project: "Beefy",
       logoURL: "https://scroll-eco-list.netlify.app/logos/Beefy.png",
       href: "https://app.beefy.com/",
+      upcoming: true,
     },
     // {
     //   name: "Euler Finance",
@@ -148,6 +151,7 @@ const OTHERS_DATA: ProtocolData = {
       project: "Loopfi",
       logoURL: "https://scroll-eco-list.netlify.app/logos/Loop.jpg",
       href: "https://app.loopfi.xyz/",
+      upcoming: true,
     },
     // {
     //   name: "Pencils",
