@@ -13,12 +13,11 @@ const BadgeMasonry = props => {
   const rowCount = useRef(4)
 
   const parentOffsetRef = useRef<number>(0)
-  const parentRef = useRef(0)
+  const parentRef = useRef<HTMLDivElement>(null)
 
   useLayoutEffect(() => {
     parentOffsetRef.current = parentRef.current?.offsetTop ?? 0
-    console.log(parentRef.current, "parentRef.current")
-    rowCount.current = Math.floor(parentRef.current.clientWidth / columnWidth)
+    rowCount.current = Math.floor((parentRef.current?.clientWidth as number) / columnWidth)
   }, [])
 
   const virtualizer = useWindowVirtualizer({

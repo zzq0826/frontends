@@ -42,7 +42,7 @@ const Rollup = () => {
 
   const tableRowsRef = useRef<HTMLTableSectionElement | null>(null)
 
-  const timerRef = useRef<any>()
+  const timerRef = useRef<any>(undefined)
 
   useEffect(() => {
     if (page && pageSize) {

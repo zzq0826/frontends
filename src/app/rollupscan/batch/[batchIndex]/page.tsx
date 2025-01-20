@@ -75,7 +75,7 @@ const BoxItem = styled(Box)(({ theme }) => ({
 }))
 
 const Batch = props => {
-  const params = use(props.params)
+  const params: any = use(props.params)
   const { batch, isLoading } = useBatchDetail(params.batchIndex)
   const { isLandscape } = useCheckViewport()
 

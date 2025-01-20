@@ -45,7 +45,7 @@ const BadgeDetail = props => {
   const [actionHeight, setActionHeight] = useState("auto")
   const [isOverflow, setIsOverflow] = useState(false)
 
-  const actionsRef = useRef()
+  const actionsRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const actionBoxObserver = new ResizeObserver(entries => {

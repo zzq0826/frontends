@@ -45,7 +45,7 @@ const BoxItem = styled(Box)(({ theme }) => ({
 }))
 
 const Chunk = props => {
-  const params = use(props.params)
+  const params: any = use(props.params)
   const { chunks = [], isLoading } = useChunkList(params.batchIndex)
 
   const { isLandscape } = useCheckViewport()

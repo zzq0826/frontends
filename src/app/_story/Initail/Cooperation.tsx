@@ -1,4 +1,4 @@
-import { motion } from "framer-motion"
+import { motion } from "motion/react"
 import { makeStyles } from "tss-react/mui"
 
 import { Avatar, Paper, Stack, Typography } from "@mui/material"

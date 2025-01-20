@@ -1,7 +1,7 @@
 "use client"
 
 import { useQuery } from "@tanstack/react-query"
-import { motion } from "framer-motion"
+import { motion } from "motion/react"
 import dynamic from "next/dynamic"
 import { useEffect, useRef, useState } from "react"
 import Img from "react-cool-img"
@@ -34,7 +34,7 @@ const Header = () => {
   const [badgesScale, setBadgesScale] = useState(1)
   const [starsScale, setStarsScale] = useState(1)
 
-  const badgesContainerRef = useRef<any>()
+  const badgesContainerRef = useRef<HTMLDivElement>(null)
 
   const { data } = useQuery({
     queryKey: ["totalCount"],

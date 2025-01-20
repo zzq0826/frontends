@@ -129,7 +129,7 @@ const ProtocolCard = props => {
 
   const [isExpended, setIsExpended] = useState(false)
 
-  const cardRef = useRef<HTMLElement>()
+  const cardRef = useRef<HTMLElement>(null)
 
   const handleClickMore = () => {
     setIsExpended(true)

@@ -17,7 +17,7 @@ import data from "./data.json"
 
 const StickerContest = () => {
   const { isMobile } = useCheckViewport()
-  const contentRef = useRef<HTMLElement>()
+  const contentRef = useRef<HTMLElement>(null)
 
   return (
     <ScrollExpandedBg sx={{ pt: 0 }} anchorEl={contentRef} bottomColor="brand">

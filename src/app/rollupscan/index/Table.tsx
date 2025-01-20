@@ -1,7 +1,7 @@
 import dayjs from "dayjs"
 import { default as RouterLink } from "next/link"
 import { usePathname, useRouter, useSearchParams } from "next/navigation"
-import React, { forwardRef, useMemo } from "react"
+import React, { useMemo } from "react"
 import { useStyles } from "tss-react/mui"
 
 import { Chip, Pagination, TableBody, TableContainer, TableHead, TablePagination, TableRow, Typography, alpha } from "@mui/material"
@@ -115,8 +115,8 @@ const CustomTableRow = styled(TableRow)(({ theme }) => ({
   },
 }))
 
-const RollupTable = forwardRef<any, any>(function RollupTable(props, ref) {
-  const { onPaginationChange } = props
+const RollupTable = function RollupTable(props) {
+  const { onPaginationChange, ref } = props
   const { cx } = useStyles()
   const { data, total, emptyBatch, searchLoading, batchLoading, currentClickedBatch } = useRollupStore()
   const router = useRouter()
@@ -251,6 +251,6 @@ const RollupTable = forwardRef<any, any>(function RollupTable(props, ref) {
       />
     </TableContainer>
   )
-})
+}
 
 export default RollupTable

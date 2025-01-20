@@ -20,7 +20,8 @@ export const generateMetadata = genMeta(async ({ params }) => {
   }
 })
 
-const BlogDetail = () => {
+const BlogDetail = async ({ params }) => {
+  const { blogId } = await params
   return (
     <>
       <link
@@ -34,7 +35,7 @@ const BlogDetail = () => {
         href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.9.0/github-markdown.min.css"
         crossOrigin="anonymous"
       />
-      <Detail></Detail>
+      <Detail blogId={blogId?.toLowerCase()}></Detail>
     </>
   )
 }

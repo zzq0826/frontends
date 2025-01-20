@@ -29,7 +29,7 @@ const useStyles = makeStyles()(theme => ({
 }))
 
 const MintFlowDialog = props => {
-  const scrollRef = useRef()
+  const scrollRef = useRef<HTMLDivElement>(null)
   const { classes } = useStyles()
 
   // const trigger = useScrollTrigger({ target: scrollRef?.current })

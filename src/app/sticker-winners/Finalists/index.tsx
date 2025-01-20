@@ -17,7 +17,7 @@ import Winner from "./Winner"
 import data from "./data.json"
 
 const StickerContest = () => {
-  const contentRef = useRef<HTMLElement>()
+  const contentRef = useRef<HTMLElement>(null)
 
   return (
     <ScrollExpandedBg sx={{ pt: ["3.6rem", "7.2rem"] }} anchorEl={contentRef} bottomColor="brand">
