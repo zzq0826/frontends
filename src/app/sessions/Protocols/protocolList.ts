@@ -41,7 +41,6 @@ const DECENTRALIZED_EXCHANGES_DATA: ProtocolData = {
       project: "Nuri",
       logoURL: "https://scroll-eco-list.netlify.app/logos/Nuri%20Exchange.png",
       href: "https://www.nuri.exchange/",
-      upcoming: true,
     },
     {
       name: "Oku Trade",
@@ -67,12 +66,12 @@ const DECENTRALIZED_EXCHANGES_DATA: ProtocolData = {
       logoURL: "https://scroll-eco-list.netlify.app/logos/Syncswap.png",
       href: "https://syncswap.xyz/",
     },
-    {
-      name: "Vessel",
-      project: "Vessel",
-      logoURL: "https://scroll-eco-list.netlify.app/logos/Vessel.jpg",
-      href: "https://vessel.finance/",
-    },
+    // {
+    //   name: "Vessel",
+    //   project: "Vessel",
+    //   logoURL: "https://scroll-eco-list.netlify.app/logos/Vessel.jpg",
+    //   href: "https://vessel.finance/",
+    // },
     // {
     //   name: "Wombat",
     //   project: "Wombat",
@@ -106,25 +105,18 @@ const LENDING_BORROWING_DATA: ProtocolData = {
       logoURL: "https://scroll-eco-list.netlify.app/logos/Compound%20Finance.png",
       href: "https://app.compound.finance/?market=usdc-scroll",
     },
-    {
-      name: "Huma",
-      project: "Huma",
-      logoURL: "/imgs/sessions/tokens/Huma.svg",
-      href: "https://app.huma.finance/evm/#/",
-    },
+    // {
+    //   name: "Huma",
+    //   project: "Huma",
+    //   logoURL: "/imgs/sessions/tokens/Huma.svg",
+    //   href: "https://app.huma.finance/evm/#/",
+    // },
     // {
     //   name: "Layer Bank",
     //   project: "Layerbank",
     //   logoURL: "https://scroll-eco-list.netlify.app/logos/LayerBank.png",
     //   href: "https://app.layerbank.finance/scroll/bank",
     // },
-    {
-      name: "Rho Markets",
-      project: "Rho Markets",
-      logoURL: "https://scroll-eco-list.netlify.app/logos/Rho%20Markets.png",
-      href: "https://www.rhomarkets.xyz/",
-      upcoming: true,
-    },
   ],
 }
 
@@ -172,6 +164,13 @@ const OTHERS_DATA: ProtocolData = {
     //   logoURL: "https://scroll-eco-list.netlify.app/logos/Tranchess.png",
     //   href: "https://www.tranchess.com/",
     // },
+    {
+      name: "Rho Markets",
+      project: "Rho Markets",
+      logoURL: "https://scroll-eco-list.netlify.app/logos/Rho%20Markets.png",
+      href: "https://www.rhomarkets.xyz/",
+      upcoming: true,
+    },
   ],
 }
 

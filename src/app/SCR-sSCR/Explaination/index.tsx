@@ -22,6 +22,7 @@ const Explaination = () => {
           <SectionHeader
             dark
             sx={{ mb: ["3.2rem", "12rem"] }}
+            maxWidth={["100%", "50%"]}
             title="Why sSCR"
             content="Unlock the potential of SCR whilst engaging with the Scroll ecosystem."
             // action={

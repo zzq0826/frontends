@@ -22,6 +22,7 @@ const Explaination = () => {
           <SectionHeader
             dark
             sx={{ mb: ["3.2rem", "12rem"] }}
+            maxWidth={["100%", "50%"]}
             title="Why scrETH"
             content="A Scroll Native LRT ensures the security of your assets while maximizing your earning potential."
             // action={
