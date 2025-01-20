@@ -17,7 +17,6 @@ import NetworkLabel from "./NetworkLabel"
 
 const useStyles = makeStyles()(theme => ({
   grid: {
-    marginTop: "2rem",
     backgroundColor: (theme as any).vars.palette.themeBackground.normal,
     padding: "2.4rem",
     borderRadius: "2rem",
@@ -136,14 +135,6 @@ const ProtocolCard = props => {
     setIsExpended(true)
   }
 
-  const handleReflow = () => {
-    // don't trigger measure when the height exceeds the standard height by default
-    const standardHeight = isDesktop ? 156 : isMobile ? 324 : 196
-    if (!isExpended && cardRef.current!.clientHeight > standardHeight) {
-      return
-    }
-    onResize()
-  }
   return (
     <Box className={cx(classes.grid, className)} ref={cardRef} {...restProps}>
       <Stack
@@ -196,7 +187,6 @@ const ProtocolCard = props => {
             </>
           }
           basedOn="words"
-          onReflow={handleReflow}
         />
       ) : (
         <Typography className={classes.desc}>(empty)</Typography>
