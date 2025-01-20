@@ -11,7 +11,7 @@ const Header = () => {
       sx={{
         pt: ["4.8rem", "4rem"],
         pb: "8rem",
-        height: ["auto", "calc(100vh - 6.5rem)"],
+        height: ["auto", "auto", "auto", "calc(100vh - 6.5rem)"],
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",

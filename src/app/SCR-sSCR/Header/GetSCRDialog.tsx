@@ -20,7 +20,7 @@ const GetSCRDialog = props => {
             backgroundColor: alpha("#101010", 0.8),
           },
           "& .MuiDialog-paper": {
-            width: "58rem",
+            width: "54.4rem",
             maxWidth: "100%",
             padding: "4rem 3.2rem",
             borderRadius: "2rem",
@@ -63,7 +63,12 @@ const GetSCRDialog = props => {
           <SvgIcon sx={{ fontSize: "1.8rem" }} component={CloseSvg} inheritViewBox></SvgIcon>
         </IconButton>
       </DialogTitle>
+
       <DialogContent sx={{ p: 0, minHeight: "50rem" }}>
+        <Typography sx={{ fontSize: ["1.4rem", "1.6rem"], lineHeight: ["2rem", "2.4rem"], mb: "2.4rem" }}>
+          Please verify the validity of these links and ensure you conduct your own research on SCR and the risks that may be involved. Under no
+          circumstances will we be responsible for any losses you may incur.
+        </Typography>
         {GER_SCR_DATA.map(({ title, data }, index) => (
           <>
             {!!index && <Divider sx={{ my: ["2.4rem", "3.2rem"], borderColor: "#E9E9E9" }}></Divider>}
@@ -83,43 +88,3 @@ const GetSCRDialog = props => {
 }
 
 export default GetSCRDialog
-
-{
-  /* <List sx={{ pt: "2.4rem", pb: 0 }}>
-          {data?.map(item => (
-            <ListItem
-              key={item.project}
-              sx={{
-                height: "5.6rem",
-                p: 0,
-                gap: ["0.8rem", "1.6rem"],
-                "&:nth-of-type(n + 2)": {
-                  mt: "2.4rem",
-                },
-              }}
-            >
-              <ListItemAvatar sx={{ minWidth: 0 }}>
-                <Avatar sx={{ width: "4.8rem", height: "4.8rem", borderRadius: "0.7rem" }} alt={item.project} src={PROJECT_MAP[item.project].logo} />
-              </ListItemAvatar>
-              <ListItemText primaryTypographyProps={{ fontSize: ["1.6rem", "2rem"], fontWeight: 600 }}>{PROJECT_MAP[item.project].name}</ListItemText>
-              <Button
-                href={PROJECT_MAP[item.project].website}
-                sx={{
-                  borderRadius: "0.8rem",
-                  width: ["14rem", "18rem"],
-                  height: "4.8rem",
-                  fontSize: ["1.6rem", "1.8rem"],
-                  px: ["1rem", "2.4rem"],
-                  fontWeight: 600,
-                  overflow: "hidden",
-                  whiteSpace: "nowrap",
-                  textOverflow: "ellipsis",
-                }}
-                target="_blank"
-              >
-                Go to {PROJECT_MAP[item.project].name}
-              </Button>
-            </ListItem>
-          ))}
-        </List>  */
-}

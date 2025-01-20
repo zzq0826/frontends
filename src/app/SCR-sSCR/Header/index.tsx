@@ -40,7 +40,7 @@ const Header = props => {
       sx={{
         pt: "4rem",
         pb: ["4.8rem", "8rem"],
-        height: ["auto", "auto", "calc(100vh - 6.5rem)"],
+        height: ["auto", "auto", "auto", "calc(100vh - 6.5rem)"],
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
