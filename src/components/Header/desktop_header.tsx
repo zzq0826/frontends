@@ -1,6 +1,6 @@
 // import { default as NavLink } from "next/link"
+import { sendGAEvent } from "@next/third-parties/google"
 import React, { useState } from "react"
-import ReactGA from "react-ga4"
 import { useStyles } from "tss-react/mui"
 
 import { Box, Container, Fade, Link, Popper, Stack, SvgIcon, Typography } from "@mui/material"
@@ -255,12 +255,12 @@ const DesktopHeader = ({ currentMenu }) => {
           end={item.end}
           key={item.key}
           reloadDocument={item.reload}
-          onClick={() =>
-            ReactGA.event("click_menu", {
+          onClick={() => {
+            sendGAEvent("event", "click_menu", {
               label: item.label,
               device: "desktop",
             })
-          }
+          }}
         >
           {item.label}
         </LinkStyledButton>
