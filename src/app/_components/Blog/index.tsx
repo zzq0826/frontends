@@ -61,7 +61,7 @@ const STORIES = [
   {
     cover: "/imgs/homepage/landing-blog-2.webp",
     title: "Scroll Open: Forge the Open Economy",
-    content: "A six-week program empowering builders to create impactful dApps and shape the future of the Open Economy",
+    content: "A six-week program empowering builders to create impactful dApps and shape the future of the Open Economy.",
     href: "https://open.scroll.io/",
   },
 ]

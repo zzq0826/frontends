@@ -141,7 +141,10 @@ const StoryCard = props => {
           >
             {title}
           </Typography>
-          <Typography sx={{ fontSize: ["1.6rem", "2rem"], cursor: "inherit" }} className={classes.content}>
+          <Typography
+            sx={{ fontSize: ["1.6rem", "2rem"], cursor: "inherit", minHeight: ["auto", "auto", cover ? "10.4rem" : "auto"] }}
+            className={classes.content}
+          >
             {content}
           </Typography>
         </CardContent>
