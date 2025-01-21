@@ -36,7 +36,7 @@ const DisclaimerBox = styled(Box)(({}) => ({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
-}))
+})) as typeof Box
 
 const BadgeDetail = props => {
   const { detail, loading, breadcrumb, property, onUpgrade, children } = props

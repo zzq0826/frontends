@@ -27,26 +27,26 @@ interface ScrollButtonProps extends Omit<ButtonProps, "color"> {
 const gColor = (color, theme) => {
   switch (color) {
     case "primary":
-      return (theme as any).vars.palette.primary.main
+      return theme.vars.palette.primary.main
     case "secondary":
-      return (theme as any).vars.palette.primary.contrastText
+      return theme.vars.palette.primary.contrastText
     case "tertiary":
       return "#ffffff"
     default:
-      return (theme as any).vars.palette.text.primary
+      return theme.vars.palette.text.primary
   }
 }
 
 const cColor = (color, theme) => {
   switch (color) {
     case "primary":
-      return (theme as any).vars.palette.primary.contrastText
+      return theme.vars.palette.primary.contrastText
     case "secondary":
-      return (theme as any).vars.palette.text.primary
+      return theme.vars.palette.text.primary
     case "tertiary":
       return "#000000"
     default:
-      return (theme as any).vars.palette.primary.contrastText
+      return theme.vars.palette.primary.contrastText
   }
 }
 

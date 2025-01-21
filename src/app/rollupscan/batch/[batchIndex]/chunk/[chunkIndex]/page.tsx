@@ -42,7 +42,7 @@ const BoxItem = styled(Box)(({ theme }) => ({
       marginRight: "1.6rem",
     },
   },
-}))
+})) as typeof Box
 
 const Chunk = props => {
   const params: any = use(props.params)
@@ -69,7 +69,15 @@ const Chunk = props => {
   return (
     <Box>
       <Header />
-      <Box className="wrapper mx-auto" sx={{ marginBottom: "16rem" }}>
+      <Box
+        className="wrapper mx-auto"
+        sx={{
+          marginBottom: "16rem",
+          "& *": {
+            fontFamily: "var(--developer-page-font-family) !important",
+          },
+        }}
+      >
         <Breadcrumbs aria-label="breadcrumb" sx={{ fontWeight: 600 }} separator={<NavigateNext fontSize="large" />}>
           <RouterLink href="/rollupscan?page=1&per_page=10">Batches</RouterLink>
           <RouterLink href={`/rollupscan/batch/${params.batchIndex}`}> Batch {params.batchIndex}</RouterLink>
@@ -86,7 +94,7 @@ const Chunk = props => {
               <Box
                 sx={{
                   width: "100%",
-                  border: theme => `1px solid ${(theme as any).vars.palette.border.main}`,
+                  border: theme => `1px solid ${theme.vars.palette.border.main}`,
                   borderRadius: "10px",
                   marginTop: "2.2rem",
                 }}

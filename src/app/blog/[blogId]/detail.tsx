@@ -35,7 +35,7 @@ const BlogContainer = styled(Box)(
     overflow: hidden;
   };
   `,
-)
+) as typeof Box
 
 const BlogNavbar = styled(Box)(({ theme }) => ({
   position: "sticky",
@@ -44,7 +44,7 @@ const BlogNavbar = styled(Box)(({ theme }) => ({
   [theme.breakpoints.down("md")]: {
     display: "none",
   },
-}))
+})) as typeof Box
 
 const BlogDetail = props => {
   const { blogId } = props

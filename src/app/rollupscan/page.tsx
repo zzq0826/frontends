@@ -26,7 +26,7 @@ const InfoBox = styled(Box)(({ theme }) => ({
     columnGap: "2rem",
     marginBottom: "3.5rem",
   },
-}))
+})) as typeof Box
 
 const Rollup = () => {
   const router = useRouter()

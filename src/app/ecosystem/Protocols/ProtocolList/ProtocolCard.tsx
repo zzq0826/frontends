@@ -17,7 +17,7 @@ import NetworkLabel from "./NetworkLabel"
 
 const useStyles = makeStyles()(theme => ({
   grid: {
-    backgroundColor: (theme as any).vars.palette.themeBackground.normal,
+    backgroundColor: theme.vars.palette.themeBackground.normal,
     padding: "2.4rem",
     borderRadius: "2rem",
     position: "relative",
@@ -58,7 +58,7 @@ const useStyles = makeStyles()(theme => ({
     borderRadius: "0.8rem",
     overflow: "hidden",
     alignSelf: "center",
-    backgroundColor: (theme as any).vars.palette.background.default,
+    backgroundColor: theme.vars.palette.background.default,
     [theme.breakpoints.down("sm")]: {
       width: "4.8rem",
       height: "4.8rem",
@@ -90,7 +90,7 @@ const useStyles = makeStyles()(theme => ({
   tag: {
     display: "inline-block",
     color: "#84623A",
-    backgroundColor: (theme as any).vars.palette.themeBackground.highlight,
+    backgroundColor: theme.vars.palette.themeBackground.highlight,
     borderRadius: "1.6rem",
     padding: "0.4rem 1.2rem",
     fontSize: "1.6rem",

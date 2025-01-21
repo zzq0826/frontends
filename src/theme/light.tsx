@@ -1,3 +1,5 @@
+import { color } from "motion/react"
+
 import { alpha, lighten } from "@mui/material/styles"
 
 import { boxShadowOptions, paletteOptions, typographyOptions } from "./options"
@@ -301,7 +303,7 @@ const lightTheme = {
     MuiAccordion: {
       styleOverrides: {
         root: ({ theme }) => ({
-          borderBottom: `1px solid ${(theme as any).vars.palette.border.main}`,
+          borderBottom: `1px solid ${theme.vars.palette.border.main}`,
           "&:before": {
             backgroundColor: "unset",
           },
@@ -352,11 +354,18 @@ const lightTheme = {
     MuiLink: {
       styleOverrides: {
         root: ({ theme }) => ({
-          color: (theme as any).vars.palette.link.main,
+          color: theme.vars.palette.link.main,
           fontSize: "1.6rem",
           fontWeight: 600,
           cursor: "pointer",
         }),
+      },
+    },
+    MuiBreadcrumbs: {
+      styleOverrides: {
+        root: {
+          color: "var(--mui-palette-text-secondary)",
+        },
       },
     },
   },
