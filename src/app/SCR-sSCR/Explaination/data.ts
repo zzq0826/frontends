@@ -5,8 +5,8 @@ import VoteSvg from "@/assets/svgs/defi/vote.svg"
 const data = [
   {
     icon: SecureSvg,
-    title: "Trade and secure",
-    description: "sSCR can be traded, used as collateral, or secure AVSs for economic security.",
+    title: "Liquid and secure",
+    description: "sSCR can be traded, used as collateral, or, in the future, used to secure AVSs, key features, and applications.",
   },
   {
     icon: VoteSvg,
@@ -15,7 +15,7 @@ const data = [
   },
   {
     icon: UpSvg,
-    title: "Multiply earnings in Defi",
+    title: "Multiple integrations in DeFi",
     description: "An additional Marks multiplier is applied for users that deposit sSCR into eligible DeFi destinations.",
   },
 ]

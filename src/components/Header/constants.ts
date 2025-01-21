@@ -284,7 +284,7 @@ const mainnetNavigations = [
           },
           {
             text: "scrETH",
-            label: "Scroll’s native ETH Liquid Retaking Token",
+            label: "Scroll’s native ETH Liquid Restaking Token",
             key: "scrETH",
             rootKey: "defi",
             href: "/scrETH",

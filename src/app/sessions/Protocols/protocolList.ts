@@ -61,10 +61,11 @@ const DECENTRALIZED_EXCHANGES_DATA: ProtocolData = {
     //   href: "https://scribe.exchange/",
     // },
     {
-      name: "SyncSwap",
-      project: "SyncSwap",
+      name: "Syncswap",
+      project: "Syncswap",
       logoURL: "https://scroll-eco-list.netlify.app/logos/Syncswap.png",
       href: "https://syncswap.xyz/",
+      upcoming: true,
     },
     // {
     //   name: "Vessel",
@@ -152,6 +153,13 @@ const OTHERS_DATA: ProtocolData = {
     //   href: "https://app.pencilsprotocol.io/farming",
     // },
     {
+      name: "Rho Markets",
+      project: "Rho Markets",
+      logoURL: "https://scroll-eco-list.netlify.app/logos/Rho%20Markets.png",
+      href: "https://www.rhomarkets.xyz/",
+      upcoming: true,
+    },
+    {
       name: "Tempest",
       project: "Tempest",
       logoURL: "https://scroll-eco-list.netlify.app/logos/Tempest%20Finance.png",
@@ -164,13 +172,6 @@ const OTHERS_DATA: ProtocolData = {
     //   logoURL: "https://scroll-eco-list.netlify.app/logos/Tranchess.png",
     //   href: "https://www.tranchess.com/",
     // },
-    {
-      name: "Rho Markets",
-      project: "Rho Markets",
-      logoURL: "https://scroll-eco-list.netlify.app/logos/Rho%20Markets.png",
-      href: "https://www.rhomarkets.xyz/",
-      upcoming: true,
-    },
   ],
 }
 

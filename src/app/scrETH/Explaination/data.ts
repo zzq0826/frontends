@@ -10,13 +10,14 @@ const data = [
   },
   {
     icon: UpSvg,
-    title: "Multiply earnings in Defi",
-    description: "Earn additional rewards from Scroll Sessions by deploying scrETH to eligible DeFi destinations on Scroll.",
+    title: "Deep DeFi Integrations",
+    description:
+      "Earn additional rewards from Scroll Sessions and from Scroll's DeFi ecosystem by deploying scrETH to eligible DeFi destinations on Scroll.",
   },
   {
     icon: SecureSvg,
-    title: "Trade and secure",
-    description: "scrETH can be traded, used as collateral or, in the future, help secure the set of AVSs that rely on them for economic security.",
+    title: "Liquid and secure",
+    description: "scrETH can be traded, used as collateral or, in the future, help secure the set of AVSs that rely on them for economic security",
   },
 ]
 

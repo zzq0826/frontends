@@ -66,6 +66,7 @@ const Header = props => {
             direction="column"
             alignItems="center"
             sx={{
+              flex: 1,
               p: ["2.4rem", "4rem 2.4rem"],
               backgroundColor: "background.default",
               borderRadius: "2rem",
@@ -74,11 +75,13 @@ const Header = props => {
           >
             <Image src={item.imageURL} alt={item.title} width={516} height={408} className="w-auto h-[12rem] sm:h-[18rem]"></Image>
             <Typography sx={{ fontSize: ["2rem", "3.2rem"], lineHeight: ["3.2rem", "4.8rem"], fontWeight: 600 }}>{item.title}</Typography>
-            <Typography sx={{ fontSize: ["1.6rem", "1.8rem"], lineHeight: ["2.4rem", "2.8rem"], textAlign: "center" }}>{item.description}</Typography>
+            <Typography sx={{ fontSize: ["1.6rem", "1.8rem"], lineHeight: ["2.4rem", "2.8rem"], textAlign: "center", flex: 1 }}>
+              {item.description}
+            </Typography>
             <Stack direction="row" justifyContent="center" sx={{ width: "100%", gap: ["0.8rem", "2.4rem"], mb: ["0.8rem", "2.4rem"] }}>
               {item.values.map(({ label, value }, index) => (
                 <Statistic key={label} label={label}>
-                  {formatLargeNumber(actionList.find(action => action.id === item.id)!.values?.[index] ?? value)}
+                  {value === null ? "--" : formatLargeNumber(actionList.find(action => action.id === item.id)!.values?.[index] ?? value)}
                 </Statistic>
               ))}
             </Stack>

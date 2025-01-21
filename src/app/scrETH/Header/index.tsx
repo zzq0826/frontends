@@ -28,11 +28,11 @@ const Header = () => {
         sx={{
           fontSize: ["1.8rem", "2.4rem"],
           lineHeight: ["3.2rem", "4rem"],
-          maxWidth: "68rem",
+          maxWidth: "50rem",
           textAlign: "center",
         }}
       >
-        scrETH is Scroll’s native ETH underlying Liquid Restaking Token. Stake ETH/WETH/ wstETH to obtain scrETH.
+        scrETH is Scroll's ecosystem native ETH LRT. Deposit ETH/WETH/ wstETH to obtain scrETH.
       </Typography>
       <Button className="!w-full sm:!w-[20.8rem]" color="default" gloomy>
         Coming soon

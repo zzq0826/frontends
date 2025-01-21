@@ -17,6 +17,7 @@ import { commafy, formatLargeNumber } from "@/utils"
 import MarksTooltip from "../components/MarksTooltip"
 import QATooltip from "../components/QATooltip"
 
+// TODO: new blog
 const SESSION_AIRDROP_LINK = "/blog/introducing-scrolls-first-airdrop-a-celebration-of-the-global-community"
 
 const MotionBox = motion(Box)
@@ -128,7 +129,7 @@ const TotalPoints = () => {
               <Typography sx={{ fontSize: "1.4rem", lineHeight: "2.4rem", fontFamily: "var(--developer-page-font-family)" }}>
                 How does this work
               </Typography>
-              <QATooltip title="lorem ipsm....">
+              <QATooltip title="Providing liquidity in listed DEXs boosts your accrual rate. The more useful and volatile your liquidity pair, the higher the boost. Additional boosts will be introduced by Scroll’s upcoming LRTs soon.">
                 <span className="text-[0] cursor-pointer">
                   <QaSvg></QaSvg>
                 </span>

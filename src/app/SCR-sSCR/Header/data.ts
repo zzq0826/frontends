@@ -42,7 +42,7 @@ const data = [
     id: "get-scr",
     imageURL: GetScrSvg,
     title: "Get SCR",
-    description: "SCR is the governance token of Scroll, which can be used to vote or raise proposals in the Scroll community.",
+    description: "SCR is Scroll's governance token, which can be used to vote or raise proposals in the Scroll community.",
     values: [
       { label: "Circulating supply", value: 0 },
       { label: "Votable supply", value: 0 },
@@ -53,8 +53,9 @@ const data = [
     id: "stake-scr",
     imageURL: StakeScrSvg,
     title: "Stake SCR to get sSCR",
-    description: "sSCR (staked SCR) is an LRT with SCR as the underlying, which can be deployed into wider DeFi ecosystem to earn rewards.",
-    values: [{ label: "Total sSCR", value: 1_000_000_000 }],
+    description:
+      "sSCR (restaked SCR) is an LRT with SCR as the underlying assets, which can be deployed into the wider DeFi ecosystem to earn rewards and secure key features and applications in the future.",
+    values: [{ label: "Total sSCR", value: null }],
     actionLabel: "Coming soon",
     upcoming: true,
   },
