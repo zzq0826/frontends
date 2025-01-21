@@ -23,7 +23,7 @@ const ProtocolCard = props => {
     walletCurrentAddress,
   ]) as any
 
-  const marks = protocolMarksMap?.[project] ?? "0"
+  const marks = protocolMarksMap?.[project]
 
   return (
     <Link href={href} target="_blank" rel="noopener noreferrer">

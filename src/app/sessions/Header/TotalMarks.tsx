@@ -42,20 +42,6 @@ const TotalPoints = () => {
     initialData: {},
   })
 
-  const { data: session0And1Data, isFetching: session0And1Loading } = useQuery({
-    queryKey: ["session0And1Marks", walletCurrentAddress],
-    queryFn: async () => {
-      const data = await scrollRequest(fetchSession0And1TotalMarksURL(walletCurrentAddress))
-      if (data.status !== "1") {
-        return Promise.reject(new Error("Something went wrong, please try again later."))
-      }
-      return data.result
-    },
-    enabled: !!walletCurrentAddress && hasSignedTerms,
-    refetchOnWindowFocus: false,
-    initialData: {},
-  })
-
   return (
     <MotionBox
       sx={[
@@ -98,10 +84,10 @@ const TotalPoints = () => {
             </Typography>
             <Typography sx={{ fontSize: "1.4rem", lineHeight: ["2rem", "2.4rem"], fontFamily: "var(--developer-page-font-family)" }}>
               Marks carried over from Session 0 & 1:{" "}
-              {session0And1Loading ? (
+              {session2Loading ? (
                 <Skeleton sx={{ borderRadius: "0.4rem", width: "3.2rem", height: "2rem", display: "inline-block" }}></Skeleton>
               ) : (
-                <>{session0And1Data.marks ? formatLargeNumber(session0And1Data.marks, 2) : "--"}</>
+                <>{session2Data.carry ? formatLargeNumber(session2Data.carry, 2) : "--"}</>
               )}
             </Typography>
             <Link underline="always" href={SESSION_AIRDROP_LINK} className="font-developer !text-inherit !text-[1.4rem] !font-normal">

@@ -29,6 +29,7 @@ const DECENTRALIZED_EXCHANGES_DATA: ProtocolData = {
       project: "Ambient",
       logoURL: "https://scroll-eco-list.netlify.app/logos/Ambient%20Finance.png",
       href: "https://ambient.finance/",
+      upcoming: true,
     },
     {
       name: "Maverick",
@@ -61,8 +62,8 @@ const DECENTRALIZED_EXCHANGES_DATA: ProtocolData = {
     //   href: "https://scribe.exchange/",
     // },
     {
-      name: "Syncswap",
-      project: "Syncswap",
+      name: "SyncSwap",
+      project: "SyncSwap",
       logoURL: "https://scroll-eco-list.netlify.app/logos/Syncswap.png",
       href: "https://syncswap.xyz/",
       upcoming: true,
