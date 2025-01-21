@@ -57,7 +57,7 @@ const Web3ContextProvider = props => {
 
   useEffect(() => {
     if (isConnected && activeConnector?.name) {
-      sendGAEvent("wallet_connected", {
+      sendGAEvent("event", "wallet_connected", {
         wallet_type: activeConnector.name,
       })
     }
