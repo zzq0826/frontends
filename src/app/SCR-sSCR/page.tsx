@@ -9,7 +9,9 @@ const ScrAndsSCRPage = async () => {
   const circulatingSupplyStr = await fs.readFile(process.cwd() + "/public/tokenomics/circulatingSupply.txt", "utf8")
   const circulatingSupply = +circulatingSupplyStr
 
-  const { votable_supply } = await fetch(`${process.env.NEXT_PUBLIC_AGORA_API_URI}/api/v1/votable_supply`).then(res => res.json())
+  const { votable_supply } = await fetch(`${process.env.NEXT_PUBLIC_AGORA_API_URI}/api/v1/votable_supply`, {
+    next: { revalidate: 3600 },
+  }).then(res => res.json())
 
   return (
     <>
