@@ -219,7 +219,7 @@ const DesktopHeader = ({ currentMenu }) => {
         >
           <span>{item.label}</span>
           {item.new && (
-            <Box sx={{ backgroundColor: "#B5F5EC", padding: "0 0.8rem", height: "2rem", lineHeight: "2rem", borderRadius: "0.4rem", ml: "0.4rem" }}>
+            <Box sx={{ backgroundColor: "#B5F5EC", padding: "0 0.8rem", height: "2rem", lineHeight: "2rem", borderRadius: "0.4rem", ml: "1rem" }}>
               <Typography sx={{ fontSize: "1.2rem", lineHeight: "2rem", fontWeight: 600 }}>NEW</Typography>
             </Box>
           )}
