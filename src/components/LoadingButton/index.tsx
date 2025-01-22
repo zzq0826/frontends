@@ -1,11 +1,27 @@
 import { makeStyles } from "tss-react/mui"
 
 import { Button, CircularProgress, Stack } from "@mui/material"
+import { lighten } from "@mui/material/styles"
 
 const useStyles = makeStyles()(theme => ({
   loadingIndicator: {
     color: theme.vars.palette.primary.contrastText,
     width: "max-content",
+  },
+  root: {
+    width: "15rem",
+    height: "4.4rem",
+    fontSize: "1.6rem",
+    fontWeight: 600,
+    borderRadius: "0.5rem",
+  },
+  containedPrimary: {
+    "&:hover": {
+      backgroundColor: lighten("#FF684B", 0.1),
+    },
+  },
+  loading: {
+    backgroundColor: lighten("#FF684B", 0.1) + " !important",
   },
 }))
 
@@ -25,7 +41,8 @@ const ScrollLoadingButton = props => {
 
   return (
     <Button
-      classes={{ loadingIndicator: classes.loadingIndicator }}
+      variant="contained"
+      classes={{ root: classes.root, loading: classes.loading, loadingIndicator: classes.loadingIndicator }}
       loadingIndicator={
         <Stack direction="row" alignItems="center" spacing={1}>
           <span>{renderLoadingText()}</span>

@@ -1,6 +1,4 @@
-import { color } from "motion/react"
-
-import { alpha, lighten } from "@mui/material/styles"
+import { alpha } from "@mui/material/styles"
 
 import { boxShadowOptions, paletteOptions, typographyOptions } from "./options"
 
@@ -162,38 +160,6 @@ const lightTheme = {
             border: "none !important",
             color: paletteOptions.action.disabled,
             backgroundColor: paletteOptions.action.disabledBackground,
-          },
-        },
-      ],
-    },
-    MuiLoadingButton: {
-      styleOverrides: {
-        root: {
-          width: "15rem",
-          height: "4.4rem",
-          fontSize: "1.6rem",
-          fontWeight: 600,
-          borderRadius: "0.5rem",
-        },
-      },
-      defaultProps: {
-        variant: "contained",
-        color: "primary",
-      },
-      variants: [
-        {
-          props: { variant: "contained", color: "primary" },
-          style: {
-            backgroundColor: paletteOptions.primary.main,
-            "&:hover": {
-              backgroundColor: lighten(paletteOptions.primary.main, 0.1),
-            },
-          },
-        },
-        {
-          props: { variant: "contained", color: "primary", loading: true },
-          style: {
-            backgroundColor: `${paletteOptions.primary.main} !important`,
           },
         },
       ],
