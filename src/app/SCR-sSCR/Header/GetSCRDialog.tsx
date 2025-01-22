@@ -64,7 +64,22 @@ const GetSCRDialog = props => {
         </IconButton>
       </DialogTitle>
 
-      <DialogContent sx={{ p: 0, minHeight: "50rem" }}>
+      <DialogContent
+        sx={{
+          p: 0,
+          minHeight: "50rem",
+          "&::-webkit-scrollbar-thumb": {
+            backgroundColor: "rgba(209, 205, 204, 0.6)",
+            borderRadius: "8px",
+          },
+          "&::-webkit-scrollbar": {
+            width: "6px",
+          },
+          // Firefox
+          scrollbarWidth: "thin",
+          scrollbarColor: "rgba(209, 205, 204, 0.6) transparent",
+        }}
+      >
         <Typography sx={{ fontSize: ["1.4rem", "1.6rem"], lineHeight: ["2rem", "2.4rem"], mb: "2.4rem" }}>
           Please verify the validity of these links and ensure you conduct your own research on SCR and the risks that may be involved. Under no
           circumstances will we be responsible for any losses you may incur.

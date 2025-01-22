@@ -1,3 +1,5 @@
+import Bithumb from "@/assets/images/defi/Bithumb.jpg"
+import OKX from "@/assets/images/defi/OKX.jpg"
 import BinanceSvg from "@/assets/svgs/defi/binance.svg?url"
 import GetScrSvg from "@/assets/svgs/defi/get-scr.svg?url"
 import StakeScrSvg from "@/assets/svgs/defi/stake-scr.svg?url"
@@ -25,12 +27,22 @@ const SWAP_IN_DEX = {
 }
 
 const BUY_ON_BINANCE = {
-  title: "Buy on Binance",
+  title: "Buy on CEX",
   data: [
     {
       name: "Binance",
       logoURL: BinanceSvg,
       href: "https://www.binance.com/en/trade/SCR_USDT",
+    },
+    {
+      name: "Bithumb",
+      logoURL: Bithumb,
+      href: "https://www.bithumb.com/react/trade/order/SCR-KRW",
+    },
+    {
+      name: "OKX",
+      logoURL: OKX,
+      href: "https://www.okx.com/trade-spot/scr-usdt",
     },
   ],
 }

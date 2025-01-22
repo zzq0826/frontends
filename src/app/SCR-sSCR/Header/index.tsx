@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 import { Container, Stack, Typography } from "@mui/material"
 
@@ -15,6 +15,23 @@ import DATA from "./data"
 const Header = props => {
   const { circulatingSupply, votableSupply } = props
   const [getSCROpen, setGetSCROpen] = useState(false)
+  const [height, setHeight] = useState("auto")
+
+  useEffect(() => {
+    function handleResize() {
+      if (window.innerHeight - 65 > 858) {
+        setHeight("calc(100vh - 6.5rem)")
+      } else {
+        setHeight("auto")
+      }
+    }
+    handleResize()
+    window.addEventListener("resize", handleResize)
+    return () => {
+      window.removeEventListener("resize", handleResize)
+    }
+  }, [])
+
   const actionList = [
     {
       id: "get-scr",
@@ -40,7 +57,7 @@ const Header = props => {
       sx={{
         pt: "4rem",
         pb: ["4.8rem", "8rem"],
-        height: ["auto", "auto", "auto", "calc(100vh - 6.5rem)"],
+        height: ["auto", "auto", height],
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",

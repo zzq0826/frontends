@@ -17,8 +17,7 @@ import { commafy, formatLargeNumber } from "@/utils"
 import MarksTooltip from "../components/MarksTooltip"
 import QATooltip from "../components/QATooltip"
 
-// TODO: new blog
-const SESSION_AIRDROP_LINK = "/blog/introducing-scrolls-first-airdrop-a-celebration-of-the-global-community"
+const SESSION_AIRDROP_LINK = "/blog/introducing-scroll-session-2"
 
 const MotionBox = motion(Box)
 

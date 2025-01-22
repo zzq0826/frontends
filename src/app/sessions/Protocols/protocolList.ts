@@ -100,6 +100,7 @@ const LENDING_BORROWING_DATA: ProtocolData = {
       project: "Aave",
       logoURL: "https://scroll-eco-list.netlify.app/logos/Aave.svg",
       href: "https://app.aave.com/",
+      upcoming: true,
     },
     {
       name: "Compound",

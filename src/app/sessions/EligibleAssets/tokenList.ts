@@ -2,6 +2,11 @@ import ETHSvg from "@/assets/svgs/bridge/network-mainnet.svg?url"
 
 const TOKEN_LIST = [
   {
+    name: "SCR",
+    logoURI: "/imgs/token/scr.svg",
+    href: "https://scrollscan.com/token/0xd29687c813d741e2f938f4ac377128810e217b1b",
+  },
+  {
     name: "ETH/WETH",
     logoURI: ETHSvg,
     href: "/bridge?token=ETH",
@@ -51,11 +56,7 @@ const TOKEN_LIST = [
     logoURI: "/imgs/sessions/tokens/stone-white.svg",
     href: "https://poc.routerintents.com/apps/stakestone",
   },
-  {
-    name: "SCR",
-    logoURI: "/imgs/token/scr.svg",
-    href: "https://scrollscan.com/token/0xd29687c813d741e2f938f4ac377128810e217b1b",
-  },
+
   // {
   //   name: "pufETH",
   //   logoURI: "https://scroll-tech.github.io/token-list/data/PufETH/logo.svg",

@@ -1,4 +1,7 @@
+"use client"
+
 import Image from "next/image"
+import { useEffect, useState } from "react"
 
 import { Container, Stack, Typography } from "@mui/material"
 
@@ -6,12 +9,28 @@ import SCRETHHero from "@/assets/svgs/defi/scr-eth-hero.svg?url"
 import Button from "@/components/Button"
 
 const Header = () => {
+  const [height, setHeight] = useState("auto")
+
+  useEffect(() => {
+    function handleResize() {
+      if (window.innerHeight - 65 > 858) {
+        setHeight("calc(100vh - 6.5rem)")
+      } else {
+        setHeight("auto")
+      }
+    }
+    handleResize()
+    window.addEventListener("resize", handleResize)
+    return () => {
+      window.removeEventListener("resize", handleResize)
+    }
+  }, [])
   return (
     <Container
       sx={{
         pt: ["4.8rem", "4rem"],
         pb: "8rem",
-        height: ["auto", "auto", "auto", "calc(100vh - 6.5rem)"],
+        height: ["auto", "auto", height],
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
