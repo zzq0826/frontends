@@ -2,7 +2,7 @@ import { GoogleAnalytics } from "@next/third-parties/google"
 import { Metadata } from "next"
 import React, { Suspense } from "react"
 
-import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter"
+import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter"
 
 import GlobalComponents from "@/components/GlobalComponents"
 // import GoogleAnalytics from "@/components/GoogleAnalytics"
