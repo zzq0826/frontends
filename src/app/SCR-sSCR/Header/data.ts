@@ -30,7 +30,7 @@ const BUY_ON_BINANCE = {
     {
       name: "Binance",
       logoURL: BinanceSvg,
-      href: "https://scroll-us.ambient.finance/swap/chain=0x82750&tokenA=0x0000000000000000000000000000000000000000&tokenB=0xd29687c813d741e2f938f4ac377128810e217b1b",
+      href: "https://www.binance.com/en/trade/SCR_USDT",
     },
   ],
 }
