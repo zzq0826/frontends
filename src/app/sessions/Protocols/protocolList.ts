@@ -96,7 +96,7 @@ const LENDING_BORROWING_DATA: ProtocolData = {
   tag: "1x Marks",
   data: [
     {
-      name: "AAVE",
+      name: "Aave",
       project: "Aave",
       logoURL: "https://scroll-eco-list.netlify.app/logos/Aave.svg",
       href: "https://app.aave.com/",

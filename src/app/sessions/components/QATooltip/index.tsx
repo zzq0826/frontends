@@ -21,6 +21,9 @@ const useStyles = makeStyles()(theme => ({
     lineHeight: "2.4rem",
     borderRadius: "2rem",
     width: "28rem",
+    [theme.breakpoints.down("md")]: {
+      marginTop: "1.6rem !important",
+    },
   },
 }))
 

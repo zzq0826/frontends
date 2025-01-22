@@ -11,7 +11,7 @@ const Header = () => {
       sx={[
         {
           position: "relative",
-          height: ["120rem", "75rem", "auto"],
+          height: ["124rem", "75rem", "auto"],
           background: [`url(${MobileHeroBg.src}) bottom / contain no-repeat`, `url(${HeroBg.src}) bottom / contain no-repeat`],
           aspectRatio: ["auto", "auto", "16 / 9"],
           marginTop: [0, 0, "-6.5rem"],

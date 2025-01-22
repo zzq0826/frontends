@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 
 import { Box, Divider, Skeleton, Stack, Typography } from "@mui/material"
 
-import { fetchSession0And1TotalMarksURL, fetchSession2TotalMarksURL } from "@/apis/sessions"
+import { fetchSession2TotalMarksURL } from "@/apis/sessions"
 import QaSvg from "@/assets/svgs/sessions/qa.svg"
 import Button from "@/components/Button"
 import Link from "@/components/Link"
@@ -73,7 +73,7 @@ const TotalPoints = () => {
                 }}
               >
                 {session2Loading ? (
-                  <Skeleton sx={{ borderRadius: "1rem", width: "12rem", height: "8rem", display: "inline-block" }}></Skeleton>
+                  <Skeleton sx={{ borderRadius: "1rem", width: "12rem", height: ["4.8rem", "8rem"], display: "inline-block" }}></Skeleton>
                 ) : (
                   <>{session2Data.marks ? formatLargeNumber(session2Data.marks, 2) : "--"}</>
                 )}
@@ -106,7 +106,7 @@ const TotalPoints = () => {
               }}
             >
               {session2Loading ? (
-                <Skeleton sx={{ borderRadius: "1rem", width: "12rem", height: "8rem", display: "inline-block" }}></Skeleton>
+                <Skeleton sx={{ borderRadius: "1rem", width: "12rem", height: ["4.8rem", "8rem"], display: "inline-block" }}></Skeleton>
               ) : (
                 <>{session2Data.boost ? formatLargeNumber(session2Data.boost, 2) + "x" : "--"}</>
               )}
