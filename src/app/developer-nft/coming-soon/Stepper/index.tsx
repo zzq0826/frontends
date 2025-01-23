@@ -91,7 +91,7 @@ const NFTStepper = () => {
                 labelContainer: classes.stepLabelContainer,
                 label: classes.stepLabelText,
               }}
-              StepIconComponent={PhraseStepIcon}
+              slots={{ stepIcon: PhraseStepIcon }}
               optional={
                 // TODO: NumberTypography not allow component="span"
                 <Typography
