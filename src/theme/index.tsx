@@ -13,7 +13,7 @@ const ScrollThemeProvider = ({ children }) => {
     },
     colorSchemes: {
       light: lightTheme,
-      dark: lightTheme,
+      dark: false,
     },
   })
 
