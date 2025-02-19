@@ -18,15 +18,12 @@ import NavbarItem from "./NavbarItem"
 import { navigations } from "./data"
 import useCheckCustomNavBarBg from "./useCheckCustomNavBarBg"
 import useCheckTheme from "./useCheckTheme"
-import useShowGasPriceViewer from "./useShowGasPriceViewer"
 
 const DesktopHeader = ({ currentMenu }) => {
   const [isHoveringNavbar, setIsHoveringNavbar] = useState(false)
   useCheckCustomNavBarBg({ isHover: isHoveringNavbar })
-  const { isDesktop, isLandscape } = useCheckViewport()
+  const { isLandscape } = useCheckViewport()
   const dark = useCheckTheme()
-
-  const gasPriceViewerVisible = useShowGasPriceViewer()
 
   const [hoveringNavbarItemKey, setHoveringNavbarItemKey] = useState("")
 

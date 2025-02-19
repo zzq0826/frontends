@@ -8,7 +8,7 @@ import useScrollTrigger from "@mui/material/useScrollTrigger"
 
 import useCheckViewport from "@/hooks/useCheckViewport"
 
-import Announcement from "./announcement"
+// import Announcement from "./announcement"
 import { navigations } from "./data"
 import DesktopNav from "./desktop_header"
 import MobileNav from "./mobile_header"
@@ -60,7 +60,7 @@ export default function Header() {
     return (
       <HideOnScroll>
         <AppBar position="sticky" sx={{ boxShadow: "none", backgroundColor: "transparent" }}>
-          <Announcement />
+          {/* <Announcement /> */}
           <DesktopNav currentMenu={currentMenu} />
         </AppBar>
       </HideOnScroll>
@@ -68,7 +68,7 @@ export default function Header() {
   } else {
     return (
       <AppBar position="sticky" sx={{ boxShadow: "none", backgroundColor: "transparent" }}>
-        <Announcement />
+        {/* <Announcement /> */}
         <MobileNav currentMenu={currentMenu} />
       </AppBar>
     )

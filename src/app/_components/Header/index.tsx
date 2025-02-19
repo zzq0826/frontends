@@ -7,7 +7,7 @@ import Button from "@/components/Button"
 import OrientationToView from "@/components/Motion/OrientationToView"
 import useCheckViewport from "@/hooks/useCheckViewport"
 
-const ANNOUNCEMENT_HEIGHT = "5.9rem"
+const ANNOUNCEMENT_HEIGHT = "0rem"
 
 const Title = styled(Typography)(({ theme }) => ({
   fontSize: "6.4rem",
